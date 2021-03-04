@@ -16,5 +16,5 @@ export class AppComponent implements OnInit {
     this.http.get('https://api.giphy.com/v1/gifs/search?api_key=eXhNdgjlQiPGRXTVpgPL8TKWNTfaToEa&q=Operation&limit=25&offset=0&rating=pg-13&lang=en')
       .subscribe(data => console.log(data));
   }
-  
+
 }

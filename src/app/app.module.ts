@@ -8,6 +8,9 @@ import { HeaderComponent } from './header/header.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { GameModesComponent } from './game-modes/game-modes.component';
+import { TimeChallengeComponent } from './game-modes/time-challenge/time-challenge.component';
+import { EndlessTriviaComponent } from './game-modes/endless-trivia/endless-trivia.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     HeaderComponent,
     SignInComponent,
     CreateProfileComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    GameModesComponent,
+    TimeChallengeComponent,
+    EndlessTriviaComponent
   ],
   imports: [
     BrowserModule,
