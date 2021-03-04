@@ -1,1 +1,22 @@
-<h1>hello</h1>
+<div>
+<form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+    <h2>Create Account - DRAFT</h2>
+    <label for="email">Email</label>
+    <input id="email" type="email" ngModel name="email" #emailSignup required email>
+    <label for="password">Password</label>
+    <input id="password" type="password" ngModel name="password" #passwordSignup required minlength="6">
+    <button type="submit">Sign Up</button>
+    <!-- <button (click)="createAccount(emailCreateAccount.value,passwordCreateAccount.value)" [disabled]="authForm.invalid">Create freaking account</button> -->
+</form>
+
+
+
+</div>
+
+<div>
+    <h2>Sign In - DRAFT</h2>
+    <input type="text #emailSignup">
+    <input type="text #passwordSignup">
+    <!-- <button (click)="signIn(emailCreateAccount.value,passwordCreateAccount.value)">Sign the frick in</button> -->
+    <!-- WHY IS THIS AN ERROR????? -->
+    </div>
