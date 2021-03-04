@@ -23,8 +23,8 @@ import { FormsModule } from '@angular/forms';
     CreateProfileComponent,
     LeaderboardComponent,
     GameModesComponent,
-    EndlessTriviaComponent,
     TimeChallengeComponent,
+    EndlessTriviaComponent
   ],
   imports: [
     BrowserModule,

@@ -4,11 +4,13 @@ import { Trivia } from 'src/app/models/trivia.model';
 import { GiphyService } from 'src/app/services/giphy-api.service';
 import { TriviaService } from 'src/app/services/trivia-api.service';
 
+
 @Component({
   selector: 'app-endless-trivia',
   templateUrl: './endless-trivia.component.html',
   styleUrls: ['./endless-trivia.component.css']
 })
+
 export class EndlessTriviaComponent  {
 
   giph: Giphy;
@@ -16,16 +18,6 @@ export class EndlessTriviaComponent  {
 
   constructor(private giphyService: GiphyService, 
               private triviaService: TriviaService) { }
-  
-  // ngOnInit(): void {
-  //   this.triviaService.fetchGiph().subscribe(responseData => {
-  //       this.trivia = {
-  //         answer: responseData.answer,
-  //         question: responseData.question
-  //       }
-  //     })
-    
-//     this.giphyService.fetchRandomQuestion().subscribe()
   
 // ~sarah~
 randomQuestion:any;
@@ -48,5 +40,4 @@ getGiphHint(randomQuestion) {
 this.giphHint = giph
   })
 }
-
 }

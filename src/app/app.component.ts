@@ -21,35 +21,6 @@ export class AppComponent implements OnInit {
       .subscribe(data => console.log(data));
   }
 
-firebaseAuth = AngularFireAuth;
-
-fireService = FirebaseService;
-
-isLoggedIn = false;
-
-  // async signIn(email: string, password: string) {
-  //   await this.firebaseAuth
-  //     .signInWithEmailAndPassword(email, password)
-  //     .then((res) => {
-  //       this.isLoggedIn = true;
-  //       localStorage.setItem('user', JSON.stringify(res.user));
-  //     });
-  // }
-
-  // async createAccount(email: string, password: string) {
-  //   await this.fireService
-  //     .createUserWithEmailAndPassword(email, password)
-  //     .then((res) => {
-  //       this.isLoggedIn = true;
-  //       localStorage.setItem('user', JSON.stringify(res.user));
-  //     });
-  // }
-
-  // logOut() {
-  //   this.firebaseAuth.signOut()
-  //   localStorage.removeItem('user')
-  // }
-
   onLogin(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
@@ -63,5 +34,4 @@ isLoggedIn = false;
     this.firebaseService.signUp(email, password).subscribe( data => console.log(data))
     form.reset()
   }
-  
 }

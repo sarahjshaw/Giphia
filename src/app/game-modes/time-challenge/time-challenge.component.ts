@@ -11,7 +11,4 @@ export class TimeChallengeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
-
 }
