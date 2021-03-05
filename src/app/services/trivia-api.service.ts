@@ -9,6 +9,8 @@ export class TriviaService {
 
     apiKey = 'eXhNdgjlQiPGRXTVpgPL8TKWNTfaToEa';
 
+randomQuestion: Trivia[];
+
     constructor(private http: HttpClient) {}
 
     fetchRandomQuestion() {

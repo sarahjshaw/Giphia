@@ -1,1 +1,26 @@
-<p>home works!</p>
+<header>
+  <div class="container">
+    <nav>
+        <ul>
+          <li><a routerLink="/signin">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="GraphicsArea">
+    <a routerLink="/home" class="logo">Logo will go here</a>
+    </div>
+
+</header>
+
+<body>
+    <button (click)="leaderboardRoute()"></button>
+    <!-- <li><a routerLink="/leaderboard">Leaderboard</a></li> -->
+
+    <button (click)="playGameRoute()"></button>
+    <!-- <li><a routerLink="/game-modes">Play</a></li> -->
+</body>
+
+<router-outlet></router-outlet>
+
+

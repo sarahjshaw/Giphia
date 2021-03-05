@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { AngularFireModule } from '@angular/fire';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,8 +10,14 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { GameModesComponent } from './game-modes/game-modes.component';
 import { EndlessTriviaComponent } from './game-modes/endless-trivia/endless-trivia.component';
 import { TimeChallengeComponent } from './game-modes/time-challenge/time-challenge.component';
-import { FirebaseService } from './services/firebase.service';
+// import { FirebaseService } from './snervices/firebase.service';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import { PlayerProfileComponent } from './player-profile/player-profile.component';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { AppRoutingModule } from './app-routing.module'
 
 @NgModule({
   declarations: [
@@ -24,24 +29,22 @@ import { FormsModule } from '@angular/forms';
     LeaderboardComponent,
     GameModesComponent,
     TimeChallengeComponent,
-    EndlessTriviaComponent
+    EndlessTriviaComponent,
+    PlayerProfileComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AngularFireModule.initializeApp({
-      apiKey: 'AIzaSyBRhAlt1aJy_2BKQG-t4PbAZzp6zTYFHjg',
-      authDomain: 'giphia-9e631.firebaseapp.com',
-      databaseURL: 'https://giphia-9e631-default-rtdb.firebaseio.com/',
-      projectId: 'giphia-9e631',
-      storageBucket: 'giphia-9e631.appspot.com',
-      messagingSenderId: '910625041730',
-      appId: '1:910625041730:web:c8322c587ce123c7a5ecdb',
-      measurementId: 'G-16HX29XC3N',
-    }),
+    RouterModule,
+    MatInputModule,
+    MatButtonModule,
+    AppRoutingModule
   ],
-  providers: [FirebaseService],
+  providers: [
+    ,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

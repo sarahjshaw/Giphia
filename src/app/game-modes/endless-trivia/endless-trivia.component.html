@@ -1,7 +1,8 @@
 <!-- header containing logo/name, login/profile link, score? -->
 <h1>Hint</h1>
-<div class="hintGiph"></div>
+<div>{{giphHint}}</div>
 
 <h1>Question</h1>
-<div class="randomQ" *ngFor="let q of randomQuestion">{{q.question}}</div>
+<div>{{randomQuestion}}</div>
 
+<button (click)="nextQuestion()">Next Question</button>

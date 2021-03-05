@@ -1,0 +1,91 @@
+* {
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+}
+/* body {
+  background-image: url(Giphia.png);
+} */
+h1 {
+  padding-top: 5%;
+  padding-bottom: 3%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 32px;
+  color: white;
+  text-shadow: 3px 3px 5px black;
+}
+.blocks {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+#startbutton {
+  width: 110px;
+  height: 40px;
+  margin: 5px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 18px;
+  box-shadow: 2px 2px 7px rgb(158, 53, 26);
+}
+#resetbutton {
+  width: 110px;
+  height: 40px;
+  margin: 5px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 18px;
+  box-shadow: 2px 2px 7px rgb(158, 53, 26);
+}
+#timerbutton {
+  width: 150px;
+  height: 30px;
+  margin: 5px;
+  padding-top: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 7px rgb(158, 53, 26);
+  border: none;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+}
+.memory-game {
+  margin-top: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  perspective: 1000px;
+  margin: auto;
+}
+ 
+/* DESKTOP VERSION */
+@media (min-width: 768px) {
+h1 {
+  font-size: 48px;
+}
+  .memory-game {
+    width: 800px;
+    height: 400px;
+  }
+  #startbutton {
+    width: 200px;
+    height: 50px;
+    margin: 5px;
+  }
+  #resetbutton {
+    width: 200px;
+    height: 50px;
+    margin: 5px;
+  }
+  #timerbutton {
+    width: 200px;
+    height: 35px;
+    margin: 5px;
+    padding-top: 15px;
+  }}
