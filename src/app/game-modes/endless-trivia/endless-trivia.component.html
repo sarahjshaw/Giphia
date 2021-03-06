@@ -1,8 +1,14 @@
 <!-- header containing logo/name, login/profile link, score? -->
+<body>
+    
 <h1>Hint</h1>
-<div>{{giphHint}}</div>
+<div class="giphCont" *ngFor="let gif of giphHint">
+    <img [src]="gif.images.orginal.url" alt="GiphHint">
+</div>
 
 <h1>Question</h1>
 <div>{{randomQuestion}}</div>
 
 <button (click)="nextQuestion()">Next Question</button>
+
+</body>

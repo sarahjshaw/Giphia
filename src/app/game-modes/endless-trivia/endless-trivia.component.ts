@@ -34,11 +34,14 @@ export class EndlessTriviaComponent implements OnInit {
       console.log('randomAnswer', this.randomAnswer);
       console.log('randomQuestion', this.randomQuestion);
 
-      this.giphyService.fetchGiph(this.randomAnswer).subscribe((result) => {
-        this.giphHint = result[0];
-        result = this.giphArray;
-        console.log('giphHint', this.giphHint);
-        console.log('giphArray', this.giphArray);
+      this.giphyService.fetchGiph(this.randomAnswer).subscribe((result: any) => {
+        console.log('result', result);
+        // this.giphArray = data.data;
+        result.data[1] = this.giphHint;
+
+        console.log('testing', this.giphHint);
+        // result[0].embed_url = this.giphHint;
+        // result = this.giphArray;
       });
     });
   }
@@ -62,5 +65,4 @@ export class EndlessTriviaComponent implements OnInit {
   nextQuestion() {
     this.ngOnInit();
   }
-
 }
