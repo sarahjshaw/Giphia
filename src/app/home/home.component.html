@@ -1,23 +1,25 @@
 <header>
-  <div class="container">
+  <div class="navigationContainer">
     <nav>
         <ul>
           <li><a routerLink="/signin">Login</a></li>
+          
         </ul>
+        <button (click)="backClick()">Back</button>
       </nav>
     </div>
 
-    <div class="GraphicsArea">
+    <div class="graphicsArea">
     <a routerLink="/home" class="logo">Logo will go here</a>
     </div>
 
 </header>
 
 <body>
-    <button (click)="leaderboardRoute()"></button>
+    <button (click)="leaderboardRoute()">Leaderboard</button>
     <!-- <li><a routerLink="/leaderboard">Leaderboard</a></li> -->
 
-    <button (click)="playGameRoute()"></button>
+    <button (click)="playGameRoute()">Play</button>
     <!-- <li><a routerLink="/game-modes">Play</a></li> -->
 </body>
 
