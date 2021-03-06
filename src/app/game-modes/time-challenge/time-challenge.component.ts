@@ -30,7 +30,7 @@ export class TimeChallengeComponent implements OnInit {
 // document.getElementById("resetbutton").addEventListener("click", reset);
 // document.getElementById("startbutton").addEventListener("click", startButtonPress);
 // function startTimer() {
-//   timer.innerHTML = `${minute}mins ${second}secs`; 
+//   timer.innerHTML = `${minute}mins ${second}secs`;
 //   second++;
 //   if (second === 60) {
 //     minute++;
@@ -50,33 +50,12 @@ export class TimeChallengeComponent implements OnInit {
 //   }
 // }
 
-<<<<<<< HEAD
+
 // // function resetTimer() {
 // //   clearInterval(interval);
-// //   second = 0; 
+// //   second = 0;
 // //   minute = 0;
 // //   timer.innerHTML = `${minute}mins ${second}secs`;
 // }
 }
-=======
-// function reset() {
-//   for (let card of cards) {
-//     card.style.display = "block";
-//     card.childNodes[1].classList.add("hidden");
-//     card.childNodes[3].classList.remove("hidden");
-//     card.removeEventListener("click");
-//   }
-//    resetTimer();
-// }
 
-
-
-// function resetTimer() {
-//   clearInterval(interval);
-//   second = 0;
-//   minute = 0;
-//   timer.innerHTML = `${minute}mins ${second}secs`;
-// }
-
-}
->>>>>>> signin-login
