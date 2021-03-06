@@ -37,26 +37,26 @@ export class TimeChallengeComponent implements OnInit {
 // let interval;
 // function startButtonPress() {
 //   if (!startPressed) {
-//     interval = setInterval(startTimer, 1000); 
+//     interval = setInterval(startTimer, 1000);
 //     startPressed = true;
 //   }
 // }
 
 // function reset() {
 //   for (let card of cards) {
-//     card.style.display = "block"; 
-//     card.childNodes[1].classList.add("hidden"); 
+//     card.style.display = "block";
+//     card.childNodes[1].classList.add("hidden");
 //     card.childNodes[3].classList.remove("hidden");
 //     card.removeEventListener("click");
 //   }
-//    resetTimer(); 
+//    resetTimer();
 // }
 
 
 
 // function resetTimer() {
 //   clearInterval(interval);
-//   second = 0; 
+//   second = 0;
 //   minute = 0;
 //   timer.innerHTML = `${minute}mins ${second}secs`;
 // }
