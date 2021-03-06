@@ -25,7 +25,7 @@ export class FirebaseService {
 
   signUp(email: string, password: string) {
     return this.http.post<AuthREsponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBRhAlt1aJy_2BKQG-t4PbAZzp6zTYFHjg',
- {
+    {
       email: email,
       password: password,
       returnSecureToken: true

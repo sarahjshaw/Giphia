@@ -45,11 +45,12 @@ export class TimeChallengeComponent implements OnInit {
 // let interval;
 // function startButtonPress() {
 //   if (!startPressed) {
-//     interval = setInterval(startTimer, 1000); 
+//     interval = setInterval(startTimer, 1000);
 //     startPressed = true;
 //   }
 // }
 
+<<<<<<< HEAD
 // // function resetTimer() {
 // //   clearInterval(interval);
 // //   second = 0; 
@@ -57,3 +58,25 @@ export class TimeChallengeComponent implements OnInit {
 // //   timer.innerHTML = `${minute}mins ${second}secs`;
 // }
 }
+=======
+// function reset() {
+//   for (let card of cards) {
+//     card.style.display = "block";
+//     card.childNodes[1].classList.add("hidden");
+//     card.childNodes[3].classList.remove("hidden");
+//     card.removeEventListener("click");
+//   }
+//    resetTimer();
+// }
+
+
+
+// function resetTimer() {
+//   clearInterval(interval);
+//   second = 0;
+//   minute = 0;
+//   timer.innerHTML = `${minute}mins ${second}secs`;
+// }
+
+}
+>>>>>>> signin-login
