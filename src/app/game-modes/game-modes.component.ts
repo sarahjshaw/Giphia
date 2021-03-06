@@ -10,12 +10,12 @@ export class GameModesComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  leaderboardRoute(){
-    this.router.navigateByUrl('/leaderboard');
+  endlessTriviaGame(){
+    this.router.navigateByUrl('/endless-trivia');
   };
 
-  playGameRoute(){
-    this.router.navigateByUrl('./game-modes');
+  timeChallengeGame(){
+    this.router.navigateByUrl('/time-challenge');
   };
 
   ngOnInit(): void {
