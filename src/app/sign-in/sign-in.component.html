@@ -1,16 +1,10 @@
-<!-- <div>
+<div>
     <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
-        <h2>Create Account</h2> -->
-        <!-- <label for="email">Email</label> -->
-        <!-- <mat-form-field>
-            <input matInput id="email" type="email" ngModel name="email" #email="ngModel" placeholder="Email" required email>
-            <mat-error *ngIf="email.invalid">Please enter a valid Email!</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-            <input id="password" type="password" ngModel name="password (min=6 characters)" #password="ngModel" placeholder="Password" required minlength="6">
-            <mat-error *ngIf="email.invalid">Please enter a valid Password</mat-error>
-        </mat-form-field> -->
-        <!-- <label for="password">Password</label> -->
-        <!-- <button mat-raised-button type="submit">Sign Up</button>
+        <h2>Create Account - DRAFT</h2>
+        <label for="email">Email</label>
+        <input id="email" type="email" ngModel name="email" #emailSignup required email>
+        <label for="password">Password</label>
+        <input id="password" type="password" ngModel name="password" #passwordSignup required minlength="6">
+        <button type="submit">Sign Up</button>
     </form>
-</div> -->
+</div>
