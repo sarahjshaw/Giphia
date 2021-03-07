@@ -28,11 +28,11 @@ export class TimeChallengeComponent implements OnInit {
     },1000)
   }
   resetButton() {
-    
+    clearTimeout(this.interval);
   }
-  pauseTimer() {
-    clearInterval(this.interval);
-  }
+ pauseButton() {
+  clearInterval(this.interval);
+ }
 
 }
 

@@ -29,6 +29,17 @@ h1 {
   font-size: 18px;
   box-shadow: 2px 2px 7px rgb(177, 47, 25);
 }
+#pausebutton {
+  width: 110px;
+  height: 40px;
+  margin: 5px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 18px;
+  box-shadow: 2px 2px 7px rgb(177, 47, 25);
+}
 #resetbutton {
   width: 110px;
   height: 40px;
