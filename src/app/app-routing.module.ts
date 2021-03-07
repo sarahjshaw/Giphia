@@ -50,7 +50,7 @@ export const routes: Routes = [
              navLabel:'Create Profile',
              title:'Giphia',
              description: 'trivia game with a giphy twist', 
-             icon: 
+             icon: 'person',
            }
   },
 
