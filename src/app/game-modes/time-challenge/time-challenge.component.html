@@ -1,8 +1,6 @@
 <h1>Time Challenge</h1>
 <section class="blocks">
-<button id="startbutton">Start</button>
-<button id="resetbutton">Reset</button>
-<div id="timerbutton"></div>
+<button id="startbutton" (click)='startTimer()'>Start</button>
+<button id="resetbutton" (click)='resetButton()'>Reset</button>
+<div id="timerbutton">{{timeLeft}} Seconds left...</div>
 </section>
-<section class="time-count"></section>
-
