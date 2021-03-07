@@ -4,12 +4,7 @@ export interface Variables {
     navlabel: string; //sets what the label should be for the nav menu button
     navIcon: string;  //decides which SVG should be included for the navigation menu button
     title: string; //sets the description meta tags appropriate to the page
-    description: string; //sets the description
+    description: string; //sets the description meta tags appropriate to the page
 
-
-
-
-
-
-}
+};
 

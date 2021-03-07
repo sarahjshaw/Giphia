@@ -2,13 +2,15 @@
 <body>
     
 <h1>Hint</h1>
-<div class="giphCont" *ngFor="let gif of giphHint">
-    <img [src]="gif.images.orginal.url" alt="GiphHint">
+<div class="giphCont" *ngFor="let gif of giphArray">
+    <img src="{{gif.images.original.url}}" alt="GiphHint">
 </div>
 
 <h1>Question</h1>
 <div>{{randomQuestion}}</div>
 
-<button (click)="nextQuestion()">Next Question</button>
+<input id="user_answer" type="text" placeholder="Your answer" [(ngModel)]="user_answer">
+
+<button (click)="submitAnswer()">Submit</button>
 
 </body>

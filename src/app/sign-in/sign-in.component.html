@@ -12,7 +12,7 @@
         <button mat-raised-button color="accent" type="submit" [disabled]="authForm.invalid">Sign up</button>
         <div class="switch-form">or <a (click)="onSwitchForm()">Login</a></div>
     </form>
-    <div class="req-error">
+    <div class="req-error" *ngIf="reqError">
       <h2>An Error Occured!</h2>
       <button type="button" (click)="onHandleError()">Okay</button>
     </div>
@@ -32,4 +32,8 @@
       <button mat-raised-button color="accent" type="submit" [disabled]="authForm.invalid">Login</button>
       <div class="switch-form">or <a (click)="onSwitchForm()">Sign up</a></div>
   </form>
+  <div class="req-error" *ngIf="reqError">
+    <h2>An Error Occured!</h2>
+    <button type="button" (click)="onHandleError()">Okay</button>
+  </div>
 </div>
