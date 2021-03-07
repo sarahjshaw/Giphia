@@ -2,9 +2,6 @@
   font-weight: 700;
   font-family: "Open Sans", sans-serif;
 }
-body {
-  background-image: url(/links/Giphia.png);
-}
 h1 {
   padding-top: 5%;
   padding-bottom: 3%;
@@ -55,7 +52,7 @@ h1 {
   color: black;
   text-align: center;
 }
-.memory-game {
+.time-count {
   margin-top: 10;
   display: flex;
   flex-wrap: wrap;
@@ -64,29 +61,4 @@ h1 {
   margin: auto;
 }
  
-/* DESKTOP VERSION */
-@media (min-width: 768px) {
-h1 {
-  font-size: 48px;
-}
-  .memory-game {
-    width: 800px;
-    height: 400px;
-  }
-  #startbutton {
-    width: 200px;
-    height: 50px;
-    margin: 5px;
-  }
-  #resetbutton {
-    width: 200px;
-    height: 50px;
-    margin: 5px;
-  }
-  #timerbutton {
-    width: 200px;
-    height: 35px;
-    margin: 5px;
-    padding-top: 15px;
-  }
-}
+

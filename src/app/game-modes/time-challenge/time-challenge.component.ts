@@ -12,50 +12,27 @@ import { TriviaService } from 'src/app/services/trivia-api.service';
 export class TimeChallengeComponent implements OnInit {
     giph: Giphy;
     trivia: Trivia;
+    timeLeft: number = 60;
+    interval;
   constructor() { }
 
   ngOnInit(): void {
   }
+  startTimer() {
+    this.interval = setInterval(() => {
+      if(this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.timeLeft = 60;
+      }
+    },1000)
+  }
+  resetButton() {
+    
+  }
+  pauseTimer() {
+    clearInterval(this.interval);
+  }
 
-
-// let cards = Array.from(document.querySelectorAll(".memory-card"));
-// const gameBoard = document.querySelector(".memory-game");
-// let startPressed = false;
-// window.addEventListener("DomContentLoaded", (event) => {
-// newDeal();
-// }
-// )
-;
-
-// document.getElementById("resetbutton").addEventListener("click", reset);
-// document.getElementById("startbutton").addEventListener("click", startButtonPress);
-// function startTimer() {
-//   timer.innerHTML = `${minute}mins ${second}secs`;
-//   second++;
-//   if (second === 60) {
-//     minute++;
-//     second = 0;
-//   }
-// }
-
-// const timer = document.getElementById("timerbutton");
-// let second = 0;
-// let minute = 0;
-// timer.innerHTML = `${minute}mins ${second}secs`;
-// let interval;
-// function startButtonPress() {
-//   if (!startPressed) {
-//     interval = setInterval(startTimer, 1000);
-//     startPressed = true;
-//   }
-// }
-
-
-// // function resetTimer() {
-// //   clearInterval(interval);
-// //   second = 0;
-// //   minute = 0;
-// //   timer.innerHTML = `${minute}mins ${second}secs`;
-// }
 }
 
