@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ɵNullViewportScroller } from '@angular/common';
+import { Component, OnInit, Output } from '@angular/core';
+// import * as EventEmitter from 'node:events';
 import { Giphy } from 'src/app/models/giphy.model';
 import { Trivia } from 'src/app/models/trivia.model';
 import { GiphyService } from 'src/app/services/giphy-api.service';
@@ -19,14 +21,13 @@ export class EndlessTriviaComponent implements OnInit {
   ) {}
 
   giphHint: any;
-  qQuestion: string;
-  qAnswer: string;
   randomQuestion: any;
   randomAnswer: any;
   giphArray: any;
   i = 0;
-  newGiphHint: any;
   user_answer: string;
+  user_score = 0;
+  strikes = 0;
 
   ngOnInit(): void {
     this.triviaService.fetchRandomQuestion().subscribe((result) => {
@@ -38,15 +39,16 @@ export class EndlessTriviaComponent implements OnInit {
       this.giphyService
         .fetchGiph(this.randomAnswer)
         .subscribe((result: any) => {
-          console.log('result', result);
+          // console.log('result', result);
           // this.giphArray = data.data;
           this.giphArray = result.data;
-          console.log('testing', this.giphArray);
-          this.giphHint = this.giphArray[0];
-          console.log('testing123', this.giphHint);
+          // console.log('testing', this.giphArray);
+          this.giphHint = this.giphArray[this.i].images.original.url;
+          // console.log('testing123', this.giphHint);
         });
     });
   }
+
 
   //TODO
 
@@ -54,32 +56,47 @@ export class EndlessTriviaComponent implements OnInit {
   //scroll through available gifs in returned randomAnswer array result[0]
   //did we kneecap ourselves by having it set to the 0th index in ngOnInIt rahter that grabbing the array and 0ing below?
 
-  // nextGiphHint(giphArray) {
-  //   this.i + 1;
-  //   this.i = this.i % Array.length; //SHOULD restart if gone over the array length
-  //   giphArray[this.i] = this.newGiphHint; //if this works, let's change this to the 'giphHint'
-  // }
+  nextGiphHint() {
+this.i = this.i +1;
+this.giphHint = this.giphArray[this.i].images.original.url;
+//WORKS BUT NEEDS TO BE ABLE TO PUSH TO HTML ~ Help
+  }
 
-  //submit function
-  //ngIf? User input =(is there a way to do 'similar?') randomAnswer
-  //right or wrong answer, right > Show NEXT button, re-run ngOnInIt funcitons, wrong > new hint? / give up? / something else
+  //Push user highscore/game/question count to database
 
   submitAnswer() {
-    if (this.randomAnswer != this.user_answer) {
+    if (this.randomAnswer != this.user_answer.toLowerCase()) {
       console.log('WRONG');
       //sound?
-      //next hint?
-      //give up? deducts points
+      this.strikes = this.strikes + 1;
+      if (this.strikes === 3) {
+        console.log('Youre out!');
+        this.removePoint();
+        this.user_answer = '';
+        this.strikes = 0;
+        this.nextQuestion();
+        ///Is this too harsh?
+      }
     } else {
       console.log('CORRECT');
-      //add points
       //you did it message
+      this.addPoint();
       this.nextQuestion();
       this.user_answer = '';
+      this.strikes = 0;
     }
   }
 
   nextQuestion() {
     this.ngOnInit();
+    //Should also push user's current score 
+  }
+
+  addPoint() {
+    this.user_score = this.user_score + 1;
+  }
+
+  removePoint() {
+    this.user_score = this.user_score - 1;
   }
 }

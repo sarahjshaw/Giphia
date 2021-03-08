@@ -1,5 +1,21 @@
 body {
-    color: red;
+    height: 100vh;
+    outline: blue solid 1px;
+}
+
+h1 {
+
+}
+
+img {
+    max-height: 75vh;
+}
+
+#q_cont {
+    background-color: #ffff;
+    border-radius: 3vw;
+    width: 95vw;
+    margin-left: 2.5vw;
 }
 
 .giphCont {
