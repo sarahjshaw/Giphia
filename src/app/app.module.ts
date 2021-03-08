@@ -46,7 +46,6 @@ import { ChooseAvatarComponent } from './choose-avatar/choose-avatar.component'
     BrowserAnimationsModule
   ],
   providers: [
-    ,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
   ],
   bootstrap: [AppComponent],

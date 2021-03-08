@@ -23,10 +23,20 @@ export class FirebaseService {
   // isLoggedin:boolean = false;
 
   constructor(private http: HttpClient) {}
- //cw
-  // setLoginStatus(status: boolean){
-  // this.isLoggedin = status;
-  // }
+
+
+  fetchUserProfile(uid: string) {
+    this.http.get(`https://giphia-9e631-default-rtdb.firebaseio.com/users/${uid}.json`)
+      .subscribe(data => console.log(data));
+  }
+
+  createUserProfile(uid: string, username: string) {
+    this.http.post(`https://giphia-9e631-default-rtdb.firebaseio.com/users/${uid}.json`, {
+      username: username
+    })
+      .subscribe(data => console.log(data));
+  }
+ 
 
   signUp(email: string, password: string) {
     // this.setLoginStatus(true)
