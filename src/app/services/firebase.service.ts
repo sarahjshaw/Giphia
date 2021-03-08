@@ -22,6 +22,17 @@ export class FirebaseService {
 
   constructor(private http: HttpClient) {}
 
+  fetchUserProfile(uid: string) {
+    this.http.get(`https://giphia-9e631-default-rtdb.firebaseio.com/users/${uid}.json`)
+      .subscribe(data => console.log(data));
+  }
+
+  createUserProfile(uid: string, username: string) {
+    this.http.post(`https://giphia-9e631-default-rtdb.firebaseio.com/users/${uid}.json`, {
+      username: username
+    })
+      .subscribe(data => console.log(data));
+  }
 
   signUp(email: string, password: string) {
     return this.http.post<AuthREsponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBRhAlt1aJy_2BKQG-t4PbAZzp6zTYFHjg',

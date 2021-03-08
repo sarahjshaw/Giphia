@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FirebaseService } from '../services/firebase.service';
 
 
@@ -12,16 +13,20 @@ export class SignInComponent implements OnInit {
   isLogin: boolean = true;
   reqError = null;
 
-  constructor(private firebaseService: FirebaseService) { }
+  constructor(private firebaseService: FirebaseService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  // fetch userProfile testing
   onLogin(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
     this.firebaseService.login(email, password).subscribe( data => {
       console.log(data)
+      this.firebaseService.fetchUserProfile(data.localId);
+      this.router.navigate(['/home']);
     }, error => {
       this.reqError = error.message;
       console.log(error)
@@ -29,11 +34,39 @@ export class SignInComponent implements OnInit {
     form.reset();
   }
 
+  // onLogin(form: NgForm) {
+  //   const email = form.value.email;
+  //   const password = form.value.password;
+  //   this.firebaseService.login(email, password).subscribe( data => {
+  //     console.log(data)
+  //   }, error => {
+  //     this.reqError = error.message;
+  //     console.log(error)
+  //   });
+  //   form.reset();
+  // }
+
+  // onSignup(form: NgForm) {
+  //   const email = form.value.email;
+  //   const password = form.value.password;
+  //   this.firebaseService.signUp(email, password).subscribe( data => {
+  //     console.log(data)
+  //   }, error => {
+  //     this.reqError = error.message;
+  //     console.log(error)
+  //   })
+  //   form.reset()
+  // }
+
+  // username testing
   onSignup(form: NgForm) {
+    const username = form.value.username;
     const email = form.value.email;
     const password = form.value.password;
     this.firebaseService.signUp(email, password).subscribe( data => {
       console.log(data)
+      this.firebaseService.createUserProfile(data.localId, username);
+      this.router.navigate(['/home']);
     }, error => {
       this.reqError = error.message;
       console.log(error)
@@ -50,3 +83,4 @@ export class SignInComponent implements OnInit {
   }
 
 }
+
