@@ -1,8 +1,10 @@
+<app-header></app-header>
+
 <header>
     <div class="container">
       <nav>
           <ul>
-            <li><a routerLink="/signin">Login</a></li>
+            <!-- <li><a routerLink="/signin">Login</a></li> -->
           </ul>
         </nav>
       </div>
@@ -14,10 +16,10 @@
   </header>
   
   <body>
-      <button (click)="endlessTriviaGame()">Play Endless Trivia</button>
+      <button (click)="endlessTriviaGame()" (click)="playCount()">Play Endless Trivia</button>
       <!-- <li><a routerLink="/leaderboard">Leaderboard</a></li> -->
   
-      <button (click)="timeChallengeGame()">Play Time Challenge</button>
+      <button (click)="timeChallengeGame()" (click)="playCount()">Play Time Challenge</button>
       <!-- <li><a routerLink="/game-modes">Play</a></li> -->
   </body>
   

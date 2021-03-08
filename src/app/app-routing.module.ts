@@ -10,7 +10,7 @@ import { PlayerProfileComponent } from './player-profile/player-profile.componen
 import { GameModesComponent } from './game-modes/game-modes.component';
 import { EndlessTriviaComponent } from './game-modes/endless-trivia/endless-trivia.component';
 import { TimeChallengeComponent } from './game-modes/time-challenge/time-challenge.component';
-import { Variables } from './models/variables';
+import { ChooseAvatarComponent } from './choose-avatar/choose-avatar.component';
 
 export const routes: Routes = [
 
@@ -44,7 +44,7 @@ export const routes: Routes = [
            }
   },
 
-  { path: 'create-profile', component:CreateProfileComponent,
+  { path: 'create-profile', component: CreateProfileComponent,
      data: { show:true,
              showChildren:false,
              navLabel:'Create Profile',
@@ -54,21 +54,33 @@ export const routes: Routes = [
            }
   },
 
+  { path: 'chooseavatar', component: ChooseAvatarComponent,
+     data: { show:true,
+          showChildren:false,
+          navLabel:'Choose Avatar',
+          title:'Giphia',
+          description: 'trivia game with a giphy twist', 
+          icon: 'person',
+        }
+},
+
   { path: 'player-profile', component: PlayerProfileComponent,
      data: { show:true,
              showChildren:false,
              navLabel:'Profile',
              title:'Giphia',
-             description: 'trivia game with a giphy twist'
+             description: 'trivia game with a giphy twist',
+             icon: 'person',
             }
    },
 
-  { path: 'gamemodes', component:GameModesComponent,
+  { path: 'gamemodes', component: GameModesComponent,
      data: { show:true,
              showChildren:false,
              navLabel:'Game Modes',
              title:'Giphia',
-             description: 'trivia game with a giphy twist'
+             description: 'trivia game with a giphy twist',
+             icon: 'game controller',
             }
   },
 
@@ -77,7 +89,8 @@ export const routes: Routes = [
              showChildren:false,
              navLabel:'Endless Trivia',
              title:'Giphia',
-             description: 'trivia game with a giphy twist'
+             description: 'trivia game with a giphy twist', 
+             icon: 'question mark',
    }
   },
 
@@ -86,7 +99,9 @@ export const routes: Routes = [
      showChildren:false,
      navLabel:'Time Challenge',
      title:'Giphia',
-     description: 'trivia game with a giphy twist'
+     description: 'trivia game with a giphy twist',
+     icon: 'stop watch',
+     
      }
   },
 
@@ -95,7 +110,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)], 
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -19,11 +19,17 @@ interface AuthREsponseData {
 export class FirebaseService {
 
   user = new BehaviorSubject<User>(null);
+  //cw
+  // isLoggedin:boolean = false;
 
   constructor(private http: HttpClient) {}
-
+ //cw
+  // setLoginStatus(status: boolean){
+  // this.isLoggedin = status;
+  // }
 
   signUp(email: string, password: string) {
+    // this.setLoginStatus(true)
     return this.http.post<AuthREsponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBRhAlt1aJy_2BKQG-t4PbAZzp6zTYFHjg',
     {
       email: email,
@@ -39,6 +45,7 @@ export class FirebaseService {
 
 
   login(email: string, password: string) {
+    // this.setLoginStatus(true) //cw
     return this.http.post<AuthREsponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBRhAlt1aJy_2BKQG-t4PbAZzp6zTYFHjg',
       {
         email: email,
@@ -52,5 +59,7 @@ export class FirebaseService {
       }))
   }
 
+  // will need one for logout
+  // this.setLoginStatus(true) //cw
 
 }
