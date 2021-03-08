@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-game-modes',
@@ -8,8 +9,15 @@ import { Router} from '@angular/router';
 })
 export class GameModesComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public data: DataService) { }
 
+  numberOfGamesPlayed: number = 0;
+  
+
+  playCount(){
+    this.numberOfGamesPlayed += 1;
+  }
+  
   endlessTriviaGame(){
     this.router.navigateByUrl('/endless-trivia');
   };

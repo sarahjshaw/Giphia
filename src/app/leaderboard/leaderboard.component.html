@@ -1,1 +1,21 @@
-<p>leaderboard works!</p>
+<app-header></app-header>
+
+<div class="graphicsArea">
+    <a routerLink="/home" class="logo">Logo will go here</a>
+    </div>
+    
+<div class="leaderboard">
+    <h1>High Scores</h1>
+
+    <li>{{playerScore}}</li>
+    <li>{{playerScore}}</li>
+    <li>{{playerScore}}</li>
+    <li>{{playerScore}}</li>
+    <li>{{playerScore}}</li>
+    <li>{{playerScore}}</li>
+    <li>{{playerScore}}</li>
+
+</div>
+
+<button (click)="playGameRoute()" (click)="playCount()" >Play</button>
+

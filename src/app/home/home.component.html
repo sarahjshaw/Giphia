@@ -1,11 +1,12 @@
+<app-header></app-header>
+
 <header>
   <div class="navigationContainer">
     <nav>
         <ul>
-          <li><a routerLink="/signin">Login</a></li>
-          
+          <!-- <li><a routerLink="/signin">Login</a></li>  -->
         </ul>
-        <button (click)="backClick()">Back</button>
+        <!-- <button (click)="backClick()">Back</button> -->
       </nav>
     </div>
 
@@ -19,9 +20,18 @@
     <button (click)="leaderboardRoute()">Leaderboard</button>
     <!-- <li><a routerLink="/leaderboard">Leaderboard</a></li> -->
 
-    <button (click)="playGameRoute()">Play</button>
+    <button (click)="playGameRoute()" (click)="playCount()">Play</button>
     <!-- <li><a routerLink="/game-modes">Play</a></li> -->
+
+    <button (click)="playerStats()">Player Stats</button>
+
 </body>
+
+<div class="circles-image" id="hidden" alt="circles-illustration">
+  <span class="large-dot"></span>
+  <span class="medium-dot"></span>
+  <span class="small-dot"></span>
+</div> 
 
 <router-outlet></router-outlet>
 

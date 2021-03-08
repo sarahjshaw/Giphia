@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { DataService } from 'src/app/services/data.service';
+
 
 @Component({
   selector: 'app-home',
@@ -9,16 +11,27 @@ import { Location } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router, private _location: Location) { }   //imported the router to use in button function ~Christa~
+  constructor(private router: Router, private _location: Location, public data: DataService) { }   //imported the router to use in button function ~Christa~
 
   //functions to have buttons route to the leaderboard and game play options from the home page ~Christa~
 
+  numberOfGamesPlayed: number = 0;
+  
+
+playCount(){
+  this.numberOfGamesPlayed += 1;
+}
+  
   leaderboardRoute(){
     this.router.navigateByUrl('/leaderboard');
   };
 
   playGameRoute(){
     this.router.navigateByUrl('/gamemodes');
+  };
+
+  playerStats(){
+    this.router.navigateByUrl('/player-profile');
   };
 
   backClick(){

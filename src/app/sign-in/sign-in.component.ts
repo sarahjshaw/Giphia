@@ -22,6 +22,8 @@ export class SignInComponent implements OnInit {
     const password = form.value.password;
     this.firebaseService.login(email, password).subscribe( data => {
       console.log(data)
+    // this.firebaseService.setLoginStatus(true);//is this automatically logging them in?-cw
+
     }, error => {
       this.reqError = error.message;
       console.log(error)
@@ -34,6 +36,7 @@ export class SignInComponent implements OnInit {
     const password = form.value.password;
     this.firebaseService.signUp(email, password).subscribe( data => {
       console.log(data)
+      // this.firebaseService.setLoginStatus(true);//is this automatically logging them in?-cw
     }, error => {
       this.reqError = error.message;
       console.log(error)
@@ -50,3 +53,5 @@ export class SignInComponent implements OnInit {
   }
 
 }
+//to go with log-out function - if we have one
+// this.firebaseService.setLoginStatus(false);//-cw
