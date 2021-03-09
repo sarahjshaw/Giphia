@@ -1,24 +1,29 @@
-<app-header></app-header>
-
+<head>
+  <script
+    src="https://kit.fontawesome.com/841224f046.js"
+    crossorigin="anonymous"
+  ></script>
+</head>
 <body>
-<h1>SCORE: {{user_score}}</h1>
-<div id="q_cont">
-<h1>Question</h1>
-<div>{{randomQuestion}}</div>
-</div>
-<h1>Hint</h1>
-<img src="{{giphHint}}" alt="">
-<!-- <div class="giphCont" *ngFor="let gif of giphArray">
-    <img src="{{gif.images.original.url}}" alt="GiphHint">
-</div> -->
-<button id="new_hint">New Hint</button>
-<input id="user_answer" type="text" placeholder="Your answer" [(ngModel)]="user_answer">
-<button (click)="submitAnswer()">Submit</button>
-
-<!-- <h1 mat-dialog-title>Dialog with elements</h1>
-<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-</div> -->
-
+  <div class="ticker">
+    <h1>SCORE: {{ user_score }}</h1>
+  </div>
+  <div id="q_cont">
+    <h1 id="q_title">Question</h1>
+    <div id="random_q">{{ randomQuestion }}</div>
+  </div>
+  <div id="h_cont">
+    <!-- <h1 id="h_title">Hint</h1> -->
+    <img src="{{ giphHint }}" alt="" />
+  </div>
+  <button id="next_hint" (click)="nextGiphHint()">Next Hint</button>
+  <div id="button_cont">
+    <input
+      id="user_answer"
+      type="text"
+      placeholder="Your answer"
+      [(ngModel)]="user_answer"
+    />
+    <button (click)="submitAnswer()">Submit</button>
+  </div>
 </body>

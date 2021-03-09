@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { SignInComponent } from './sign-in/sign-in.component';
-import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { GameModesComponent } from './game-modes/game-modes.component';
 import { EndlessTriviaComponent } from './game-modes/endless-trivia/endless-trivia.component';
@@ -27,7 +26,6 @@ import { ChooseAvatarComponent } from './choose-avatar/choose-avatar.component'
     HomeComponent,
     HeaderComponent,
     SignInComponent,
-    CreateProfileComponent,
     LeaderboardComponent,
     GameModesComponent,
     TimeChallengeComponent,

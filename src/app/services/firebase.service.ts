@@ -18,6 +18,7 @@ interface AuthREsponseData {
 })
 export class FirebaseService {
 
+  playerProfile = new Subject<any>();
   user = new BehaviorSubject<User>(null);
   //cw
   // isLoggedin:boolean = false;
@@ -27,7 +28,10 @@ export class FirebaseService {
 
   fetchUserProfile(uid: string) {
     this.http.get(`https://giphia-9e631-default-rtdb.firebaseio.com/users/${uid}.json`)
-      .subscribe(data => console.log(data));
+      .subscribe(data => {
+        // console.log(data)
+        this.playerProfile.next(data);
+      });
   }
 
   createUserProfile(uid: string, username: string) {
@@ -39,7 +43,6 @@ export class FirebaseService {
  
 
   signUp(email: string, password: string) {
-    // this.setLoginStatus(true)
     return this.http.post<AuthREsponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBRhAlt1aJy_2BKQG-t4PbAZzp6zTYFHjg',
     {
       email: email,
@@ -55,7 +58,6 @@ export class FirebaseService {
 
 
   login(email: string, password: string) {
-    // this.setLoginStatus(true) //cw
     return this.http.post<AuthREsponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBRhAlt1aJy_2BKQG-t4PbAZzp6zTYFHjg',
       {
         email: email,
@@ -68,8 +70,5 @@ export class FirebaseService {
         this.user.next(user);
       }))
   }
-
-  // will need one for logout
-  // this.setLoginStatus(true) //cw
 
 }

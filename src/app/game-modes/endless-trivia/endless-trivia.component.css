@@ -1,23 +1,80 @@
 body {
-    height: 100vh;
-    outline: blue solid 1px;
-}
-
-h1 {
-
+    height: 90vh;
+    width: 100vw;
+    background: rgb(114,9,183);
+    background: linear-gradient(142deg, rgba(114,9,183,1) 35%, rgba(148,70,200,1) 100%);
+    padding: 0px;
 }
 
 img {
     max-height: 75vh;
+    max-width: 95vw;
+    padding-bottom: 10px;
+}
+
+h1{
+    font-family: 'Roboto Slab', serif;
+    margin: 0px;
+}
+
+.ticker {
+    padding: 0vw 2.5vw 0vw 2.5vw;
+    margin-bottom: 2vh;
+    width: 100vw;
+    float: inline-end;
+    background-color: #f72585;
+    color: white;
 }
 
 #q_cont {
-    background-color: #ffff;
-    border-radius: 3vw;
+background-color: #4cc9f0;
+    border-radius: 15px;
     width: 95vw;
-    margin-left: 2.5vw;
+    margin: 0vw 2.5vw 5vw 2.5vw;
+    box-shadow: 1px 1px 5px 1px #3a0ca3;
 }
 
-.giphCont {
-    outline: blue solid 1px;
+#q_title {
+    width: 100%;
+    padding: 2vw;
+}
+
+#random_q {
+    font-family: 'Poppins', sans-serif;
+    padding: 2vw;
+}
+
+#h_cont {
+color: white;
+    width: 95vw;
+    margin: 0vw 2.5vw 0vw 2.5vw;
+    display: flex;
+    justify-content: center;
+}
+
+#button_cont {
+    display: block;
+    width: 95vw;
+    position: fixed;
+    bottom: 70px;
+}
+
+button, input  {
+    width: 90vw;
+    margin: 0vw 5vw 0vw 5vw;
+    height: 30px;
+}
+
+input {
+    padding: 0px;
+    margin-bottom: 5px;
+}
+
+button {
+    border: none;
+    border-radius: 15px;
+    color: #3a0ca3;
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    font-weight: 200;
 }

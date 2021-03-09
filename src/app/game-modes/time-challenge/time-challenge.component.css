@@ -2,6 +2,7 @@
   font-weight: 700;
   font-family: "Open Sans", sans-serif;
 }
+
 h1 {
   padding-top: 5%;
   padding-bottom: 3%;
@@ -10,8 +11,9 @@ h1 {
   justify-content: center;
   font-weight: 900;
   font-size: 32px;
-  color: white;
-  text-shadow: 3px 3px 5px black;
+  color: #e4fbff;
+  text-shadow: 3px 3px 5px #39065a;
+  background-image: linear-gradient(to right, #ea0599, #9a0f98, #6a0572, #39065a)
 }
 .blocks {
   display: flex;
@@ -22,45 +24,45 @@ h1 {
   width: 110px;
   height: 40px;
   margin: 5px;
-  background-color: white;
+  background-color: #39065a;
   border: none;
   border-radius: 5px;
-  color: black;
+  color: #e4fbff;
   font-size: 18px;
-  box-shadow: 2px 2px 7px rgb(177, 47, 25);
+  box-shadow: 2px 2px 7px #ea0599;
 }
 #pausebutton {
   width: 110px;
   height: 40px;
   margin: 5px;
-  background-color: white;
+  background-color: #39065a;
   border: none;
   border-radius: 5px;
-  color: black;
+  color: #e4fbff;
   font-size: 18px;
-  box-shadow: 2px 2px 7px rgb(177, 47, 25);
+  box-shadow: 2px 2px 7px #ea0599;
 }
 #resetbutton {
   width: 110px;
   height: 40px;
   margin: 5px;
-  background-color: white;
+  background-color: #39065a;
   border: none;
   border-radius: 5px;
-  color: black;
+  color: #e4fbff;
   font-size: 18px;
-  box-shadow: 2px 2px 7px rgb(177, 47, 25);
+  box-shadow: 2px 2px 7px #ea0599;
 }
 #timerbutton {
   width: 150px;
   height: 30px;
   margin: 5px;
   padding-top: 10px;
-  background-color: white;
-  box-shadow: 2px 2px 7px rgb(177, 47, 25);
+  background-color: #39065a;
+  box-shadow: 2px 2px 7px #ea0599;
   border: none;
   border-radius: 5px;
-  color: black;
+  color: #e4fbff;
   text-align: center;
 }
 .time-count {
@@ -71,5 +73,20 @@ h1 {
   perspective: 1000px;
   margin: auto;
 }
- 
 
+.hidden{
+      /* visibility: hidden; */
+      display: none;
+}
+ 
+#gameOver {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: orange;
+  /* z-index: 99999; */
+  height: 100%;
+  width: 100%;
+}

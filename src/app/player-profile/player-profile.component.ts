@@ -22,8 +22,7 @@ export class PlayerProfileComponent implements OnInit {
   }
 
   public playCount(){
-    // let newNumber = 0;
-    this.numberOfGamesPlayed += 1;
+    this.numberOfGamesPlayed = this.numberOfGamesPlayed += 1;
     // newNumber = this.numberOfGamesPlayed += 1; 
 };
 
