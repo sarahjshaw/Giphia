@@ -1,9 +1,48 @@
-<app-header></app-header>
-
 <h1>Time Challenge</h1>
 <section class="blocks">
-<button id="startbutton" (click)='startTimer()'>Start</button>
+<button id="startbutton" (click)='startTimer()' [disabled]="timeLeft < 60 ? false : true">Start</button>
 <button id="pausebutton" (click)='pauseButton()'>Pause</button>
 <button id="resetbutton" (click)='resetButton()'>Reset</button>
 <div id="timerbutton">{{timeLeft}} Seconds left...</div>
 </section>
+
+<head>
+  <script
+    src="https://kit.fontawesome.com/841224f046.js"
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+  <div class="ticker">
+    <h1>QUESTIONS:</h1>
+    <h1>SCORE: {{ user_score }}</h1>
+  </div>
+  <div id="q_cont">
+    <h1>Question</h1>
+    <div>{{ randomQuestion }}</div>
+  </div>
+  <div id="h_cont">
+    <h1>Hint</h1>
+    <img src="{{ giphHint }}" alt="" />
+  </div>
+  <div id="button_cont">
+    <button id="next_hint" (click)="nextGiphHint()">Next Hint</button>
+    <input
+      id="user_answer"
+      type="text"
+      placeholder="Your answer"
+      [(ngModel)]="user_answer"
+    />
+    <button (click)="submitAnswer()">Submit</button>
+  </div>
+
+    <!-- End of Game Pop-up -->
+    <div [style.display]=" timeLeft < 60 ? 'none' : 'block' "  id="gameOver" class="hidden"> >
+           <h1 class="endingHeader">You ran out of Time!</h1>
+           <p id="endingParagraph">Don't worry. You can play again!</p>
+           <button class="replay">Play Again</button>
+           <p class="clickStart">Press Play Again to restart game.</p>
+        </div>
+    
+
+</body>

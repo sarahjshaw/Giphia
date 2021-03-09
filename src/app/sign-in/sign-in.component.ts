@@ -34,30 +34,6 @@ export class SignInComponent implements OnInit {
     form.reset();
   }
 
-  // onLogin(form: NgForm) {
-  //   const email = form.value.email;
-  //   const password = form.value.password;
-  //   this.firebaseService.login(email, password).subscribe( data => {
-  //     console.log(data)
-  //   }, error => {
-  //     this.reqError = error.message;
-  //     console.log(error)
-  //   });
-  //   form.reset();
-  // }
-
-  // onSignup(form: NgForm) {
-  //   const email = form.value.email;
-  //   const password = form.value.password;
-  //   this.firebaseService.signUp(email, password).subscribe( data => {
-  //     console.log(data)
-  //   }, error => {
-  //     this.reqError = error.message;
-  //     console.log(error)
-  //   })
-  //   form.reset()
-  // }
-
   // username testing
   onSignup(form: NgForm) {
     const username = form.value.username;

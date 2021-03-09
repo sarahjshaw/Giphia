@@ -39,35 +39,22 @@ export class EndlessTriviaComponent implements OnInit {
       this.giphyService
         .fetchGiph(this.randomAnswer)
         .subscribe((result: any) => {
-          // console.log('result', result);
-          // this.giphArray = data.data;
           this.giphArray = result.data;
-          // console.log('testing', this.giphArray);
           this.giphHint = this.giphArray[this.i].images.original.url;
-          // console.log('testing123', this.giphHint);
         });
     });
   }
 
-
-  //TODO
-
-  //nextGiphHint function
-  //scroll through available gifs in returned randomAnswer array result[0]
-  //did we kneecap ourselves by having it set to the 0th index in ngOnInIt rahter that grabbing the array and 0ing below?
-
   nextGiphHint() {
-this.i = this.i +1;
+this.i = this.i + 1;
 this.giphHint = this.giphArray[this.i].images.original.url;
-//WORKS BUT NEEDS TO BE ABLE TO PUSH TO HTML ~ Help
   }
-
-  //Push user highscore/game/question count to database
 
   submitAnswer() {
     if (this.randomAnswer != this.user_answer.toLowerCase()) {
       console.log('WRONG');
       //sound?
+      //mat ripple
       this.strikes = this.strikes + 1;
       if (this.strikes === 3) {
         console.log('Youre out!');
@@ -75,7 +62,6 @@ this.giphHint = this.giphArray[this.i].images.original.url;
         this.user_answer = '';
         this.strikes = 0;
         this.nextQuestion();
-        ///Is this too harsh?
       }
     } else {
       console.log('CORRECT');

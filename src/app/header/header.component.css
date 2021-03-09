@@ -1,5 +1,13 @@
-.nav-button{
-    display:flex;
-    color:black;
-    background-color: aquamarine;
+header {
+    background-color: white;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
 }

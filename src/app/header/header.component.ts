@@ -12,15 +12,23 @@ import { FirebaseService } from '../services/firebase.service';
 })
 export class HeaderComponent implements OnInit {
 
-
   backClick(){
-    this._location.back();
+
   }
 
-  constructor(public router: Router, private _location: Location, public routes: RouterModule, public fireService:FirebaseService) { }
+  playerInfo;
+
+  constructor(public routes: RouterModule, public fireService:FirebaseService) { }
 
 
   ngOnInit(): void {
+    this.fireService.playerProfile.subscribe(data => {
+      // console.log(data)
+      for (let key in data) {
+        this.playerInfo = data[key]
+      }
+      console.log(this.playerInfo)
+    })
   }
 
 }

@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
-import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { PlayerProfileComponent } from './player-profile/player-profile.component';
 import { GameModesComponent } from './game-modes/game-modes.component';
 import { EndlessTriviaComponent } from './game-modes/endless-trivia/endless-trivia.component';
@@ -41,16 +40,6 @@ export const routes: Routes = [
              title:'Giphia',
              description: 'trivia game with a giphy twist',
              icon:'person',
-           }
-  },
-
-  { path: 'create-profile', component: CreateProfileComponent,
-     data: { show:true,
-             showChildren:false,
-             navLabel:'Create Profile',
-             title:'Giphia',
-             description: 'trivia game with a giphy twist', 
-             icon: 'person',
            }
   },
 
