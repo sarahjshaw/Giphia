@@ -1,14 +1,26 @@
 <header>
-  <button (click)="backClick()">Back</button>
-  <h1 href="#" class="logo">Giphia</h1>
+  <div class="header-wrapper">
 
-  <div>
-    <ul class="navbar-links">
-      <li>{{playerInfo.name}}</li>
-      <li><a routerLink="/player-profile">Player Profile</a></li> 
-      <li><a routerLink="/signin">Login</a></li> 
-        <!-- <li><a routerLink="/home">Home</a></li> -->
-    </ul>
+    <button class="back-btn" (click)="backClick()">Back</button>
+    <h1 class="logo">Giphia</h1>
+
+    <div class="login-wrapper">
+      <h3 class="login-btn" (click)="onLogin()" *ngIf="!isAuthenticated">Login</h3>
+      <button mat-button [matMenuTriggerFor]="beforeMenu" [style]="{display: !isAuthenticated ? 'none' : 'block'}">{{playerInfo.username}} </button>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item>Player Stats</button>
+        <button mat-menu-item (click)="onLogout()">Log Out</button>
+      </mat-menu>
+    </div>
+
+
+    <!-- <div>
+      <ul class="navbar-links">
+        <li>{{playerInfo.username}}</li>
+        <li><a routerLink="/player-profile">Player Profile</a></li>
+        <li><a routerLink="/signin">Login</a></li> -->
+          <!-- <li><a routerLink="/home">Home</a></li> -->
+      <!-- </ul>
+    </div> -->
   </div>
-  
 </header>

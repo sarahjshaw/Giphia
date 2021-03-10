@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RouterModule } from '@angular/router';
-import { Location } from '@angular/common';
+import { PlayerProfile } from '../models/player-profile.model';
 import { FirebaseService } from '../services/firebase.service';
 
 
@@ -11,24 +10,32 @@ import { FirebaseService } from '../services/firebase.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isAuthenticated: boolean = false;
+  playerInfo: any = '';
 
-  backClick(){
-
-  }
-
-  playerInfo;
-
-  constructor(public routes: RouterModule, public fireService:FirebaseService) { }
+  constructor(private router: Router, public firebaseService:FirebaseService) { }
 
 
   ngOnInit(): void {
-    this.fireService.playerProfile.subscribe(data => {
-      // console.log(data)
-      for (let key in data) {
-        this.playerInfo = data[key]
-      }
-      console.log(this.playerInfo)
+    this.firebaseService.playerProfile.subscribe(data => {
+      this.firebaseService.user.subscribe(user => {
+        this.isAuthenticated = !user ? false : true
+      })
+      this.playerInfo = data[0];
     })
+
+  }
+
+  onLogin() {
+    this.router.navigate(['/signin'])
+  }
+
+  onLogout() {
+    this.firebaseService.logout()
+    this.playerInfo = '';
+  }
+
+  backClick() {
   }
 
 }

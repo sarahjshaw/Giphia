@@ -1,4 +1,5 @@
-<div *ngIf="!isLogin">
+<body class="mat-typography">
+  <div *ngIf="!isLogin">
     <form #authForm="ngForm" (ngSubmit)="onSignup(authForm)">
         <h2>Sign up</h2>
         <mat-form-field>
@@ -19,24 +20,25 @@
       <h2>An Error Occured!</h2>
       <button type="button" (click)="onHandleError()">Okay</button>
     </div>
-</div>
-
-<div *ngIf="isLogin">
-  <form #authForm="ngForm" (ngSubmit)="onLogin(authForm)">
-      <h2>Login</h2>
-      <mat-form-field>
-        <input matInput id="email" type="email" ngModel name="email" placeholder="Email" #email="ngModel" required email>
-        <mat-error *ngIf="email.invalid">Please enter a valid Email</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput id="password" type="password" ngModel name="password" placeholder="Password (min=6 characters)" #password="ngModel" required minlength="6">
-        <mat-error *ngIf="password.invalid">Please enter a valid Password</mat-error>
-      </mat-form-field>
-      <button mat-raised-button color="accent" type="submit" [disabled]="authForm.invalid">Login</button>
-      <div class="switch-form">or <a (click)="onSwitchForm()">Sign up</a></div>
-  </form>
-  <div class="req-error" *ngIf="reqError">
-    <h2>An Error Occured!</h2>
-    <button type="button" (click)="onHandleError()">Okay</button>
   </div>
-</div>
+
+  <div *ngIf="isLogin">
+    <form #authForm="ngForm" (ngSubmit)="onLogin(authForm)">
+        <h2>Login</h2>
+        <mat-form-field>
+          <input matInput id="email" type="email" ngModel name="email" placeholder="Email" #email="ngModel" required email>
+          <mat-error *ngIf="email.invalid">Please enter a valid Email</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput id="password" type="password" ngModel name="password" placeholder="Password (min=6 characters)" #password="ngModel" required minlength="6">
+          <mat-error *ngIf="password.invalid">Please enter a valid Password</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="accent" type="submit" [disabled]="authForm.invalid">Login</button>
+        <div class="switch-form">or <a (click)="onSwitchForm()">Sign up</a></div>
+    </form>
+    <div class="req-error" *ngIf="reqError">
+      <h2>An Error Occured!</h2>
+      <button type="button" (click)="onHandleError()">Okay</button>
+    </div>
+  </div>
+</body>
