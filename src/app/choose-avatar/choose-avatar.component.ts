@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { DataService } from 'src/app/services/data.service';
-import { AvatarService } from 'src/app/services/avatar.service';
+
 
 @Component({
   selector: 'app-choose-avatar',
@@ -15,5 +15,11 @@ export class ChooseAvatarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  // import Avatars from '@dicebear/avatars';
+  // import sprites from '@dicebear/avatars-bottts-sprites';
+  
+  // let avatars = new Avatars(sprites());
+  // let svg = avatars.create('custom-seed');
 
 }

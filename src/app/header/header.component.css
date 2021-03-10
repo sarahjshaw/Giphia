@@ -23,9 +23,22 @@ img:hover{
     height: 61px;
 }
 
-.back, .signin, .profile{
+.back {
   width: 75px;
   height: 30px;
+  margin: 5px;
+  background-color: #39065a;
+  border: none;
+  border-radius: 5px;
+  color: #e4fbff;
+  font-size: 15px;
+  box-shadow: 2px 2px 7px #ea0599;
+  cursor: pointer;
+}
+
+.signin, .profile{
+  width: 75px;
+  height: 100px;
   margin: 5px;
   background-color: #39065a;
   border: none;

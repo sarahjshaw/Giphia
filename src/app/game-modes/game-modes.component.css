@@ -1,0 +1,24 @@
+img{
+    height: 150px;
+}
+
+.GraphicsArea{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height: 300px;
+    background-color:white;
+}
+
+.endless, .timed{
+    width: 125px;
+    height: 40px;
+    margin: 5px;
+    background-color: #39065a;
+    border: none;
+    border-radius: 5px;
+    color: #e4fbff;
+    font-size: 15px;
+    box-shadow: 2px 2px 7px #ea0599;
+    cursor: pointer;
+  }
