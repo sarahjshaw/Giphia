@@ -11,3 +11,28 @@ ul {
 a {
     text-decoration: none;
 }
+
+img{
+    height: 60px;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+img:hover{
+    cursor: pointer;
+    height: 61px;
+}
+
+.back, .signin, .profile{
+  width: 75px;
+  height: 30px;
+  margin: 5px;
+  background-color: #39065a;
+  border: none;
+  border-radius: 5px;
+  color: #e4fbff;
+  font-size: 15px;
+  box-shadow: 2px 2px 7px #ea0599;
+  cursor: pointer;
+}
+

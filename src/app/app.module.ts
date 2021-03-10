@@ -19,7 +19,6 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChooseAvatarComponent } from './choose-avatar/choose-avatar.component';
-import { GiphiaLogoService} from 'src/app/services/giphia-logo.service';
 
 @NgModule({
   declarations: [

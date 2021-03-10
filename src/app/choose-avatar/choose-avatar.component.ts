@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { DataService } from 'src/app/services/data.service';
+import { AvatarService } from 'src/app/services/avatar.service';
 
 @Component({
   selector: 'app-choose-avatar',

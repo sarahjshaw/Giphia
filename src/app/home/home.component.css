@@ -23,7 +23,12 @@ body{
 
 }
 
-
+img{
+  height: 150px;
+  display: flex;
+  padding-bottom: 70%;
+  
+}
 
 /* .large-dot{
     height:220px;
