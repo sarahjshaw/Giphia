@@ -1,7 +1,12 @@
+<body>
 <div class="playerHeaderSection informationContainer">
-   <i class="fas fa-glasses"></i><img class="avatar" src='' alt="player-avatar" />
+
+   <i class="fas fa-glasses"></i><img class="avatar" src='' alt="" />
+
    <h1>{{playerName}}</h1>
+
    <p>{{" Player since: " + signUpYear }}</p>
+
 </div>
 
 <div class="higestScoreSection informationContainer"> 
@@ -19,9 +24,8 @@
     <h2>{{playerRanking}}</h2>
  </div>
  
- <button (click)="playCount()"(click)="playGameRoute()" >Play</button>
- <button (click)="CreateAvatarRoute()">Create Avatar</button>
- <button>Reset Stats</button>
+ <button class="playbutton" (click)="playCount()"(click)="playGameRoute()" >Play</button>
+ <button class="createAvatarbutton" (click)="CreateAvatarRoute()">Create Avatar</button>
+ <button class="resetStatsButton" >Reset Stats</button>
  <!-- <button id="resetStats" (click)="resetStats()">Reset Stats</button> -->
-
- 
+</body>
