@@ -93,8 +93,9 @@ resetButton() {
         if (this.strikes === 3) {
           console.log('Youre out!');
           this.user_answer = ''; 
-          this.timeLeft = 0; //cw - if third strike than the timer is equal to 0?
-          clearInterval(this.interval);//cw - clear the timer when wrong?
+          this.strikes = 0;
+          // this.timeLeft = 0; //cw - if third strike than the timer is equal to 0?
+          // clearInterval(this.interval);//cw - clear the timer when wrong?
         }
         
       } else {

@@ -47,7 +47,6 @@ export class EndlessTriviaComponent implements OnInit {
           this.giphHint = this.giphArray[this.i].images.original.url;
         });
     });
-    // this.firebaseService.updateEndlessScore(this.user_score)
   }
 
   nextGiphHint() {
