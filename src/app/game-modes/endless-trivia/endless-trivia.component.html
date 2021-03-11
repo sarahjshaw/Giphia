@@ -6,7 +6,8 @@
 </head>
 <body>
   <div class="ticker">
-    <h1>SCORE: {{ user_score }}</h1>
+    <h1 id="score">SCORE: {{ user_score }}</h1>
+<h1 id="quit" (click)="gameOver()">QUIT</h1>
   </div>
   <div id="q_cont">
     <h1 id="q_title">Question</h1>

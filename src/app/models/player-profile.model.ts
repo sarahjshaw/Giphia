@@ -1,3 +1,5 @@
 export interface PlayerProfile {
-  username: string
+  username: string,
+  bestScoreEndless: number,
+  
 }

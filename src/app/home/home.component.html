@@ -1,14 +1,15 @@
+<html>
 <header>
-    <div class="graphicsArea">
+  <div class="graphicsArea">
     <a routerLink="/home" class="logo">
-      <img src="assets/images/giphiacircle.jpg" alt="Giphia Logo">
-    </a>
-    </div>
-
+      <img src="assets/images/pinkbackground.jpg">
+      </a>
     </div>
 </header>
 
 <body>
+  <div id="ticker">Where trivia goes to get even nerdier</div>    
+<img src="https://media4.giphy.com/media/KZysJjKb8XyQSXQZwl/giphy.gif?cid=ecf05e475w5dgyk0h5mq6jbg82fxhtjuynw56swwhuehoj89&rid=giphy.gif" alt="">
     <button (click)="leaderboardRoute()">Leaderboard</button>
 
     <button (click)="playGameRoute()" (click)="playCount()">Play</button>
@@ -22,7 +23,7 @@
   <span class="medium-dot"></span>
   <span class="small-dot"></span>
 </div> 
-
+</html>
 <router-outlet></router-outlet>
 
 

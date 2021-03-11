@@ -1,10 +1,13 @@
 import { ɵNullViewportScroller } from '@angular/common';
 import { Component, OnInit, Output } from '@angular/core';
+import { FirebaseApp } from '@angular/fire';
 // import * as EventEmitter from 'node:events';
 import { Giphy } from 'src/app/models/giphy.model';
 import { Trivia } from 'src/app/models/trivia.model';
 import { GiphyService } from 'src/app/services/giphy-api.service';
 import { TriviaService } from 'src/app/services/trivia-api.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
+
 
 @Component({
   selector: 'app-endless-trivia',
@@ -17,7 +20,8 @@ export class EndlessTriviaComponent implements OnInit {
 
   constructor(
     private giphyService: GiphyService,
-    private triviaService: TriviaService
+    private triviaService: TriviaService,
+    private firebaseService: FirebaseService
   ) {}
 
   giphHint: any;
@@ -43,6 +47,7 @@ export class EndlessTriviaComponent implements OnInit {
           this.giphHint = this.giphArray[this.i].images.original.url;
         });
     });
+    // this.firebaseService.updateEndlessScore(this.user_score)
   }
 
   nextGiphHint() {
@@ -54,24 +59,19 @@ this.giphHint = this.giphArray[this.i].images.original.url;
     if (this.randomAnswer != this.user_answer.toLowerCase()) {
       console.log('WRONG');
       alert("Wrong!");
-      //sound?
-      //mat ripple
       this.strikes = this.strikes + 1;
       if (this.strikes === 3) {
         console.log('Youre out!');
-        this.removePoint();
         this.user_answer = '';
-        this.strikes = 0;
         this.nextQuestion();
+        this.gameOver();
       }
     } else {
       console.log('CORRECT');
-      //you did it message
       alert("Correct!");
       this.addPoint();
       this.nextQuestion();
       this.user_answer = '';
-      this.strikes = 0;
     }
   }
 
@@ -87,4 +87,14 @@ this.giphHint = this.giphArray[this.i].images.original.url;
   removePoint() {
     this.user_score = this.user_score - 1;
   }
+
+  gameOver() {
+    this.firebaseService.updateEndlessScore(this.user_score)
+// if (this.user_score > this.high_score) {
+//   this.high_score = this.user_score;
+//   //push?
+//   } else {
+// alert("Did not beat high score")
+//   }
+}
 }

@@ -27,6 +27,7 @@ export class TimeChallengeComponent implements OnInit {
     user_answer: string;
     user_score = 0;
     strikes = 0;
+    high_score = 0;
 
   constructor(private triviaService: TriviaService, 
     private giphyService: GiphyService,
@@ -56,6 +57,7 @@ export class TimeChallengeComponent implements OnInit {
     this.interval = setInterval(() => {
       if(this.timeLeft > 0) {
         this.timeLeft--;
+        this.gameOver();
        } //else {
       //   this.timeLeft = 60; //commented this out to prevent endless looping
       // }
@@ -67,7 +69,6 @@ resetButton() {
     this.timeLeft = 60;
     // this.ngOnInit;
     this.startTimer();
-
   }
 
  pauseButton() {
@@ -91,7 +92,6 @@ resetButton() {
         this.strikes = this.strikes + 1;
         if (this.strikes === 3) {
           console.log('Youre out!');
-          this.removePoint();
           this.user_answer = ''; 
           this.timeLeft = 0; //cw - if third strike than the timer is equal to 0?
           clearInterval(this.interval);//cw - clear the timer when wrong?
@@ -140,7 +140,13 @@ resetButton() {
   this.isShownTrue = !this.isShownTrue;
 }
 
-
-
+gameOver() {
+  if (this.user_score > this.high_score) {
+    this.high_score = this.user_score;
+    //push?
+    } else {
+  alert("Did not beat high score")
+    }
+  }
 
 }

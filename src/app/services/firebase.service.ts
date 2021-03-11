@@ -46,6 +46,16 @@ export class FirebaseService {
       .subscribe(data => console.log(data));
   }
 
+  updateEndlessScore(endless_high_score: number) {
+    this.user.subscribe(data => {
+      this.http.post(`https://giphia-9e631-default-rtdb.firebaseio.com/users/${data.id}.json`, {
+      bestScoreEndless: endless_high_score
+    })
+      .subscribe(data => console.log(data));
+    })
+    
+  }
+
 
   signUp(email: string, password: string) {
     return this.http.post<AuthREsponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBRhAlt1aJy_2BKQG-t4PbAZzp6zTYFHjg',
@@ -80,5 +90,9 @@ export class FirebaseService {
     this.user.next(null);
     this.router.navigate(['/signin']);
   }
+
+highScore() {
+  
+}
 
 }
