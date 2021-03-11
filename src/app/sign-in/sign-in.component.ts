@@ -19,8 +19,8 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // fetch userProfile testing
   onLogin(form: NgForm) {
+    console.log(form)
     const email = form.value.email;
     const password = form.value.password;
     this.firebaseService.login(email, password).subscribe( data => {
@@ -34,7 +34,6 @@ export class SignInComponent implements OnInit {
     form.reset();
   }
 
-  // username testing
   onSignup(form: NgForm) {
     const username = form.value.username;
     const email = form.value.email;

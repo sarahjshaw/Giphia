@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
+import { PlayerProfile } from '../models/player-profile.model';
 import { User } from '../models/user.model';
 
 interface AuthREsponseData {
@@ -17,19 +19,22 @@ interface AuthREsponseData {
   providedIn: 'root',
 })
 export class FirebaseService {
-
-  playerProfile = new Subject<any>();
+  playerProfile = new Subject<PlayerProfile[]>();
   user = new BehaviorSubject<User>(null);
-  //cw
-  // isLoggedin:boolean = false;
 
-  constructor(private http: HttpClient) {}
-
+  constructor(private http: HttpClient,
+              private router: Router) {}
 
   fetchUserProfile(uid: string) {
-    this.http.get(`https://giphia-9e631-default-rtdb.firebaseio.com/users/${uid}.json`)
+    this.http.get<any>(`https://giphia-9e631-default-rtdb.firebaseio.com/users/${uid}.json`)
+      .pipe(map((resData) => {
+        const resArray = [];
+        for (let key in resData) {
+          resArray.push({...resData[key]})
+      }
+      return resArray;
+    }))
       .subscribe(data => {
-        // console.log(data)
         this.playerProfile.next(data);
       });
   }
@@ -40,7 +45,7 @@ export class FirebaseService {
     })
       .subscribe(data => console.log(data));
   }
- 
+
 
   signUp(email: string, password: string) {
     return this.http.post<AuthREsponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBRhAlt1aJy_2BKQG-t4PbAZzp6zTYFHjg',
@@ -69,6 +74,11 @@ export class FirebaseService {
         const user = new User(resData.email, resData.localId, resData.idToken, expirationDate);
         this.user.next(user);
       }))
+  }
+
+  logout() {
+    this.user.next(null);
+    this.router.navigate(['/signin']);
   }
 
 }

@@ -9,11 +9,11 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { GameModesComponent } from './game-modes/game-modes.component';
 import { EndlessTriviaComponent } from './game-modes/endless-trivia/endless-trivia.component';
 import { TimeChallengeComponent } from './game-modes/time-challenge/time-challenge.component';
-// import { FirebaseService } from './snervices/firebase.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
 import { PlayerProfileComponent } from './player-profile/player-profile.component';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -40,6 +40,7 @@ import { ChooseAvatarComponent } from './choose-avatar/choose-avatar.component';
     RouterModule,
     MatInputModule,
     MatButtonModule,
+    MatMenuModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
