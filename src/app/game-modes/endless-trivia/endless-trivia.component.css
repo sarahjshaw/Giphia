@@ -7,7 +7,7 @@ body {
 }
 
 img {
-    max-height: 50vh;
+    max-height: 42vh;
     max-width: 95vw;
     padding-bottom: 10px;
 }
@@ -18,8 +18,9 @@ h1{
 }
 
 .ticker {
-    padding: 0vw 2.5vw 0vw 2.5vw;
-    margin-bottom: 2vh;
+    padding: 5vh 2.5vw 0vw 2.5vw;
+    margin: -5vh 0vw 2vh 0vw;
+    /* margin-bottom: 2vh; */
     width: auto;
     float: inline-end;
     background-color: #f72585;
@@ -69,9 +70,9 @@ color: white;
 
 #button_cont {
     display: block;
-    width: 95vw;
+    width: 100vw;
     position: fixed;
-    bottom: 70px;
+    bottom: 60px;
     display: flex;
     justify-content: center;
     flex-direction: column;
