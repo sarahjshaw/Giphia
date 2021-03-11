@@ -1,19 +1,25 @@
 .informationContainer{
-    padding:3em;
-    border: 1px solid black;
+    padding:2em;
+    border: 1px solid white;
     margin-bottom: 1em;
+    margin-right:20px;
+    margin-left:20px;
     display:flex;
+    justify-content:space-around;
+    align-items:center;
     flex-direction: row;
+    color:white;  
 }
+
 .avatar{
     border-radius: 50%;
-    background-color:gray;
-    width: 50px;
-    height:50px;
+    background-color:white;
+    width: 100px;
+    height:100px; 
 }
 
 .verticalPipe{
-    border-left: 1px solid black;
+    border-left: 1px solid white;
     height: 100px;
     left: 50%;
     margin-left: -3px;
@@ -23,4 +29,59 @@
 .playerHeaderSection{
     display:flex;
     flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    
+    
+
+}
+
+.higestScoreSection{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+   
+}
+
+h1{
+    padding-top:15px;
+    font-weight: 500;
+    font-size: 35px;
+}
+
+h2{
+    font-size: 40px;
+}
+
+p{
+    font-size: 18px;
+}
+
+
+.graphicsArea{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height: 300px;
+
+}
+
+button{
+height:30px;
+display:flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+margin:11px 20px;
+align-content: space-between;
+
+}
+
+body {
+    height: 90vh;
+    width: 100vw;
+    background: rgb(114,9,183);
+    background: linear-gradient(142deg, rgba(114,9,183,1) 35%, rgba(148,70,200,1) 100%);
+    padding: 0px;
 }

@@ -12,7 +12,10 @@
     crossorigin="anonymous"
   ></script>
 </head>
+
 <body>
+
+  <div class="game-assets" [style.display]="timeLeft === 0 ? 'none' : 'block'">
   <div class="ticker">
     <h1>QUESTIONS:</h1>
     <h1>SCORE: {{ user_score }}</h1>
@@ -33,16 +36,21 @@
       placeholder="Your answer"
       [(ngModel)]="user_answer"
     />
-    <button (click)="submitAnswer()">Submit</button>
+    <button (click)="submitAnswer()" [disabled]="timeLeft === 0 ? true : false" >Submit</button>
   </div>
 
-    <!-- End of Game Pop-up -->
-    <div [style.display]=" timeLeft < 60 ? 'none' : 'block' "  id="gameOver" class="hidden"> >
-           <h1 class="endingHeader">You ran out of Time!</h1>
-           <p id="endingParagraph">Don't worry. You can play again!</p>
-           <button class="replay">Play Again</button>
-           <p class="clickStart">Press Play Again to restart game.</p>
-        </div>
-    
+  <div *ngIf="isShownTrue" id="correctAnswerPopUp">Correct!</div>
+  <div *ngIf="isShownWrong" id="wrongAnswerPopUp"> Wrong!</div>
 
+</div>
+
+    <!-- End of Game Pop-up -->
+    <div [style.display]="timeLeft === 0 ? 'block' : 'none'" id="gameOver" > 
+    <h1 class="endingHeader">Game Over!</h1>
+           <p id="endingParagraph">Don't worry. You can play again!</p>
+           <button class="replay"(click)="resetButton()">Play Again</button>
+           <p class="clickStart">Press Play Again to restart game.</p>
+           <button class="clickHome" (click)="homeClick()">Home</button>
+        </div>
+  
 </body>
