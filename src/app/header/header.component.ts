@@ -13,12 +13,12 @@ import { FirebaseService } from '../services/firebase.service';
 export class HeaderComponent implements OnInit {
 
   backClick(){
-
+    this._location.back();
   }
 
   playerInfo;
 
-  constructor(public routes: RouterModule, public fireService:FirebaseService) { }
+  constructor(public routes: RouterModule, public fireService:FirebaseService,private _location: Location) { }
 
 
   ngOnInit(): void {

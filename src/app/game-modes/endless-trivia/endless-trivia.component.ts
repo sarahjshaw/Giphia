@@ -53,6 +53,7 @@ this.giphHint = this.giphArray[this.i].images.original.url;
   submitAnswer() {
     if (this.randomAnswer != this.user_answer.toLowerCase()) {
       console.log('WRONG');
+      alert("Wrong!");
       //sound?
       //mat ripple
       this.strikes = this.strikes + 1;
@@ -66,6 +67,7 @@ this.giphHint = this.giphArray[this.i].images.original.url;
     } else {
       console.log('CORRECT');
       //you did it message
+      alert("Correct!");
       this.addPoint();
       this.nextQuestion();
       this.user_answer = '';

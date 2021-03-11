@@ -1,11 +1,22 @@
 header {
     background-color: white;
+    display:flex;
+    margin-left:20px;
+    margin-top:20px;
+    justify-content: space-between;
+    
 }
 
 ul {
     display: flex;
     flex-direction: row;
     list-style: none;
+    justify-content: space-between;
+    padding:0px 15px 0px 15px;
+}
+
+li{
+    padding:0px 20px 0px 15px;  
 }
 
 a {
@@ -49,3 +60,10 @@ img:hover{
   cursor: pointer;
 }
 
+.back{
+    display:flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0px 5px 0px 5px;
+    margin-right:10px;
+}

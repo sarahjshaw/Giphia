@@ -3,6 +3,9 @@ import { Giphy } from 'src/app/models/giphy.model';
 import { Trivia } from 'src/app/models/trivia.model';
 import { GiphyService } from 'src/app/services/giphy-api.service';
 import { TriviaService } from 'src/app/services/trivia-api.service';
+import { RouterModule } from '@angular/router';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,7 +28,12 @@ export class TimeChallengeComponent implements OnInit {
     user_score = 0;
     strikes = 0;
 
-  constructor(private triviaService: TriviaService, private giphyService: GiphyService,) { }
+  constructor(private triviaService: TriviaService, 
+    private giphyService: GiphyService,
+    private _location: Location,
+    public routes: RouterModule,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
     this.triviaService.fetchRandomQuestion().subscribe((result) => {
@@ -48,23 +56,24 @@ export class TimeChallengeComponent implements OnInit {
     this.interval = setInterval(() => {
       if(this.timeLeft > 0) {
         this.timeLeft--;
-      } else {
-        this.timeLeft = 60;
-      }
+       } //else {
+      //   this.timeLeft = 60; //commented this out to prevent endless looping
+      // }
     },1000)
   }
 
-
-
-  resetButton() {
+resetButton() {
     clearInterval(this.interval);
     this.timeLeft = 60;
-    this.ngOnInit;
+    // this.ngOnInit;
+    this.startTimer();
+
   }
 
  pauseButton() {
   clearInterval(this.interval);
  }
+ 
 
  nextGiphHint() {
   this.i = this.i + 1;
@@ -74,20 +83,28 @@ export class TimeChallengeComponent implements OnInit {
     submitAnswer() {
       if (this.randomAnswer != this.user_answer.toLowerCase()) {
         console.log('WRONG');
+        alert("Wrong!"); //alert works better than the popup
         //sound?
+        // setTimeout(() => {     this popup works but is to slow
+        //   this.toggleShowFalse() 
+        // }, 20000);
         this.strikes = this.strikes + 1;
         if (this.strikes === 3) {
           console.log('Youre out!');
           this.removePoint();
-          this.user_answer = '';
-          this.strikes = 0;
-          //stop game & add a pop-up that shows 
-          // this.nextQuestion();
+          this.user_answer = ''; 
+          this.timeLeft = 0; //cw - if third strike than the timer is equal to 0?
+          clearInterval(this.interval);//cw - clear the timer when wrong?
         }
+        
       } else {
         console.log('CORRECT');
         //you did it message
+        // setTimeout(() => {     this popup works but is to slow
+        //   this.toggleShowTrue() 
+        // }, 800);
         this.addPoint();
+        alert("Correct!");//alert works better than the popup
         this.nextQuestion();
         this.user_answer = '';
         this.strikes = 0;
@@ -107,11 +124,23 @@ export class TimeChallengeComponent implements OnInit {
       this.user_score = this.user_score - 1;
     }
   
-    // gameDisplay(){
-    //   this.remove("hidden");
-    // }
+    homeClick(){
+    this.router.navigateByUrl('/home');
+  }
+ 
+  isShownWrong: boolean = false;
+  isShownTrue: boolean = false;
 
+  
+ toggleShowFalse(){
+   this.isShownWrong = !this.isShownWrong;
+ }
+
+ toggleShowTrue(){
+  this.isShownTrue = !this.isShownTrue;
 }
 
 
 
+
+}
