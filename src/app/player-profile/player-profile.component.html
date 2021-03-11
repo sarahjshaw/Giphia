@@ -1,20 +1,20 @@
 <body>
 <div class="playerHeaderSection informationContainer">
 
-   <i class="fas fa-glasses"></i><img class="avatar" src='' alt="" />
+   <!-- <i class="fas fa-glasses"></i><img class="avatar" src='' alt="" /> -->
 
-   <h1>{{playerName}}</h1>
+   <h1>{{playerInfo.username}}</h1>
 
    <p>{{" Player since: " + signUpYear }}</p>
 
 </div>
 
-<div class="higestScoreSection informationContainer"> 
+<div class="higestScoreSection informationContainer">
     <p>Highest Personal Score</p>
-    <h2> {{highestScore}} points</h2>
+    <h2> {{playerInfo.bestScoreEndless}} Correct</h2>
  </div>
 
- <div class="playerStatsSection informationContainer"> 
+ <div class="playerStatsSection informationContainer">
     <p>Games Played:</p>
     <h2>{{numberOfGamesPlayed}}</h2>
 
@@ -23,7 +23,7 @@
     <p>Player Ranking:</p>
     <h2>{{playerRanking}}</h2>
  </div>
- 
+
  <button class="playbutton" (click)="playCount()"(click)="playGameRoute()" >Play</button>
  <button class="createAvatarbutton" (click)="CreateAvatarRoute()">Create Avatar</button>
  <button class="resetStatsButton" >Reset Stats</button>

@@ -19,7 +19,7 @@ interface AuthREsponseData {
   providedIn: 'root',
 })
 export class FirebaseService {
-  playerProfile = new Subject<PlayerProfile[]>();
+  playerProfile = new Subject<PlayerProfile>();
   user = new BehaviorSubject<User>(null);
 
   constructor(private http: HttpClient,
@@ -27,33 +27,29 @@ export class FirebaseService {
 
   fetchUserProfile(uid: string) {
     this.http.get<any>(`https://giphia-9e631-default-rtdb.firebaseio.com/users/${uid}.json`)
-      .pipe(map((resData) => {
-        const resArray = [];
-        for (let key in resData) {
-          resArray.push({...resData[key]})
-      }
-      return resArray;
-    }))
       .subscribe(data => {
+        console.log(data)
         this.playerProfile.next(data);
       });
   }
 
   createUserProfile(uid: string, username: string) {
-    this.http.post(`https://giphia-9e631-default-rtdb.firebaseio.com/users/${uid}.json`, {
+    this.http.patch(`https://giphia-9e631-default-rtdb.firebaseio.com/users/${uid}.json`, {
       username: username
     })
-      .subscribe(data => console.log(data));
+      .subscribe(data => {
+        this.fetchUserProfile(uid);
+      });
   }
 
   updateEndlessScore(endless_high_score: number) {
     this.user.subscribe(data => {
-      this.http.post(`https://giphia-9e631-default-rtdb.firebaseio.com/users/${data.id}.json`, {
+      this.http.patch(`https://giphia-9e631-default-rtdb.firebaseio.com/users/${data.id}.json`, {
       bestScoreEndless: endless_high_score
     })
       .subscribe(data => console.log(data));
     })
-    
+
   }
 
 
@@ -92,7 +88,7 @@ export class FirebaseService {
   }
 
 highScore() {
-  
+
 }
 
 }

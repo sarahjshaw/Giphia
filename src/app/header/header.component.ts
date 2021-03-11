@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
       this.firebaseService.user.subscribe(user => {
         this.isAuthenticated = !user ? false : true
       })
-      this.playerInfo = data[0];
+      this.playerInfo = data;
     })
 
   }
@@ -33,6 +33,13 @@ export class HeaderComponent implements OnInit {
   onLogout() {
     this.firebaseService.logout()
     this.playerInfo = '';
+  }
+
+  onPlayerStats() {
+    this.firebaseService.user.subscribe(userData => {
+      this.firebaseService.fetchUserProfile(userData.id);
+    })
+    this.router.navigate(['/player-profile'])
   }
 
   backClick() {

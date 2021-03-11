@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { DataService } from 'src/app/services/data.service';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-player-profile',
@@ -10,20 +10,28 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class PlayerProfileComponent implements OnInit {
 
-  playerName:string = "Jane Somebody";
+  playerName:string;
   signUpYear:number = 2021;
-  highestScore:number = 20000;
+  highestScoreEndless:number;
   playerRanking:number = 2;
-  numberOfGamesPlayed: number = 0;
- 
-  constructor(private router: Router, private _location: Location, public data: DataService) { }
+  numberOfGamesPlayed: number = 3;
 
-  ngOnInit(): void {
-  }
+  playerInfo: any = '';
 
-  public playCount(){
+  constructor(private router: Router,
+              private firebaseService: FirebaseService,
+              public data: DataService) { }
+
+ngOnInit() {
+  this.firebaseService.playerProfile.subscribe(playerData => {
+    this.playerInfo = playerData;
+  })
+}
+
+
+playCount(){
     this.numberOfGamesPlayed = this.numberOfGamesPlayed += 1;
-    // newNumber = this.numberOfGamesPlayed += 1; 
+    // newNumber = this.numberOfGamesPlayed += 1;
 };
 
   playGameRoute(){
