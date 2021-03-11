@@ -15,11 +15,6 @@ html {
   font-family: 'Poppins', sans-serif;
 }
 
-body{
-    display:flex;
-    flex-direction: column;
-}
-
 .background-circles{
     background-color: white;
     border-radius: 50%;
@@ -39,14 +34,14 @@ body{
 
 button{
     width: 200px;
-    height: 120px;
+    height: 80px;
     margin:11px 20px;
     background-color: #39065a;
     border: none;
     border-radius: 20px;
     color: #e4fbff;
     font-size: 25px;
-    box-shadow: 2px 2px 7px #ea0599;
+    /* box-shadow: 2px 2px 7px #ea0599; */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -56,6 +51,14 @@ button{
     flex-direction: row;
 }
 
+body {
+height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;    
+  flex-direction: column;
+}
+
 button:hover{
   background-color: #38065a98;
   box-shadow: 3px 3px 8px rgba(234, 5, 154);
@@ -63,9 +66,8 @@ button:hover{
 }
 
 img {
-  max-width: 50vw;
-  padding-bottom: 10vh;
-  padding-left: 10vh;
+  max-width: 80vw;
+padding: 0px 0px 10px 10vw;
   display:flex;
   align-items: center;
   justify-content: center;

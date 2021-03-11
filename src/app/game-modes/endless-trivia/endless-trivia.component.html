@@ -16,13 +16,16 @@
   <div id="h_cont">
     <!-- <h1 id="h_title">Hint</h1> -->
     <img src="{{ giphHint }}" alt="" />
+      <button id="next_hint" (click)="nextGiphHint()">Next Hint</button>
   </div>
-  <button id="next_hint" (click)="nextGiphHint()">Next Hint</button>
+
+
+
   <div id="button_cont">
     <input
       id="user_answer"
       type="text"
-      placeholder="Your answer"
+      placeholder="  Your answer"
       [(ngModel)]="user_answer"
     />
     <button (click)="submitAnswer()">Submit</button>
