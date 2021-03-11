@@ -105,6 +105,7 @@ button {
 button:hover {
     background-color: #3a0ca3;
     font-size: 16px;
+    transition: .3s ease-in-out;
 }
 /* PINK - #f72585
 PURP - #7209b7

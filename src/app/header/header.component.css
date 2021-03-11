@@ -8,8 +8,16 @@ h1 {
   font-size: 35px;
 }
 
-.login-wrapper {
- 
+h1:hover{
+  cursor: pointer;
+  font-size: 36px;
+}
+
+.logo{
+  height: 150px;
+  width: 200px;
+  display: flex;
+
 }
 
 .login-btn {
@@ -31,8 +39,17 @@ h1 {
   font-weight: 600;  
 }
 
-.logo {
-  margin: 0;
+.login-btn:hover{
+  background-color: #38065a98;
+  box-shadow: 3px 3px 8px rgba(234, 5, 154);
+  font-size: 17px;
+  transition: .3s ease-in-out;
+}
+.back-btn:hover{
+    background-color: #38065a98;
+    box-shadow: 3px 3px 8px rgba(234, 5, 154);
+    font-size: 16px;
+    transition: .3s ease-in-out;
 }
 
 header {
