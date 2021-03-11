@@ -7,13 +7,17 @@
 }
 
 .login-wrapper {
+  margin: 4px 4px;
+  border-radius: 3px;
+  padding: 0px 3px;
+  background-color: rgba(0, 0, 0, 0.383);
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1em;
   color: white;
   font-family: 'Roboto', sans-serif;
-  text-shadow: 50px 50px 0px rgba(255,255,255,.2);
+  cursor: pointer;
 }
 
 .login-btn {
@@ -40,4 +44,8 @@ a {
 
 .back-btn {
   margin-left: 1em;
+}
+
+#username {
+  padding: 0px;
 }
