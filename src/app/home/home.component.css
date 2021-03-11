@@ -63,6 +63,7 @@ button:hover{
   background-color: #38065a98;
   box-shadow: 3px 3px 8px rgba(234, 5, 154);
   font-size: 26px;
+  transition: .3s ease-in-out;
 }
 
 img {
