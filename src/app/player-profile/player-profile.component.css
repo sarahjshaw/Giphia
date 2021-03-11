@@ -49,14 +49,22 @@ h1{
     font-weight: 500;
     font-size: 100px;
     margin-bottom: 30px;
+    font-size: 35px;
+    color:#4cc9f0;
+    font-family: 'Roboto Slab', serif;
 }
 
 h2{
     font-size: 40px;
+    color:#f72585;
 }
 
 p{
-    font-size: 18px;
+    font-size: 20px;
+    color:white;
+    font-weight: 400;
+    line-height: 35px;
+    font-family: 'Roboto Slab', serif;    
 }
 
 
@@ -82,7 +90,21 @@ align-content: space-between;
 body {
     height: 90vh;
     width: 100vw;
-    background: rgb(114,9,183);
-    background: linear-gradient(142deg, rgba(114,9,183,1) 35%, rgba(148,70,200,1) 100%);
+    background: rgb(58,12,163);
+    background: linear-gradient(180deg, rgba(58,12,163,1) 0%, rgba(114,9,183,1) 94%);
     padding: 0px;
+}
+
+.yearStarted{
+    color:white;
+}
+
+.ranking{
+    font-size: 25px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.games{
+    font-size: 25px;
+    font-family: 'Roboto Slab', serif;
 }
