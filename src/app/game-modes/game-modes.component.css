@@ -24,9 +24,10 @@ body{
 }
 
 .endless, .timed{
+    top: 30%;
     width: 200px;
     height: 80px;
-    margin:11px 20px;
+    margin: 100px auto 0;
     background-color: #39065a;
     border: none;
     border-radius: 20px;
@@ -41,7 +42,7 @@ body{
     font-weight: 600;
     flex-direction: row;
   }
-  
+
 button{
 height:30px;
 display:flex;
@@ -53,9 +54,45 @@ align-content: space-between;
 
 };
 
-.btn-cards {
+.btn-wrapper {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
 }
 
+h3 {
+  color: white;
+  text-align: center;
+}
 
- 
+mat-card {
+  border-radius: 15px;
+  border-top: 10px solid  #4CC9F0;
+  width: 40%;
+  margin: 0 auto 50px;
+  height: 40%;
+}
+
+mat-card-content {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 550;
+  font-size: 1.1em;
+}
+
+.cards-wrapper {
+  margin-top: 10%;
+}
+
+hr {
+  margin: 20px 20px;
+}
+
+@media only screen and (min-width: 600px) {
+
+  .cards-wrapper {
+    display: flex;
+    height: 50%;
+  }
+
+}
