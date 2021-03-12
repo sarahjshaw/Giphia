@@ -3,3 +3,69 @@ img{
     display: flex;
     
     }
+
+    body {
+        height: 90vh;
+        width: 100vw;
+        background: rgb(58,12,163);
+        background: linear-gradient(180deg, rgba(58,12,163,1) 0%, rgba(114,9,183,1) 94%);
+        padding: 0px;
+    }
+
+    .leaderboard{
+        color:white;
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        padding:2em;
+        border: 1px solid white;
+        margin-bottom: 1em;
+        margin-right:20px;
+        margin-left:20px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        
+    }
+
+    li{
+        list-style-type: none;
+        font-weight: 200;
+        font-size: 100px;
+        margin-bottom: 30px;
+        font-size: 35px;
+        color:white;
+        font-family: 'Roboto Slab', serif;
+        
+    }
+
+    button{
+        width: 200px;
+        height: 80px;
+        margin:11px 20px;
+        background-color: #39065a;
+        border: none;
+        border-radius: 20px;
+        color: #e4fbff;
+        font-size: 25px;
+        /* box-shadow: 2px 2px 7px #ea0599; */
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        flex-direction: row;
+    }
+
+    h1{
+        padding-top:25px;
+        font-weight: 500;
+        font-size: 200px;
+        margin-bottom: 30px;
+        font-size: 35px;
+        color:#4cc9f0;
+        font-family: 'Roboto Slab', serif;
+    }
+    

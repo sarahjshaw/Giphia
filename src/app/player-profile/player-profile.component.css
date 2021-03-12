@@ -55,12 +55,12 @@ h1{
 }
 
 h2{
-    font-size: 40px;
+    font-size: 35px;
     color:#f72585;
 }
 
 p{
-    font-size: 20px;
+    font-size: 25px;
     color:white;
     font-weight: 400;
     line-height: 35px;
@@ -77,13 +77,22 @@ p{
 }
 
 button{
-height:30px;
-display:flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-margin:11px 20px;
-align-content: space-between;
+    width: 200px;
+    height: 80px;
+    margin:11px 20px;
+    background-color: #39065a;
+    border: none;
+    border-radius: 20px;
+    color: #e4fbff;
+    font-size: 25px;
+    /* box-shadow: 2px 2px 7px #ea0599; */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    flex-direction: row;
 
 }
 
@@ -108,3 +117,24 @@ body {
     font-size: 25px;
     font-family: 'Roboto Slab', serif;
 }
+
+.buttonGroup{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+}
+
+
+
+  /* tablet screen */
+  @media only screen and (min-width: 376px){
+
+    
+      }
+   
+  /* computer screen */
+   @media only screen and (min-width: 768px){
+
+   
+   }

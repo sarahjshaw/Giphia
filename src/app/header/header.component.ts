@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlayerProfile } from '../models/player-profile.model';
 import { FirebaseService } from '../services/firebase.service';
+import { Location } from '@angular/common'
 
 
 @Component({
@@ -13,7 +14,7 @@ export class HeaderComponent implements OnInit {
   isAuthenticated: boolean = false;
   playerInfo: any = '';
 
-  constructor(private router: Router, public firebaseService:FirebaseService) { }
+  constructor(private router: Router, public firebaseService:FirebaseService, private _location: Location) { }
 
 
   ngOnInit(): void {
@@ -43,6 +44,11 @@ export class HeaderComponent implements OnInit {
   }
 
   backClick() {
+    this._location.back();
   }
 
 }
+
+// hamburgerFunction(){
+  
+// }

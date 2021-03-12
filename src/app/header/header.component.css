@@ -101,3 +101,129 @@ button {
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
 }
+
+@media only screen and (min-width: 376px){
+  
+  button {
+    margin:10px 10px;
+    width: 100px;
+    height: 45px;
+    background-color: #39065a;
+    /* box-shadow: 2px 2px 7px #ec92cc; */
+    border: none;
+    border-radius: 20px;
+    color: #e4fbff;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.5s ease-in;
+  }
+  .login-btn {
+    margin:10px 10px;
+    width: 100px;
+    height: 45px;
+    font-size: 20px;
+    background-color: #39065a;
+    /* box-shadow: 2px 2px 7px #ec92cc; */
+    border: none;
+    border-radius: 20px;
+    color: #e4fbff;
+    /* font-size: 20px; */
+    font-weight: 600;
+    cursor: pointer; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;  
+    transition: 0.5s ease-in;
+  }
+  img {
+    max-width: 200px;
+    transition: 0.5s ease-in;
+  }
+}
+
+@media only screen and (min-width: 769px){
+  button {
+    margin:10px 10px;
+    width: 125px;
+    height: 65px;
+    background-color: #39065a;
+    /* box-shadow: 2px 2px 7px #ec92cc; */
+    border: none;
+    border-radius: 25px;
+    color: #e4fbff;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.5s ease-in;
+  }
+  .login-btn {
+    margin:10px 10px;
+    width: 125px;
+    height: 65px;
+    font-size: 30px;
+    background-color: #39065a;
+    /* box-shadow: 2px 2px 7px #ec92cc; */
+    border: none;
+    border-radius: 25px;
+    color: #e4fbff;
+    /* font-size: 20px; */
+    font-weight: 600;
+    cursor: pointer; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;  
+    transition: 0.5s ease-in;
+  }
+  img {
+    max-width: 250px;
+    transition: 0.5s ease-in;
+  }
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  
+  color: white;
+}

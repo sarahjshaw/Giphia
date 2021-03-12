@@ -32,6 +32,7 @@ export class EndlessTriviaComponent implements OnInit {
   user_answer: string;
   user_score = 0;
   strikes = 0;
+  // user_highscore = this.firebaseService.fetchUserProfile.name;
 
   ngOnInit(): void {
     this.triviaService.fetchRandomQuestion().subscribe((result) => {
@@ -88,7 +89,7 @@ this.giphHint = this.giphArray[this.i].images.original.url;
   }
 
   gameOver() {
-    this.firebaseService.updateEndlessScore(this.user_score)
+this.firebaseService.updateEndlessScore(this.user_score)
 // if (this.user_score > this.high_score) {
 //   this.high_score = this.user_score;
 //   //push?
