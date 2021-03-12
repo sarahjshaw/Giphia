@@ -14,6 +14,8 @@ import { RouterModule } from '@angular/router';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
 import { PlayerProfileComponent } from './player-profile/player-profile.component';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -41,6 +43,8 @@ import { ChooseAvatarComponent } from './choose-avatar/choose-avatar.component';
     MatInputModule,
     MatButtonModule,
     MatMenuModule,
+    MatCardModule,
+    MatDividerModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
