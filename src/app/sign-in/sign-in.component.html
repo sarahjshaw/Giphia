@@ -24,7 +24,7 @@
 
   <div *ngIf="isLogin">
     <form #authForm="ngForm" (ngSubmit)="onLogin(authForm)">
-        <h2>Login</h2>
+        <h2>Log in</h2>
         <mat-form-field>
           <input matInput id="email" type="email" ngModel name="email" placeholder="Email" #email="ngModel" required email>
           <mat-error *ngIf="email.invalid">Please enter a valid Email</mat-error>

@@ -1,7 +1,5 @@
 import { ɵNullViewportScroller } from '@angular/common';
 import { Component, OnInit, Output } from '@angular/core';
-import { FirebaseApp } from '@angular/fire';
-// import * as EventEmitter from 'node:events';
 import { Giphy } from 'src/app/models/giphy.model';
 import { Trivia } from 'src/app/models/trivia.model';
 import { GiphyService } from 'src/app/services/giphy-api.service';
@@ -77,7 +75,7 @@ this.giphHint = this.giphArray[this.i].images.original.url;
 
   nextQuestion() {
     this.ngOnInit();
-    //Should also push user's current score 
+    //Should also push user's current score
   }
 
   addPoint() {
@@ -89,7 +87,8 @@ this.giphHint = this.giphArray[this.i].images.original.url;
   }
 
   gameOver() {
-this.firebaseService.updateEndlessScore(this.user_score)
+this.firebaseService.updateEndlessScore(this.user_score);
+this.firebaseService.updateGamesPlayed();
 // if (this.user_score > this.high_score) {
 //   this.high_score = this.user_score;
 //   //push?

@@ -1,34 +1,33 @@
 <body>
-<div class="playerHeaderSection informationContainer">
+  <div class="playerHeaderSection informationContainer">
 
-   <!-- <i class="fas fa-glasses"></i><img class="avatar" src='' alt="" /> -->
-   <i class="fas fa-glasses"></i><img class="avatar" src='https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=pink' alt="player-avatarOption" />
+    <!-- <i class="fas fa-glasses"></i><img class="avatar" src='' alt="" /> -->
+    <i class="fas fa-glasses"></i><img class="avatar" src='https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=pink' alt="player-avatarOption" />
 
-   <h1>{{playerInfo.username}}</h1>
+    <h1>{{playerInfo.username}}</h1>
 
-   <p class="yearStarted">{{" Player since: " + signUpYear }}</p>
+    <p class="yearStarted">Player since: <span id="date">{{ playerInfo.startDate | date: 'longDate' }}</span></p>
 
-</div>
+  </div>
 
-<div class="higestScoreSection informationContainer">
-    <p>Highest Personal Score</p>
-    <h2> {{playerInfo.bestScoreEndless}} Correct</h2>
- </div>
+  <div class="higestScoreSection informationContainer">
+      <p>Highest Personal Score</p>
+      <h2> {{playerInfo.bestScoreEndless}} Correct</h2>
+  </div>
 
- <div class="playerStatsSection informationContainer">
-    <p>Games Played:</p>
-    <h2>{{numberOfGamesPlayed}}</h2>
+  <div class="playerStatsSection informationContainer">
+      <p>Games Played:</p>
+      <h2>{{playerInfo.gamesPlayed}}</h2>
 
-    <div class="verticalPipe"></div>
+      <div class="verticalPipe"></div>
 
-    <p class="ranking">Player Ranking:</p>
-    <h2>{{playerRanking}}</h2>
- </div>
+      <p class="ranking">Player Ranking:</p>
+      <h2>{{playerRanking}}</h2>
+  </div>
 
- <div class="buttonGroup">
- <button class="playbutton" (click)="playCount()"(click)="playGameRoute()" >Play</button>
- <button class="createAvatarbutton" (click)="CreateAvatarRoute()">Create Avatar</button>
- <button class="resetStatsButton" >Reset Stats</button>
- </div>
- <!-- <button id="resetStats" (click)="resetStats()">Reset Stats</button> -->
+  <div class="buttonGroup">
+    <button class="playbutton" (click)="playGameRoute()">Play</button>
+    <button class="createAvatarbutton" (click)="CreateAvatarRoute()">Create Avatar</button>
+    <button class="resetStatsButton" >Reset Stats</button>
+  </div>
 </body>

@@ -7,7 +7,7 @@
 <!-- <h1 routerLink="/home" id="title">Giphia</h1> -->
     <div class="login-wrapper">
       <h3 class="login-btn" (click)="onLogin()" *ngIf="!isAuthenticated">Login</h3>
-      <button id="username" mat-button [matMenuTriggerFor]="beforeMenu" [style]="{display: !isAuthenticated ? 'none' : 'block'}">{{playerInfo.username}} </button>
+      <button id="username" mat-button [matMenuTriggerFor]="beforeMenu" [style]="{display: !isAuthenticated ? 'none' : 'block'}"><fa-icon [icon]="faCaretDown"></fa-icon> {{playerInfo.username}}</button>
       <mat-menu #beforeMenu="matMenu" xPosition="before">
         <button mat-menu-item (click)="onPlayerStats()">Player Stats</button>
         <button mat-menu-item>Leaderboards</button>
