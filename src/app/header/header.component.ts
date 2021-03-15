@@ -47,8 +47,13 @@ export class HeaderComponent implements OnInit {
     this._location.back();
   }
 
+  isShowDiv=false;
+
+  hamburgerFunction(){
+    this.isShowDiv = !this.isShowDiv;
+  }
+
+
 }
 
-// hamburgerFunction(){
-  
-// }
+

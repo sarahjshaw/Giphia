@@ -1,6 +1,4 @@
-/* html {
-  background: #f72585;
-} */
+/* styles for phone/mobile display*/
 
 h1 {
   font-family: 'Bangers', cursive;
@@ -16,7 +14,6 @@ h1:hover{
 .logo{
   max-width: 50vw;
   display: flex;
-
 }
 
 img {
@@ -24,7 +21,7 @@ img {
 }
 
 .login-btn {
-  margin:10px 10px;
+  margin:20px 10px 0px 10px;
   width: 60px;
   height: 30px;
   background-color: #39065a;
@@ -48,6 +45,7 @@ img {
   font-size: 17px;
   transition: .3s ease-in-out;
 }
+
 .back-btn:hover{
     background-color: #38065a98;
     box-shadow: 3px 3px 8px rgba(234, 5, 154);
@@ -102,6 +100,67 @@ button {
   font-family: 'Poppins', sans-serif;
 }
 
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  z-index: 100;
+  padding-top: 0px;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top:10px;
+  /* width:auto; */
+  /* height:auto; */
+  /* z-index: 100; */
+}
+
+/* Hide the links inside the navigation menu */
+.topnav #myLinks {
+  background-color:#4cc9f0;
+  color:white;
+  /* margin-top:20px; */
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  font-size: 10pt;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  padding: 5px 5px;
+  text-decoration: none;
+  font-size: 10pt;
+  z-index: 100;
+}
+
+/* Add a background color on mouse-over */
+a.icon:hover {
+  background-color:rgba(57,6,90,0.4);
+  z-index: 100;
+  border-radius: 50%;
+}
+
+.fa-bars{
+  color:white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.topnav{
+  padding-top:0px
+}
+
+
+
+/*style for tablet view*/
 @media only screen and (min-width: 376px){
   
   button {
@@ -143,8 +202,69 @@ button {
     max-width: 200px;
     transition: 0.5s ease-in;
   }
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  z-index: 100;
+  padding-top: 0px;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
 }
 
+/* Style the hamburger menu */
+.topnav a.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top:10px;
+  font-size:2.2em;
+  /* width:auto; */
+  /* height:auto; */
+  /* z-index: 100; */
+}
+
+/* Hide the links inside the navigation menu */
+.topnav #myLinks {
+  background-color:#4cc9f0;
+  color:white;
+  /* margin-top:20px; */
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+/* Style navigation menu links */
+.topnav a {
+  padding: 15px 15px;
+  text-decoration: none;
+  font-size: 20pt;
+  z-index: 100;
+}
+
+/* Add a grey background color on mouse-over */
+a.icon:hover {
+  background-color:rgba(57,6,90,0.4);
+  color:white;
+  z-index: 100;
+  border-radius: 50%;
+}
+
+.fa-bars{
+  color:white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.topnav{
+  padding-top:0px
+}
+
+
+/*style for desktop view*/
 @media only screen and (min-width: 769px){
   button {
     margin:10px 10px;
@@ -162,7 +282,7 @@ button {
     transition: 0.5s ease-in;
   }
   .login-btn {
-    margin:10px 10px;
+    margin:10px 20px 0px 10px;
     width: 125px;
     height: 65px;
     font-size: 30px;
@@ -185,45 +305,73 @@ button {
     max-width: 250px;
     transition: 0.5s ease-in;
   }
-}
-
 /* Style the navigation menu */
 .topnav {
   overflow: hidden;
-  position: relative;
-}
-
-/* Hide the links inside the navigation menu (except for logo/home) */
-.topnav #myLinks {
-  display: none;
-}
-
-/* Style navigation menu links */
-.topnav a {
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
+  z-index: 100;
+  padding-top: 0px;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
 }
 
 /* Style the hamburger menu */
 .topnav a.icon {
-  
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top:5px;
+  /* margin-top:10px; */
+  font-size:2.5em;
+  /* z-index: 100; */
+}
+
+/* Hide the links inside the navigation menu */
+.topnav #myLinks {
+  background-color:#4cc9f0;
+  color:white;
+  /* margin-top:20px; */
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  font-size: 10pt;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  padding: 15px 15px;
+  text-decoration: none;
+  font-size: 20pt;
+  z-index: 100;
+}
+
+.fa-bars{
+  color:white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+ 
 }
 
 /* Add a grey background color on mouse-over */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+a.icon:hover {
+  background-color:rgba(57,6,90,0.4);
+  color:white;
+  z-index: 100;
+  border-radius: 50%;
+  width:60px;
+  height:45px;
+  padding:0px 0px 5px 0px;
+  display:flex;
+  align-items: center;
+  justify-content:center;
 }
 
-/* Style the active link (or home/logo) */
-.active {
-  
-  color: white;
+div.topnav{
+  padding-top:0px
+}
+
+
+}
 }
