@@ -1,38 +1,41 @@
 <html>
 <header>
-<button class="back-btn" (click)="backClick()">Back</button>
-<a routerLink="/home" class="logo">
-  <img src="assets/images/giphiacircle.png">
-  </a>
-  <!-- <h1 routerLink="/home" id="title">Giphia</h1> -->
-    <div class="login-wrapper">
-      <h3 class="login-btn" (click)="onLogin()" *ngIf="!isAuthenticated">Login</h3>
-      <button id="username" mat-button [matMenuTriggerFor]="beforeMenu" [style]="{display: !isAuthenticated ? 'none' : 'block'}">{{playerInfo.username}} </button>
+  <button class="back-btn" (click)="backClick()">Back</button>
+  <a routerLink="/home" class="logo">
+    <img src="assets/images/giphiacircle.png">
+    </a>
+    <!-- <h1 routerLink="/home" id="title">Giphia</h1> -->
+      <div class="login-wrapper">
 
-      <!-- navigation for hamburger menu -->
-       <div class="topnav">
-       <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a  href="javascript:void(0);" class="icon" (click)="hamburgerFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
-        <!-- Navigation links (hidden by default) -->
-        <div id="myLinks" *ngIf="isShowDiv" >
-          <a routerLink="home">Home</a>
-          <a routerLink="leaderboard">Leaderboard</a>
-          <a routerLink="player-profile">Player Profile</a>
-          <a routerLink="gamemodes">Game Modes</a>
-        </div>
+        <h3 class="login-btn" (click)="onLogin()" *ngIf="!isAuthenticated">Login</h3>
+        <button id="username" mat-button [matMenuTriggerFor]="beforeMenu" [style]="{display: !isAuthenticated ? 'none' : 'block'}">{{playerInfo.username}} </button>
 
-        </div>
+        <!-- navigation for hamburger menu -->
+        <div class="topnav">
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+          <a  href="javascript:void(0);" class="icon" (click)="hamburgerFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+          <!-- Navigation links (hidden by default) -->
+          <div id="myLinks" *ngIf="isShowDiv" >
+            <a routerLink="home">Home</a>
+            <a routerLink="leaderboard">Leaderboard</a>
+            <a routerLink="player-profile">Player Profile</a>
+            <a routerLink="gamemodes">Game Modes</a>
+          </div>
 
+          </div>
+
+          <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button id="username" mat-button [matMenuTriggerFor]="beforeMenu" [style]="{display: !isAuthenticated ? 'none' : 'block'}"><fa-icon [icon]="faCaretDown"></fa-icon> {{playerInfo.username}}</button>
         <mat-menu #beforeMenu="matMenu" xPosition="before">
-      <button id="username" mat-button [matMenuTriggerFor]="beforeMenu" [style]="{display: !isAuthenticated ? 'none' : 'block'}"><fa-icon [icon]="faCaretDown"></fa-icon> {{playerInfo.username}}</button>
-      <mat-menu #beforeMenu="matMenu" xPosition="before">
-        <button mat-menu-item (click)="onPlayerStats()">Player Stats</button>
-        <button mat-menu-item>Leaderboards</button>
-        <button mat-menu-item (click)="onLogout()">Log Out</button>
-      </mat-menu>
-    </div>
+          <button mat-menu-item (click)="onPlayerStats()">Player Stats</button>
+          <button mat-menu-item>Leaderboards</button>
+          <button mat-menu-item (click)="onLogout()">Log Out</button>
+        </mat-menu>
 
-</header>
+      </div>
+
+  </header>
+
 </html>
