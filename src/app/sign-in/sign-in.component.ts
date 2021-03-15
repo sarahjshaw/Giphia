@@ -23,12 +23,10 @@ export class SignInComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
     this.firebaseService.login(email, password).subscribe( data => {
-      console.log(data)
       this.firebaseService.fetchUserProfile(data.localId);
       this.router.navigate(['/home']);
     }, error => {
       this.reqError = error.message;
-      console.log(error)
     });
     form.reset();
   }
@@ -42,7 +40,6 @@ export class SignInComponent implements OnInit {
       this.router.navigate(['/home']);
     }, error => {
       this.reqError = error.message;
-      console.log(error)
     })
     form.reset()
   }

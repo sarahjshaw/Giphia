@@ -70,7 +70,7 @@ mat-card {
   border-top: 10px solid  #4CC9F0;
   width: 40%;
   margin: 0 auto 50px;
-  height: 40%;
+  height: 35%;
 }
 
 mat-card-content {
@@ -81,7 +81,7 @@ mat-card-content {
 }
 
 .cards-wrapper {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 hr {
@@ -92,7 +92,9 @@ hr {
 
   .cards-wrapper {
     display: flex;
-    height: 50%;
+    height: 700px;
+    font-size: large;
+    line-height: 2em;
   }
 
 }

@@ -10,11 +10,7 @@ import { FirebaseService } from '../services/firebase.service';
 })
 export class PlayerProfileComponent implements OnInit {
 
-  playerName:string;
-  signUpYear:number = 2021;
-  highestScoreEndless:number;
   playerRanking:number = 2;
-  numberOfGamesPlayed: number = 3;
 
   playerInfo: any = '';
 
@@ -28,12 +24,6 @@ ngOnInit() {
   })
 }
 
-
-playCount(){
-    this.numberOfGamesPlayed = this.numberOfGamesPlayed += 1;
-    // newNumber = this.numberOfGamesPlayed += 1;
-};
-
   playGameRoute(){
     this.router.navigateByUrl('/gamemodes');
   };
@@ -42,10 +32,5 @@ playCount(){
     this.router.navigateByUrl('/chooseavatar');
   };
 
-// resetStats() {
-// //   clearInterval(interval);
-// //   second = 0;
-// //   minute = 0;
-// //   timer.innerHTML = `${minute}mins ${second}secs`;
-// // }
+
 }

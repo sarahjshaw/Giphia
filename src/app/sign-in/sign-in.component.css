@@ -1,24 +1,29 @@
 html, body {
   background: linear-gradient(142deg, rgba(114,9,183,1) 35%, rgba(148,70,200,1) 100%);
   height: 100vh;
-  padding-top: 120px;
+  padding-top: 70px;
 }
 
 
 form {
+  max-height: 500px;
+  font-family: 'poppins';
   background-color: white;
   margin:  0 auto 50px;
-  padding: 3em;
+  padding: 2em;
   display: flex;
   flex-direction: column;
   width: 50%;
   border: 1px solid grey;
   border-radius: 5px;
-  box-shadow: 0px 0px 0px 8px #000000, 0px 0px 0px 16px #4B4C4B, 0px 0px 0px 24px #828482, 0px 0px 0px 31px #B2B5B2, 0px 0px 0px 39px #DADDDA, 5px 5px 15px 5px rgba(0,0,0,0);
+  box-shadow: 0px 0px 0px 8px rgb(202, 134, 247), 0px 0px 0px 16px rgb(188, 94, 250), 0px 0px 0px 24px rgb(173, 76, 238), 0px 0px 0px 31px rgb(153, 56, 218), 0px 0px 0px 39px rgb(137, 44, 199), 5px 5px 15px 5px rgb(233, 221, 241);
 }
 
 h2 {
   text-align: center;
+  font-family: 'poppins';
+  font-weight: 700;
+  font-style: italic;
 }
 
 input, button {
@@ -44,4 +49,12 @@ a {
 .req-error {
   background-color: rgb(218, 116, 133);
   color: rgb(207, 55, 55);
+}
+
+@media only screen and (min-width: 600px) {
+
+  form {
+    max-width: 400px;
+  }
+
 }
