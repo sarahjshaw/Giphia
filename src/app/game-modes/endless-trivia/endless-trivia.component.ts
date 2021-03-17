@@ -95,12 +95,8 @@ export class EndlessTriviaComponent implements OnInit {
   delay = timer(1000 * 2);
 
   nextQuestion() {
-<<<<<<< HEAD
     this.delay.subscribe((x) => this.ngOnInit());
     //Should also push user's current score
-=======
-    this.ngOnInit();
->>>>>>> leaderboard
   }
 
   addPoint() {
@@ -114,16 +110,6 @@ export class EndlessTriviaComponent implements OnInit {
   gameOver() {
     this.firebaseService.updateEndlessScore(this.user_score);
     this.firebaseService.updateGamesPlayed();
-<<<<<<< HEAD
-    // if (this.user_score > this.high_score) {
-    //   this.high_score = this.user_score;
-    //   //push?
-    //   } else {
-    // alert("Did not beat high score")
-    //   }
-  }
-=======
   }
 
->>>>>>> leaderboard
 }
