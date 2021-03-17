@@ -1,5 +1,4 @@
-import { ɵNullViewportScroller } from '@angular/common';
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Giphy } from 'src/app/models/giphy.model';
 import { Trivia } from 'src/app/models/trivia.model';
 import { GiphyService } from 'src/app/services/giphy-api.service';
@@ -96,8 +95,12 @@ export class EndlessTriviaComponent implements OnInit {
   delay = timer(1000 * 2);
 
   nextQuestion() {
+<<<<<<< HEAD
     this.delay.subscribe((x) => this.ngOnInit());
     //Should also push user's current score
+=======
+    this.ngOnInit();
+>>>>>>> leaderboard
   }
 
   addPoint() {
@@ -111,6 +114,7 @@ export class EndlessTriviaComponent implements OnInit {
   gameOver() {
     this.firebaseService.updateEndlessScore(this.user_score);
     this.firebaseService.updateGamesPlayed();
+<<<<<<< HEAD
     // if (this.user_score > this.high_score) {
     //   this.high_score = this.user_score;
     //   //push?
@@ -118,4 +122,8 @@ export class EndlessTriviaComponent implements OnInit {
     // alert("Did not beat high score")
     //   }
   }
+=======
+  }
+
+>>>>>>> leaderboard
 }

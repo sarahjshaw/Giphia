@@ -1,21 +1,15 @@
-<!-- <div class="graphicsArea">
-    <img src="assets/images/giphiacircle.jpg" alt="Giphia Logo">
-    </div> -->
- <body>   
-<div class="leaderboard">
-    <h1>High Scores</h1>
+<body>
+  <div class="leaderboard">
+      <h1>Endless Trivia High Scores</h1>
+      <div class="list-wrapper">
+        <ul *ngFor="let player of players, let i = index">
+          <li [ngClass]="{'gold': i === 0, 'silver': i === 1, 'bronze': i === 2}">{{i + 1}} - {{player.username}} <span id="score">Score: {{player.bestScoreEndless}} </span></li>
+        </ul>
+      </div>
 
-    <li>{{playerScore}}</li>
-    <li>{{playerScore}}</li>
-    <li>{{playerScore}}</li>
-    <li>{{playerScore}}</li>
-    <li>{{playerScore}}</li>
-    <li>{{playerScore}}</li>
-    <li>{{playerScore}}</li>
+  </div>
 
-</div>
-
-<button (click)="playGameRoute()" (click)="playCount()" >Play</button>
+  <!-- <button (click)="playGameRoute()">Play</button> -->
 
 </body>
 

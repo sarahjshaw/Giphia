@@ -3,7 +3,7 @@
     <form #authForm="ngForm" (ngSubmit)="onSignup(authForm)">
         <h2>Sign up</h2>
         <mat-form-field>
-          <input matInput id="username" type="text" ngModel name="username" placeholder="Username" #username="ngModel" required>
+          <input matInput id="username" type="text" ngModel name="username" placeholder="Username" #username="ngModel" required max="14">
         </mat-form-field>
         <mat-form-field>
           <input matInput id="email" type="email" ngModel name="email" placeholder="Email" #email="ngModel" required email>

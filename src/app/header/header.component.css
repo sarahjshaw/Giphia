@@ -438,6 +438,7 @@ div.topnav{
   background-color:transparent;
   color:#39065a;
   height:60px;
+
 }
 
 
@@ -450,7 +451,7 @@ div.topnav{
 
 
 
-}
+
 span.mat-button-wrapper{
 font-size:13pt;
 }
@@ -463,6 +464,8 @@ font-size:13pt;
   margin-left:0px;
   margin-top:2px;
   padding-left:9px;
+}
+
 }
 
 }

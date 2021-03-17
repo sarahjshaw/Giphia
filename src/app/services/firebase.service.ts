@@ -26,7 +26,7 @@ export class FirebaseService {
               private router: Router) {}
 
   fetchLeaderboard() {
-    this.http.get(`https://giphia-9e631-default-rtdb.firebaseio.com/users.json`)
+    return this.http.get(`https://giphia-9e631-default-rtdb.firebaseio.com/users.json`)
       .pipe(map((resData) => {
         const leaderboardArr = [];
         for (let key in resData) {
@@ -34,7 +34,6 @@ export class FirebaseService {
         }
         return leaderboardArr;
       }))
-      .subscribe(data => console.log(data))
   }
 
   fetchUserProfile(uid: string) {
