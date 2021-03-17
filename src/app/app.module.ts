@@ -22,6 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChooseAvatarComponent } from './choose-avatar/choose-avatar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CarouselImgComponent } from './carousel-img/carousel-img.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     TimeChallengeComponent,
     EndlessTriviaComponent,
     PlayerProfileComponent,
-    ChooseAvatarComponent
+    ChooseAvatarComponent,
+    CarouselImgComponent
   ],
   imports: [
     BrowserModule,

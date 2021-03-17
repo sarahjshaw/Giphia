@@ -1,17 +1,21 @@
-.avatar{
+/* .avatar{
     border-radius: 50%;
     background-color:gray;
-    width: 50px;
-    height:50px;
-    margin-left: 2%;
+    width: 100px;
+    height:100px;
 }
 
-html {
-    background: rgb(58,12,163);
-    background: linear-gradient(180deg, rgba(58,12,163,1) 0%, rgba(114,9,183,1) 94%);
-    height: 100vh;
-  }
+.avatarOptions {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+} */
 
-h1{
-    
+.container {
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  width: 300px;
+  padding: 3em;
 }
+
