@@ -88,9 +88,8 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 99999;
-  height: 100%;
-  width: 100%;
-  height: 100%;
+  width: 101%;
+  height: 101%;
   background-color: #39065a;
 }
 
@@ -106,7 +105,7 @@ section {
   height: 100px;
   font-family: "Poppins", sans-serif;
   text-align: center;
-  /* line-height: 1.6px; */
+  line-height: 50px;
 }
 
 #end_button_cont {
@@ -135,6 +134,9 @@ section {
   color: white;
 }
 
+.clickHome {
+  font-size: 20px;
+}
 .endingHeader {
   padding: 10vh 0vw 5vh 0vw;
   font-size: 50px;
@@ -154,38 +156,6 @@ button {
   justify-content: center;
   align-items: center;
 }
-
-/* #wrongAnswerPopUp {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: black;
-  width: 100px;
-  height: 100px;
-  padding: 50px 30px 10px 30px;
-  text-align: center;
-  z-index: 100;
-  color: Red;
-  outline: 10px solid #ffff;
-  outline-offset: -30px;
-}
-
-#correctAnswerPopUp {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: green;
-  width: 100px;
-  height: 100px;
-  padding: 50px 30px 10px 30px;
-  text-align: center;
-  z-index: 100;
-  color: white;
-  outline: 10px solid #ffff;
-  outline-offset: -30px;
-} */
 
 body {
   height: 90vh;
@@ -282,6 +252,43 @@ button:hover {
   background-color: #3a0ca3;
   font-size: 16px;
   transition: 0.3s ease-in-out;
+}
+
+#correct {
+  background: rgb(55,204,82);
+  box-shadow: 0vw 0vw 0vw .3vw rgba(55,204,82,1);
+}
+
+#wrong {
+  background: rgb(255,0,35);
+background: radial-gradient(circle, rgba(255,0,35,1) 36%, rgba(251,19,84,1) 98%);
+box-shadow: 0vw 0vw 0vw .3vw rgba(251,19,84,1);
+  }
+
+#correct,
+#wrong {
+  width: 40vw;
+  height: 10vh;
+  color: white;
+  position: fixed;
+  left: 30vw;
+  bottom: 45vh;
+  font-family: "Bangers", cursive;
+  font-size: 30px;
+  font-weight: 200;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 10vh;
+}
+
+.fade {
+  width: 200vw;
+  height: 200vh;
+  position: fixed;
+  left: 0vw;
+  bottom: 0vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
 }
 
 /* PINK - #f72585

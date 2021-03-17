@@ -352,6 +352,7 @@ div.topnav{
   align-items: center;
   justify-content: center;
 }
+
 /* Style the hamburger menu */
 .topnav a.icon {
 
@@ -380,11 +381,16 @@ div.topnav{
 }
 
 
-}
+
+
 
 /* Style the active link (or home/logo) */
 .active {
 
   color: white;
+}
+
+
+
 }
 }
