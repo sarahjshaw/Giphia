@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from 'src/app/services/data.service';
+import { PlayerProfile } from '../models/player-profile.model';
 import { FirebaseService } from '../services/firebase.service';
 
 @Component({
@@ -10,24 +10,25 @@ import { FirebaseService } from '../services/firebase.service';
 })
 export class LeaderboardComponent implements OnInit {
 
-  numberOfGamesPlayed: number = 0;
-  playerScore = '50000';
+  players: PlayerProfile[] = [];
 
   constructor(public router: Router,
-              private firebaseService: FirebaseService,
-              public data: DataService) { }
+              private firebaseService: FirebaseService) { }
 
   ngOnInit(): void {
-    this.firebaseService.fetchLeaderboard()
-    
-  }
+    this.firebaseService.fetchLeaderboard().subscribe(newArray => {
+      let limitedArray = newArray.sort((a, b) => {
+        const first = a.bestScoreEndless;
+        const second = b.bestScoreEndless;
+        return second - first;
+      })
+      this.players = limitedArray.slice(0, 10);
+    })
 
-  playCount(){
-    this.numberOfGamesPlayed += 1;
   }
 
   playGameRoute(){
     this.router.navigateByUrl('/gamemodes');
-  };
+  }
 
 }
