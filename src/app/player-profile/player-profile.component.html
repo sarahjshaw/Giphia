@@ -3,8 +3,15 @@
 
     <!-- <i class="fas fa-glasses"></i><img class="avatar" src='' alt="" /> -->
     <i class="fas fa-glasses"></i><img class="avatar" src='https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=pink' alt="player-avatarOption" />
+    
+    <ng-template [ngIf]="playerInfo.username" [ngIfElse]="player" >
+      <h1>{{playerInfo.username}}</h1>
+    </ng-template>
 
-    <h1>{{playerInfo.username}}</h1>
+    <ng-template #player>
+      <h1>Player</h1>
+    </ng-template>
+    
 
     <p class="yearStarted">Player since: <span id="date">{{ playerInfo.startDate | date: 'longDate' }}</span></p>
 
@@ -30,4 +37,5 @@
     <button class="createAvatarbutton" (click)="CreateAvatarRoute()">Create Avatar</button>
     <button class="resetStatsButton" >Reset Stats</button>
   </div>
+ 
 </body>
