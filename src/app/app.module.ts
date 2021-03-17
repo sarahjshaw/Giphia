@@ -23,6 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChooseAvatarComponent } from './choose-avatar/choose-avatar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CarouselImgComponent } from './carousel-img/carousel-img.component';
+import { MatRippleModule } from '@angular/material/core'
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +53,9 @@ import { CarouselImgComponent } from './carousel-img/carousel-img.component';
     MatDividerModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatRippleModule,
+    MatDialogModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}

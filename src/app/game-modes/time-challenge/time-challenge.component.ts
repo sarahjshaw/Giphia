@@ -6,7 +6,8 @@ import { TriviaService } from 'src/app/services/trivia-api.service';
 import { RouterModule } from '@angular/router';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-
+import {MatRippleModule} from '@angular/material/core';
+import { timer } from 'rxjs'
 
 @Component({
   selector: 'app-test-count',
@@ -26,8 +27,19 @@ export class TimeChallengeComponent implements OnInit {
     i = 0;
     user_answer: string;
     user_score = 0;
-    strikes = 0;
     high_score = 0;
+
+    centered = false;
+    disabled = false;
+    unbounded = false;
+  
+    ripple_radius: "100px";
+    ripple_color: "red";
+
+    delay = timer(1000 * 2);
+
+    correct_message = false;
+    wrong_message = false;
 
   constructor(private triviaService: TriviaService, 
     private giphyService: GiphyService,
@@ -37,6 +49,8 @@ export class TimeChallengeComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.correct_message = false;
+        this.wrong_message = false;
     this.triviaService.fetchRandomQuestion().subscribe((result) => {
       this.randomAnswer = result[0].answer.toLowerCase();
       this.randomQuestion = result[0].question;
@@ -57,7 +71,6 @@ export class TimeChallengeComponent implements OnInit {
     this.interval = setInterval(() => {
       if(this.timeLeft > 0) {
         this.timeLeft--;
-        this.gameOver();
        } //else {
       //   this.timeLeft = 60; //commented this out to prevent endless looping
       // }
@@ -81,70 +94,56 @@ resetButton() {
   this.giphHint = this.giphArray[this.i].images.original.url;
     }
   
+    // submitAnswer() {
+    //   if (this.randomAnswer != this.user_answer.toLowerCase()) {
+    //     console.log('WRONG');
+    //     this.strikes = this.strikes + 1;
+    //     this.wrong_message = true;
+    //     this.delay.subscribe((wrong_message) => this.wrong_message = false);
+    //     if (this.strikes === 3) {
+    //       console.log('Youre out!');
+    //       this.user_answer = ''; 
+    //       this.strikes = 0;
+    //       this.nextQuestion();
+    //     }
+    //   } else {
+    //     console.log('CORRECT');
+    //     this.correct_message = true;
+    //     this.delay.subscribe((correct_message) => this.correct_message = false);
+    //     this.addPoint();
+    //     this.nextQuestion();
+    //     this.user_answer = '';
+    //     this.strikes = 0;
+    //   }
+    // }
+  
     submitAnswer() {
-      if (this.randomAnswer != this.user_answer.toLowerCase()) {
-        console.log('WRONG');
-        alert("Wrong!"); //alert works better than the popup
-        //sound?
-        // setTimeout(() => {     this popup works but is to slow
-        //   this.toggleShowFalse() 
-        // }, 20000);
-        this.strikes = this.strikes + 1;
-        if (this.strikes === 3) {
-          console.log('Youre out!');
-          this.user_answer = ''; 
-          this.strikes = 0;
-          this.nextQuestion();
-          // this.timeLeft = 0; //cw - if third strike than the timer is equal to 0?
-          // clearInterval(this.interval);//cw - clear the timer when wrong?
-        }
-        
-      } else {
+      if (this.randomAnswer.includes(this.user_answer.toLowerCase())) {
         console.log('CORRECT');
-        //you did it message
-        // setTimeout(() => {     this popup works but is to slow
-        //   this.toggleShowTrue() 
-        // }, 800);
         this.addPoint();
-        alert("Correct!");//alert works better than the popup
         this.nextQuestion();
         this.user_answer = '';
-        this.strikes = 0;
+        this.correct_message = true;
+        this.delay.subscribe((correct_message) => this.correct_message = false);
+      } else {
+        console.log('WRONG');
+        this.wrong_message = true;
+        this.delay.subscribe((wrong_message) => this.wrong_message = false);
       }
     }
-  
+
     nextQuestion() {
-      this.ngOnInit();
-      //Should also push user's current score 
+      this.delay.subscribe(x => this.ngOnInit())
     }
   
     addPoint() {
       this.user_score = this.user_score + 1;
     }
-  
-    removePoint() {
-      this.user_score = this.user_score - 1;
-    }
-  
+
     homeClick(){
     this.router.navigateByUrl('/home');
   }
- 
-  isShownWrong: boolean = false;
-  isShownTrue: boolean = false;
 
-  
- toggleShowFalse(){
-   this.isShownWrong = !this.isShownWrong;
- }
-
- toggleShowTrue(){
-  this.isShownTrue = !this.isShownTrue;
-}
-
-gameOver() {
-
-    }
   }
 
 
