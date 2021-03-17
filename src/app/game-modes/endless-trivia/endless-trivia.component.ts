@@ -5,7 +5,11 @@ import { Trivia } from 'src/app/models/trivia.model';
 import { GiphyService } from 'src/app/services/giphy-api.service';
 import { TriviaService } from 'src/app/services/trivia-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
-
+import { MatRippleModule } from '@angular/material/core';
+import { PlayerProfileComponent } from 'src/app/player-profile/player-profile.component';
+import { MatDialog } from '@angular/material/dialog';
+import { delay } from 'rxjs/operators';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-endless-trivia',
@@ -19,7 +23,8 @@ export class EndlessTriviaComponent implements OnInit {
   constructor(
     private giphyService: GiphyService,
     private triviaService: TriviaService,
-    private firebaseService: FirebaseService
+    private firebaseService: FirebaseService,
+    private dialog: MatDialog
   ) {}
 
   giphHint: any;
@@ -30,9 +35,22 @@ export class EndlessTriviaComponent implements OnInit {
   user_answer: string;
   user_score = 0;
   strikes = 0;
-  // user_highscore = this.firebaseService.fetchUserProfile.name;
+
+  //This is ripple stuff if we want it
+  centered = false;
+  disabled = false;
+  unbounded = true;
+  ripple_radius: '100px';
+  ripple_color: string;
+  event: any;
+  sound: string;
+
+  correct_message = false;
+  wrong_message = false;
 
   ngOnInit(): void {
+        this.correct_message = false;
+        this.wrong_message = false;
     this.triviaService.fetchRandomQuestion().subscribe((result) => {
       this.randomAnswer = result[0].answer.toLowerCase();
       this.randomQuestion = result[0].question;
@@ -49,32 +67,36 @@ export class EndlessTriviaComponent implements OnInit {
   }
 
   nextGiphHint() {
-this.i = this.i + 1;
-this.giphHint = this.giphArray[this.i].images.original.url;
+    this.i = this.i + 1;
+    this.giphHint = this.giphArray[this.i].images.original.url;
   }
 
-  submitAnswer() {
-    if (this.randomAnswer != this.user_answer.toLowerCase()) {
+  submitAnswer(event) {
+    if (this.randomAnswer.includes(this.user_answer.toLowerCase())) {
+      console.log('CORRECT');
+      this.addPoint();
+      this.nextQuestion();
+      this.user_answer = '';
+      this.correct_message = true;
+      this.delay.subscribe((correct_message) => this.correct_message = false);
+    } else {
       console.log('WRONG');
-      alert("Wrong!");
       this.strikes = this.strikes + 1;
+      this.wrong_message = true;
+      this.delay.subscribe((wrong_message) => this.wrong_message = false);
       if (this.strikes === 3) {
         console.log('Youre out!');
         this.user_answer = '';
         this.nextQuestion();
         this.gameOver();
       }
-    } else {
-      console.log('CORRECT');
-      alert("Correct!");
-      this.addPoint();
-      this.nextQuestion();
-      this.user_answer = '';
     }
   }
 
+  delay = timer(1000 * 2);
+
   nextQuestion() {
-    this.ngOnInit();
+    this.delay.subscribe((x) => this.ngOnInit());
     //Should also push user's current score
   }
 
@@ -87,13 +109,13 @@ this.giphHint = this.giphArray[this.i].images.original.url;
   }
 
   gameOver() {
-this.firebaseService.updateEndlessScore(this.user_score);
-this.firebaseService.updateGamesPlayed();
-// if (this.user_score > this.high_score) {
-//   this.high_score = this.user_score;
-//   //push?
-//   } else {
-// alert("Did not beat high score")
-//   }
-}
+    this.firebaseService.updateEndlessScore(this.user_score);
+    this.firebaseService.updateGamesPlayed();
+    // if (this.user_score > this.high_score) {
+    //   this.high_score = this.user_score;
+    //   //push?
+    //   } else {
+    // alert("Did not beat high score")
+    //   }
+  }
 }

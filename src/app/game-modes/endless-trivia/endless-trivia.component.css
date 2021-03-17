@@ -108,11 +108,58 @@ button {
   background-color: #f72585;
 }
 
+.default {
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-family: "Bangers", cursive;
+  font-size: 15px;
+  font-weight: 200;
+  width: 50vw;
+  background-color: #f72585;
+}
+
 button:hover {
   background-color: #3a0ca3;
   font-size: 16px;
   transition: 0.3s ease-in-out;
 }
+
+#correct {
+  background: rgb(55,204,82);
+  box-shadow: 0vw 0vw 0vw .3vw rgba(55,204,82,1);
+}
+
+#wrong {
+  background: rgb(255,0,35);
+background: radial-gradient(circle, rgba(255,0,35,1) 36%, rgba(251,19,84,1) 98%);
+box-shadow: 0vw 0vw 0vw .3vw rgba(251,19,84,1);
+  }
+
+  #correct, #wrong {
+    width: 40vw;
+    height: 10vh;
+    color: white;
+  position: fixed;
+  left: 30vw;
+  bottom: 45vh;
+  font-family: "Bangers", cursive;
+  font-size: 30px;
+  font-weight: 200;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 10vh;
+  }
+
+  .fade {
+    width: 200vw;
+    height: 200vh;
+    position: fixed;
+left: 0vw;
+bottom: 0vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+  }
 /* PINK - #f72585
 PURP - #7209b7
 DPRP - #3a0ca3

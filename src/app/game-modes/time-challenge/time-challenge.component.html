@@ -43,14 +43,16 @@
       />
       <button
         (click)="submitAnswer()"
-        [disabled]="timeLeft === 0 ? true : false"
+        matRipple
+        matRippleCentered="centered"
+        matRippleDisabled="disabled"
+        matRippleUnbounded="unbounded"
+        matRippleRadius="ripple_radius"
+        matRippleColor="ripple_color"
       >
         Submit
       </button>
     </div>
-
-    <div *ngIf="isShownTrue" id="correctAnswerPopUp">Correct!</div>
-    <div *ngIf="isShownWrong" id="wrongAnswerPopUp">Wrong!</div>
 
     <!-- End of Game Pop-up -->
     <div [style.display]="timeLeft === 0 ? 'block' : 'none'" id="gameOver">
@@ -63,4 +65,10 @@
       </div>
     </div>
   </body>
+  <div id="correct_message" *ngIf="correct_message">
+    <div class="fade"><div id="correct">Crushed it</div></div>
+  </div>
+  <div id="wrong_message" *ngIf="wrong_message">
+    <div class="fade"><div id="wrong">Try again</div></div>
+  </div>
 </html>
