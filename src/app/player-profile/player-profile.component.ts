@@ -11,6 +11,7 @@ import { FirebaseService } from '../services/firebase.service';
 export class PlayerProfileComponent implements OnInit {
 
   playerRanking:number = 2;
+  // isAuthenticated: boolean = false;
 
   playerInfo: any = '';
 
@@ -21,7 +22,9 @@ export class PlayerProfileComponent implements OnInit {
 ngOnInit() {
   this.firebaseService.playerProfile.subscribe(playerData => {
     this.playerInfo = playerData;
+    
   })
+  
 }
 
   playGameRoute(){

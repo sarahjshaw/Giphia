@@ -68,8 +68,8 @@ h3 {
 mat-card {
   border-radius: 15px;
   border-top: 10px solid  #4CC9F0;
-  width: 40%;
-  margin: 0 auto 50px;
+  width: 66%;
+  margin: 5px auto 50px;
   height: 35%;
 }
 
@@ -97,4 +97,16 @@ hr {
     line-height: 2em;
   }
 
+}
+
+/* computer screen */
+@media only screen and (min-width: 768px){
+
+  mat-card {
+    border-radius: 15px;
+    border-top: 10px solid  #4CC9F0;
+    width: 40%;
+    margin: 5px auto 50px;
+    height: 35%;
+  }
 }

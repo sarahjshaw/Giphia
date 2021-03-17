@@ -22,6 +22,7 @@ img {
 
 .login-btn {
   margin:20px 10px 0px 10px;
+  padding-bottom:0px;
   width: 60px;
   height: 30px;
   background-color: #39065a;
@@ -158,6 +159,33 @@ div.topnav{
   padding-top:0px
 }
 
+.hamburgerMenu{
+  background-color: #f72585;
+  margin-top:0px;
+  margin-bottom:2px;
+  padding-bottom:0px;
+  padding-top:2px;
+  height:25px;
+}
+
+.hamburgerDropDown{
+  background-color:transparent;
+  color:#39065a;
+  height:40px;
+}
+
+h3{
+  margin-bottom:0px;
+}
+
+#username{
+  font-size:8pt;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  margin-left:0px;
+  padding-left:4px;
+}
 
 
 /*style for tablet view*/
@@ -264,6 +292,27 @@ div.topnav{
 }
 
 
+.hamburgerMenu{
+  background-color: #f72585;
+}
+
+.hamburgerDropDown{
+  background-color:transparent;
+  color:#39065a;
+  height:50px;
+}
+
+#username{
+  font-size:10pt;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  margin-left:0px;
+  margin-top:2px;
+  padding-left:8px;
+}
+
+
 /*style for desktop view*/
 @media only screen and (min-width: 769px){
   button {
@@ -363,9 +412,9 @@ div.topnav{
 }
 
 /* Add a grey background color on mouse-over */
-a.icon:hover {
-  background-color:rgba(57,6,90,0.4);
-  color:white;
+/* a.icon:hover { */
+  /* background-color:rgba(57,6,90,0.4); */
+  /* color:white;
   z-index: 100;
   border-radius: 50%;
   width:60px;
@@ -374,23 +423,46 @@ a.icon:hover {
   display:flex;
   align-items: center;
   justify-content:center;
-}
+} */
 
 div.topnav{
   padding-top:0px
 }
 
+.hamburgerMenu{
+  background-color: #f72585;
+  margin-top:20px;
+}
+
+.hamburgerDropDown{
+  background-color:transparent;
+  color:#39065a;
+  height:60px;
+}
 
 
 
 
 /* Style the active link (or home/logo) */
 .active {
-
   color: white;
 }
 
 
 
 }
+span.mat-button-wrapper{
+font-size:13pt;
+}
+
+#username{
+  font-size:14pt;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  margin-left:0px;
+  margin-top:2px;
+  padding-left:9px;
+}
+
 }

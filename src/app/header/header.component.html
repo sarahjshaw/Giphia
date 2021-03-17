@@ -23,6 +23,21 @@
             <a routerLink="player-profile">Player Profile</a>
             <a routerLink="gamemodes">Game Modes</a>
           </div>
+    
+
+<!-- hamburger menu - using angular materials -->
+<button mat-button [matMenuTriggerFor]="menu" class="hamburgerMenu">
+  <a  href="javascript:void(0);" class="icon" >
+  <i class="fa fa-bars"></i>
+</a></button>
+<!-- drop-down options using angular materials -->
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="routeHome()" class="hamburgerDropDown">Home</button>
+  <button mat-menu-item (click)="routeLeaderBoard()" class="hamburgerDropDown">Leaderboard</button>
+  <button mat-menu-item (click)="routePlayerProfile()" class="hamburgerDropDown">player-profile</button>
+  <button mat-menu-item (click)="routeGameModes()" class="hamburgerDropDown">Game-Modes</button>
+</mat-menu>
+</div>
 
           </div>
 
@@ -45,3 +60,6 @@
         <button mat-menu-item>Leaderboards</button>
         <button mat-menu-item (click)="onLogout()">Log Out</button>
       </mat-menu> -->
+
+      </mat-menu>
+
