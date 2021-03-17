@@ -16,10 +16,14 @@ export class ChooseAvatarComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  // import Avatars from '@dicebear/avatars';
-  // import sprites from '@dicebear/avatars-bottts-sprites';
-  
-  // let avatars = new Avatars(sprites());
-  // let svg = avatars.create('custom-seed');
+  public slides = [
+    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=purple" },
+    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=pink" },
+    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=blue" },
+    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=green" },
+    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=yellow" },
+    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=orange" },
+    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=red" }
+  ];
 
 }
