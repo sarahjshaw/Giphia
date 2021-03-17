@@ -53,10 +53,27 @@ export class HeaderComponent implements OnInit {
     this.isShowDiv = !this.isShowDiv;
   }
 
+  routeHome(){
+    this.router.navigate(['/home'])
+  }
+
+  routeLeaderBoard(){
+    this.router.navigate(['/leaderboard'])
+  }
+
+  routePlayerProfile(){
+    this.firebaseService.user.subscribe(userData => {
+      this.firebaseService.fetchUserProfile(userData.id);
+    })
+    this.router.navigateByUrl('/player-profile');
+  };
+
+  routeGameModes(){
+    this.router.navigate(['/gamemodes'])
+  }
+
 
 }
 
 
-// hamburgerFunction(){
 
-// }
