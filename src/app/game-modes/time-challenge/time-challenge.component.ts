@@ -6,51 +6,53 @@ import { TriviaService } from 'src/app/services/trivia-api.service';
 import { RouterModule } from '@angular/router';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-import {MatRippleModule} from '@angular/material/core';
-import { timer } from 'rxjs'
+import { MatRippleModule } from '@angular/material/core';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-test-count',
   templateUrl: './time-challenge.component.html',
-  styleUrls: ['./time-challenge.component.css']
+  styleUrls: ['./time-challenge.component.css'],
 })
 export class TimeChallengeComponent implements OnInit {
-    giph: Giphy;
-    trivia: Trivia;
-    timeLeft: number = 60;
-    interval;
+  giph: Giphy;
+  trivia: Trivia;
+  timeLeft: number = 60;
+  interval;
 
-    giphHint: any;
-    randomQuestion: any;
-    randomAnswer: any;
-    giphArray: any;
-    i = 0;
-    user_answer: string;
-    user_score = 0;
-    high_score = 0;
+  giphHint: any;
+  randomQuestion: any;
+  randomAnswer: any;
+  giphArray: any;
+  i = 0;
+  user_answer: string;
+  user_score = 0;
+  high_score = 0;
+  strikes = 0;
 
-    centered = false;
-    disabled = false;
-    unbounded = false;
-  
-    ripple_radius: "100px";
-    ripple_color: "red";
+  centered = false;
+  disabled = false;
+  unbounded = false;
 
-    delay = timer(1000 * 2);
+  ripple_radius: '100px';
+  ripple_color: 'red';
 
-    correct_message = false;
-    wrong_message = false;
+  delay = timer(1000 * 0.75);
 
-  constructor(private triviaService: TriviaService, 
+  correct_message = false;
+  wrong_message = false;
+
+  constructor(
+    private triviaService: TriviaService,
     private giphyService: GiphyService,
     private _location: Location,
     public routes: RouterModule,
     private router: Router
-    ) { }
+  ) {}
 
   ngOnInit(): void {
     this.correct_message = false;
-        this.wrong_message = false;
+    this.wrong_message = false;
     this.triviaService.fetchRandomQuestion().subscribe((result) => {
       this.randomAnswer = result[0].answer.toLowerCase();
       this.randomQuestion = result[0].question;
@@ -65,85 +67,63 @@ export class TimeChallengeComponent implements OnInit {
           this.startTimer();
         });
     });
-  } 
-  
-  startTimer() {
-    this.interval = setInterval(() => {
-      if(this.timeLeft > 0) {
-        this.timeLeft--;
-       } //else {
-      //   this.timeLeft = 60; //commented this out to prevent endless looping
-      // }
-    },1000)
   }
 
-resetButton() {
+  startTimer() {
+    this.interval = setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+      } //else {
+      //   this.timeLeft = 60; //commented this out to prevent endless looping
+      // }
+    }, 1000);
+  }
+
+  resetButton() {
     clearInterval(this.interval);
     this.timeLeft = 60;
     // this.ngOnInit;
     this.startTimer();
   }
 
- pauseButton() {
-  clearInterval(this.interval);
- }
- 
+  pauseButton() {
+    clearInterval(this.interval);
+  }
 
- nextGiphHint() {
-  this.i = this.i + 1;
-  this.giphHint = this.giphArray[this.i].images.original.url;
-    }
-  
-    // submitAnswer() {
-    //   if (this.randomAnswer != this.user_answer.toLowerCase()) {
-    //     console.log('WRONG');
-    //     this.strikes = this.strikes + 1;
-    //     this.wrong_message = true;
-    //     this.delay.subscribe((wrong_message) => this.wrong_message = false);
-    //     if (this.strikes === 3) {
-    //       console.log('Youre out!');
-    //       this.user_answer = ''; 
-    //       this.strikes = 0;
-    //       this.nextQuestion();
-    //     }
-    //   } else {
-    //     console.log('CORRECT');
-    //     this.correct_message = true;
-    //     this.delay.subscribe((correct_message) => this.correct_message = false);
-    //     this.addPoint();
-    //     this.nextQuestion();
-    //     this.user_answer = '';
-    //     this.strikes = 0;
-    //   }
-    // }
-  
-    submitAnswer() {
-      if (this.randomAnswer.includes(this.user_answer.toLowerCase())) {
-        console.log('CORRECT');
-        this.addPoint();
+  nextGiphHint() {
+    this.i = this.i + 1;
+    this.giphHint = this.giphArray[this.i].images.original.url;
+  }
+
+  submitAnswer() {
+    if (this.randomAnswer.includes(this.user_answer.toLowerCase())) {
+      console.log('CORRECT');
+      this.addPoint();
+      this.nextQuestion();
+      this.user_answer = '';
+      this.correct_message = true;
+      this.delay.subscribe((correct_message) => (this.correct_message = false));
+    } else {
+      console.log('WRONG');
+      this.wrong_message = true;
+      this.delay.subscribe((wrong_message) => (this.wrong_message = false));
+      this.strikes = this.strikes + 1;
+      if (this.strikes === 3) {
         this.nextQuestion();
-        this.user_answer = '';
-        this.correct_message = true;
-        this.delay.subscribe((correct_message) => this.correct_message = false);
-      } else {
-        console.log('WRONG');
-        this.wrong_message = true;
-        this.delay.subscribe((wrong_message) => this.wrong_message = false);
+        this.strikes = 0;
       }
     }
+  }
 
-    nextQuestion() {
-      this.delay.subscribe(x => this.ngOnInit())
-    }
-  
-    addPoint() {
-      this.user_score = this.user_score + 1;
-    }
+  nextQuestion() {
+    this.delay.subscribe((x) => this.ngOnInit());
+  }
 
-    homeClick(){
+  addPoint() {
+    this.user_score = this.user_score + 1;
+  }
+
+  homeClick() {
     this.router.navigateByUrl('/home');
   }
-
-  }
-
-
+}
