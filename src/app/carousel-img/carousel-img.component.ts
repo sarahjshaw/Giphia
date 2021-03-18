@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { trigger, transition, style, animate } from "@angular/animations";
 import { AvatarService } from '../services/avatar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carousel-img',
@@ -22,8 +23,9 @@ export class CarouselImgComponent implements OnInit {
   @Input() slides;
 
   currentSlide = 0;
-  
-  constructor(private avatarService: AvatarService) { }
+
+  constructor(private avatarService: AvatarService,
+              private router: Router) { }
 
   onPreviousClick() {
     const previous = this.currentSlide - 1;
@@ -39,9 +41,10 @@ export class CarouselImgComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onPickAvatar(path: string) {
-    console.log('hello')
-    this.avatarService.chooseAvatar.next(path)
+  onPickAvatar(imgPath) {
+    console.log(imgPath.src)
+    this.avatarService.chooseAvatar.next(imgPath.src)
+    this.router.navigate(['/player-profile'])
   }
 
 }
