@@ -40,8 +40,8 @@ export class CarouselImgComponent implements OnInit {
   }
 
   onPickAvatar(path: string) {
-    // console.log('hello')
-    // this.avatarService.chooseAvatar.next(path)
+    console.log('hello')
+    this.avatarService.chooseAvatar.next(path)
   }
 
 }
