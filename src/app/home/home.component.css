@@ -113,7 +113,7 @@ img {
     top:299px;
     right:18px;
    }
-  
+/* 
    @media only screen and (min-width: 376px){
 
     img {
@@ -134,7 +134,7 @@ img {
         font-size: 24px;
         cursor: pointer;
         display: flex;
-        align-items: center; 
+        align-items: center;
         justify-content: center;
         font-family: 'Poppins', sans-serif;
         font-weight: 600;
@@ -156,7 +156,7 @@ img {
       font-size: 20px;
       transition: .5s ease-in;
     }
-   }
+   } */
   /* ipad pro screen */
    @media only screen and (min-width: 769px){
     img {
@@ -178,7 +178,7 @@ img {
         font-size: 30px;
         cursor: pointer;
         display: flex;
-        align-items: center; 
+        align-items: center;
         justify-content: center;
         font-family: 'Poppins', sans-serif;
         font-weight: 600;
@@ -203,5 +203,5 @@ img {
    }
   }
 
-    
-  
+
+
