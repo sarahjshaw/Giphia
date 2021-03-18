@@ -1,5 +1,5 @@
 <!-- <h1>Time Challenge</h1> -->
-<html>
+<body>
   <section class="blocks">
     <button
       id="startbutton"
@@ -19,56 +19,54 @@
   <div class="ticker">
     <h1>SCORE: {{ user_score }}</h1>
   </div>
-  <!-- <head>
-  <script
-    src="https://kit.fontawesome.com/841224f046.js"
-    crossorigin="anonymous"
-  ></script>
-</head> -->
-  <body>
-    <div id="q_cont">
-      <h1>Question</h1>
-      <div>{{ randomQuestion }}</div>
-    </div>
-    <div id="h_cont">
-      <img src="{{ giphHint }}" alt="" />
-      <button id="next_hint" (click)="nextGiphHint()">Next Hint</button>
-    </div>
-    <div id="button_cont">
-      <input
-        id="user_answer"
-        type="text"
-        placeholder="  Your answer"
-        [(ngModel)]="user_answer"
-      />
-      <button
-        (click)="submitAnswer()"
-        matRipple
-        matRippleCentered="centered"
-        matRippleDisabled="disabled"
-        matRippleUnbounded="unbounded"
-        matRippleRadius="ripple_radius"
-        matRippleColor="ripple_color"
-      >
-        Submit
-      </button>
-    </div>
 
-    <!-- End of Game Pop-up -->
-    <div [style.display]="timeLeft === 0 ? 'block' : 'none'" id="gameOver">
-      <h1 class="endingHeader">Game Over!</h1>
-      <p id="endingParagraph">Don't worry. You can play again!</p>
-      <div id="end_button_cont">
-        <button class="replay" (click)="resetButton()">Play Again</button>
-        <!-- <p class="clickStart">Press Play Again to restart game.</p> -->
-        <button class="clickHome" (click)="homeClick()">Home</button>
-      </div>
+  <div id="q_cont">
+    <h1 id="q_title">Question</h1>
+    <div id="random_q">{{ randomQuestion }}</div>
+  </div>
+  <div id="giph_cont">
+    <div class="giph" *ngFor="let giph of giphArray">
+      <img src="{{ giph.images.original.url }}" alt="" />
     </div>
-  </body>
-  <div id="correct_message" *ngIf="correct_message">
-    <div class="fade"><div id="correct">Crushed it</div></div>
   </div>
-  <div id="wrong_message" *ngIf="wrong_message">
-    <div class="fade"><div id="wrong">Try again</div></div>
+  <div id="h_cont">
+    <img src="{{ giphHint }}" alt="" />
+    <button id="next_hint" (click)="nextGiphHint()">Next Hint</button>
   </div>
-</html>
+  <div id="button_cont">
+    <input
+      id="user_answer"
+      type="text"
+      placeholder="  Your answer"
+      [(ngModel)]="user_answer"
+    />
+    <button
+      (click)="submitAnswer()"
+      matRipple
+      matRippleCentered="centered"
+      matRippleDisabled="disabled"
+      matRippleUnbounded="unbounded"
+      matRippleRadius="ripple_radius"
+      matRippleColor="ripple_color"
+    >
+      Submit
+    </button>
+  </div>
+
+  <!-- End of Game Pop-up -->
+  <div [style.display]="timeLeft === 0 ? 'block' : 'none'" id="gameOver">
+    <h1 class="endingHeader">Game Over!</h1>
+    <p id="endingParagraph">Don't worry. You can play again!</p>
+    <div id="end_button_cont">
+      <button class="replay" (click)="resetButton()">Play Again</button>
+      <!-- <p class="clickStart">Press Play Again to restart game.</p> -->
+      <button class="clickHome" (click)="homeClick()">Home</button>
+    </div>
+  </div>
+</body>
+<div id="correct_message" *ngIf="correct_message">
+  <div class="fade"><div id="correct">Crushed it</div></div>
+</div>
+<div id="wrong_message" *ngIf="wrong_message">
+  <div class="fade"><div id="wrong">Try again</div></div>
+</div>
