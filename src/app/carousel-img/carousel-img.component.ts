@@ -46,5 +46,4 @@ export class CarouselImgComponent implements OnInit {
     this.avatarService.chooseAvatar.next(imgPath.src)
     this.router.navigate(['/player-profile'])
   }
-
 }
