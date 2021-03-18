@@ -1,17 +1,17 @@
 /* styles for phone/mobile display*/
 
 h1 {
-  font-family: 'Bangers', cursive;
+  font-family: "Bangers", cursive;
   color: white;
   font-size: 35px;
 }
 
-h1:hover{
+h1:hover {
   cursor: pointer;
   font-size: 36px;
 }
 
-.logo{
+.logo {
   max-width: 50vw;
   display: flex;
 }
@@ -21,8 +21,8 @@ img {
 }
 
 .login-btn {
-  margin:20px 10px 0px 10px;
-  padding-bottom:0px;
+  margin: 20px 10px 0px 10px;
+  padding-bottom: 0px;
   width: 60px;
   height: 30px;
   /* background-color: #39065a; */
@@ -36,22 +36,22 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
 
-.login-btn:hover{
+.login-btn:hover {
   background-color: #38065a98;
   box-shadow: 3px 3px 8px rgba(234, 5, 154);
   font-size: 17px;
   /* transition: .3s ease-in-out; */
 }
 
-.back-btn:hover{
-    background-color: #38065a98;
-    box-shadow: 3px 3px 8px rgba(234, 5, 154);
-    font-size: 16px;
-    transition: .3s ease-in-out;
+.back-btn:hover {
+  background-color: #38065a98;
+  box-shadow: 3px 3px 8px rgba(234, 5, 154);
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
 }
 
 header {
@@ -87,18 +87,17 @@ a {
 }
 
 button {
-  margin:10px 10px;
+  margin: 10px 10px;
   width: 60px;
   height: 30px;
   background-color: #39065a;
-  /* box-shadow: 2px 2px 7px #ec92cc; */
   border: none;
   border-radius: 20px;
-  color: #e4fbff;
+  color: white;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Style the navigation menu */
@@ -106,8 +105,8 @@ button {
   overflow: hidden;
   z-index: 100;
   padding-top: 0px;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -116,7 +115,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-top:10px;
+  margin-top: 10px;
   /* width:auto; */
   /* height:auto; */
   /* z-index: 100; */
@@ -124,8 +123,8 @@ button {
 
 /* Hide the links inside the navigation menu */
 .topnav #myLinks {
-  background-color:#4cc9f0;
-  color:white;
+  background-color: #4cc9f0;
+  color: white;
   /* margin-top:20px; */
   z-index: 100;
   display: flex;
@@ -143,91 +142,77 @@ button {
 
 /* Add a background color on mouse-over */
 a.icon:hover {
-  background-color:rgba(57,6,90,0.4);
+  background-color: rgba(57, 6, 90, 0.4);
   z-index: 100;
   border-radius: 50%;
 }
 
-.fa-bars{
-  color:white;
-  display:flex;
+.fa-bars {
+  color: white;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-div.topnav{
-  padding-top:0px
+div.topnav {
+  padding-top: 0px;
 }
 
-.hamburgerMenu{
+.hamburgerMenu {
   background-color: #f72585;
-  margin-top:0px;
-  margin-bottom:2px;
-  padding-bottom:0px;
-  padding-top:2px;
-  height:25px;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  padding-bottom: 0px;
+  padding-top: 2px;
+  height: 25px;
 }
 
-.hamburgerDropDown{
-  background-color:transparent;
-  color:#39065a;
-  height:40px;
+.hamburgerDropDown {
+  background-color: transparent;
+  color: #39065a;
+  height: 40px;
 }
 
-h3{
-  margin-bottom:0px;
-  color:white;
-  display:flex;
-  align-items:center;
+h3 {
+  margin-bottom: 0px;
+  color: white;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.login-wrapper{
-  display:flex;
-  align-items:center;
+.login-wrapper {
+  display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
 }
 
-#username{
-  font-size:8pt;
-  display:flex;
+#username {
+  font-size: 8pt;
+  display: flex;
   justify-content: center;
-  align-items:center;
-  margin-left:0px;
-  padding-left:4px;
+  align-items: center;
+  margin-left: 0px;
+  padding-left: 4px;
 }
 
-
 /*style for tablet view*/
-@media only screen and (min-width: 376px){
-
+@media only screen and (min-width: 376px) {
   button {
-    margin:10px 10px;
     width: 100px;
     height: 45px;
-    background-color: #39065a;
-    /* box-shadow: 2px 2px 7px #ec92cc; */
-    border: none;
-    border-radius: 20px;
-    color: #e4fbff;
     font-size: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
     transition: 0.5s ease-in;
   }
-  .login-btn {
+
+  /* .login-btn {
     margin:10px 10px;
     width: 100px;
     height: 45px;
     font-size: 20px;
-    /* background-color: #39065a; */
-    /* box-shadow: 2px 2px 7px #ec92cc; */
     border: none;
-    /* border-radius: 20px; */
     color: #e4fbff;
-    /* font-size: 20px; */
     font-weight: 600;
     cursor: pointer;
     display: flex;
@@ -236,260 +221,106 @@ h3{
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     transition: 0.5s ease-in;
-  }
+  } */
+
   img {
     max-width: 200px;
     transition: 0.5s ease-in;
   }
 
-/* Style the navigation menu */
-.topnav {
-  overflow: hidden;
-  z-index: 100;
-  padding-top: 0px;
-  display:flex;
-  flex-direction:column;
-  align-items: center;
-}
-
-/* Style the hamburger menu */
-.topnav a.icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-top:10px;
-  font-size:2.2em;
-  /* width:auto; */
-  /* height:auto; */
-  /* z-index: 100; */
-}
-
-/* Hide the links inside the navigation menu */
-.topnav #myLinks {
-  background-color:#4cc9f0;
-  color:white;
-  /* margin-top:20px; */
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-
-}
-
-/* Style navigation menu links */
-.topnav a {
-  padding: 15px 15px;
-  text-decoration: none;
-  font-size: 20pt;
-  z-index: 100;
-}
-
-/* Add a grey background color on mouse-over */
-a.icon:hover {
-  background-color:rgba(57,6,90,0.4);
-  color:white;
-  z-index: 100;
-  border-radius: 50%;
-}
-
-.fa-bars{
-  color:white;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-
-div.topnav{
-  padding-top:0px
-}
-
-
-.hamburgerMenu{
-  background-color: #f72585;
-}
-
-.hamburgerDropDown{
-  background-color:transparent;
-  color:#39065a;
-  height:50px;
-}
-
-#username{
-  font-size:10pt;
-  display:flex;
-  justify-content: center;
-  align-items:center;
-  margin-left:0px;
-  margin-top:2px;
-  padding-left:8px;
-}
-
-h3{
-  margin-bottom:0px;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content: center;
-}
-
-.login-wrapper{
-  display:flex;
-  align-items:center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-
-/*style for desktop view*/
-@media only screen and (min-width: 769px){
-  button {
-    margin:10px 10px;
-    width: 125px;
-    height: 65px;
-    background-color: #39065a;
-    /* box-shadow: 2px 2px 7px #ec92cc; */
-    border: none;
-    border-radius: 25px;
-    color: #e4fbff;
-    font-size: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    transition: 0.5s ease-in;
+  /* Style the hamburger menu */
+  .topnav a.icon {
+    font-size: 2.2em;
   }
-  .login-btn {
-    margin:10px 20px 0px 10px;
-    width: 125px;
-    height: 65px;
-    font-size: 30px;
-    /* background-color: #39065a; */
-    /* box-shadow: 2px 2px 7px #ec92cc; */
-    border: none;
-    /* border-radius: 25px; */
-    color: #e4fbff;
-    /* font-size: 20px; */
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    transition: 0.5s ease-in;
+
+  /* Style navigation menu links */
+  .topnav a {
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 20pt;
+    z-index: 100;
   }
-  img {
-    max-width: 250px;
-    transition: 0.5s ease-in;
+
+  /* Add a grey background color on mouse-over */
+  a.icon:hover {
+    color: white;
   }
-/* Style the navigation menu */
-.topnav {
-  overflow: hidden;
-  z-index: 100;
-  padding-top: 0px;
-  display:flex;
-  flex-direction:column;
-  align-items: center;
-}
 
-/* Style the hamburger menu */
-.topnav a.icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top:5px;
-  /* margin-top:10px; */
-  font-size:2.5em;
-  /* z-index: 100; */
-}
+  .hamburgerDropDown {
+    height: 50px;
+  }
 
-/* Hide the links inside the navigation menu */
-.topnav #myLinks {
-  background-color:#4cc9f0;
-  color:white;
-  /* margin-top:20px; */
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  font-size: 10pt;
-}
+  #username {
+    font-size: 10pt;
+    margin-top: 2px;
+    padding-left: 8px;
+  }
 
-/* Style navigation menu links */
-.topnav a {
-  padding: 15px 15px;
-  text-decoration: none;
-  font-size: 20pt;
-  z-index: 100;
-}
+  /*style for desktop view*/
+  @media only screen and (min-width: 769px) {
+    button {
+      width: 125px;
+      height: 65px;
+    }
 
-.fa-bars{
-  color:white;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
+    /* .login-btn {
+      margin: 10px 20px 0px 10px;
+      width: 125px;
+      height: 65px;
+      font-size: 30px;
+      border: none;
+      color: #e4fbff;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      transition: 0.5s ease-in;
+    } */
 
-/* Style the hamburger menu */
-.topnav a.icon {
+    img {
+      max-width: 250px;
+    }
+    /* Style the navigation menu */
 
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
+    /* Style the hamburger menu */
+    .topnav a.icon {
+      justify-content: center;
+      align-items: center;
+      padding-top: 5px;
+      font-size: 2.5em;
+    }
 
-div.topnav{
-  padding-top:0px
-}
+    /* Style the hamburger menu */
+    .topnav a.icon {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
 
-.hamburgerMenu{
-  background-color: #f72585;
-  margin-top:20px;
-}
+    .hamburgerMenu {
+      margin-top: 20px;
+    }
 
-.hamburgerDropDown{
-  background-color:transparent;
-  color:#39065a;
-  height:60px;
-}
+    .hamburgerDropDown {
+      height: 60px;
+    }
 
-/* Style the active link (or home/logo) */
-.active {
-  color: white;
-}
+    /* Style the active link (or home/logo) */
+    .active {
+      color: white;
+    }
 
-span.mat-button-wrapper{
-font-size:13pt;
-}
+    span.mat-button-wrapper {
+      font-size: 13pt;
+    }
 
-#username{
-  font-size:14pt;
-  display:flex;
-  justify-content: center;
-  align-items:center;
-  margin-left:0px;
-  margin-top:2px;
-  padding-left:9px;
-}
-
-h3{
-  margin-bottom:0px;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content: center;
-}
-
-.login-wrapper{
-  display:flex;
-  align-items:center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-header {
-  width: 100%;
-}
-
-}
-
+    #username {
+      font-size: 14pt;
+      padding-left: 9px;
+    }
+  }
 }
