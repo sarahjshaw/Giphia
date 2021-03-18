@@ -13,7 +13,8 @@
     </ng-template>
     
 
-    <p class="yearStarted">Player since: <span id="date">{{ playerInfo.startDate | date: 'longDate' }}</span></p>
+    <p class="yearStarted">Player since: 
+      <span id="date">{{ playerInfo.startDate | date: 'longDate' }}</span></p>
 
   </div>
 
@@ -23,7 +24,7 @@
   </div>
 
   <div class="playerStatsSection informationContainer">
-      <p>Games Played:</p>
+      <p class="played">Games Played:</p>
       <h2>{{playerInfo.gamesPlayed}}</h2>
 
       <div class="verticalPipe"></div>

@@ -5,6 +5,7 @@
   ></script>
 </head>
 <body>
+  <a name="top"></a>
   <div class="ticker">
     <h1 id="score">SCORE: {{ user_score }}</h1>
     <h1 routerLink="/home" id="quit" (click)="gameOver()">QUIT</h1>
@@ -13,6 +14,9 @@
     <h1 id="q_title">Question</h1>
     <div id="random_q">{{ randomQuestion }}</div>
   </div>
+    <div id="giph_cont">
+<div class="giph" *ngFor='let giph of giphArray'><img src="{{giph.images.original.url}}" alt=""></div>
+    </div>
   <div id="h_cont">
     <!-- <h1 id="h_title">Hint</h1> -->
     <img src="{{ giphHint }}" alt="" />
@@ -31,10 +35,16 @@
       Submit
     </button>
   </div>
+  <!-- <button id="top_button"><a href="#" (click)='toTop()'>Back To Top</a></button> -->
+
+
+
   <div id="correct_message" *ngIf="correct_message">
     <div class="fade"><div id="correct">Crushed it</div></div>
   </div>
   <div id="wrong_message" *ngIf="wrong_message">
-    <div class="fade"><div id="wrong">Strike {{strikes}}</div></div>
+    <div class="fade">
+      <div id="wrong">Strike {{ strikes }}</div>
+    </div>
   </div>
 </body>

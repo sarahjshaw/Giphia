@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { trigger, transition, style, animate } from "@angular/animations";
+import { AvatarService } from '../services/avatar.service';
 
 @Component({
   selector: 'app-carousel-img',
@@ -22,7 +23,7 @@ export class CarouselImgComponent implements OnInit {
 
   currentSlide = 0;
   
-  constructor() { }
+  constructor(private avatarService: AvatarService) { }
 
   onPreviousClick() {
     const previous = this.currentSlide - 1;
@@ -36,6 +37,11 @@ export class CarouselImgComponent implements OnInit {
     console.log("next clicked, new current slide is: ", this.currentSlide);
   }
   ngOnInit(): void {
+  }
+
+  onPickAvatar(path: string) {
+    console.log('hello')
+    this.avatarService.chooseAvatar.next(path)
   }
 
 }

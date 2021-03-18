@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ɵNullViewportScroller } from '@angular/common';
+import { Component, OnInit, Output } from '@angular/core';
 import { Giphy } from 'src/app/models/giphy.model';
 import { Trivia } from 'src/app/models/trivia.model';
 import { GiphyService } from 'src/app/services/giphy-api.service';
@@ -25,7 +26,6 @@ export class EndlessTriviaComponent implements OnInit {
     private firebaseService: FirebaseService,
     private dialog: MatDialog
   ) {}
-
   giphHint: any;
   randomQuestion: any;
   randomAnswer: any;
@@ -111,5 +111,9 @@ export class EndlessTriviaComponent implements OnInit {
     this.firebaseService.updateEndlessScore(this.user_score);
     this.firebaseService.updateGamesPlayed();
   }
+  
+toTop() {
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
 
 }

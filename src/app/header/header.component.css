@@ -25,10 +25,10 @@ img {
   padding-bottom:0px;
   width: 60px;
   height: 30px;
-  background-color: #39065a;
+  /* background-color: #39065a; */
   /* box-shadow: 2px 2px 7px #ec92cc; */
   border: none;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   color: #e4fbff;
   /* font-size: 20px; */
   font-weight: 600;
@@ -44,7 +44,7 @@ img {
   background-color: #38065a98;
   box-shadow: 3px 3px 8px rgba(234, 5, 154);
   font-size: 17px;
-  transition: .3s ease-in-out;
+  /* transition: .3s ease-in-out; */
 }
 
 .back-btn:hover{
@@ -176,6 +176,17 @@ div.topnav{
 
 h3{
   margin-bottom:0px;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.login-wrapper{
+  display:flex;
+  align-items:center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #username{
@@ -211,10 +222,10 @@ h3{
     width: 100px;
     height: 45px;
     font-size: 20px;
-    background-color: #39065a;
+    /* background-color: #39065a; */
     /* box-shadow: 2px 2px 7px #ec92cc; */
     border: none;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     color: #e4fbff;
     /* font-size: 20px; */
     font-weight: 600;
@@ -312,6 +323,21 @@ div.topnav{
   padding-left:8px;
 }
 
+h3{
+  margin-bottom:0px;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.login-wrapper{
+  display:flex;
+  align-items:center;
+  flex-direction: column;
+  justify-content: center;
+}
+
 
 /*style for desktop view*/
 @media only screen and (min-width: 769px){
@@ -335,10 +361,10 @@ div.topnav{
     width: 125px;
     height: 65px;
     font-size: 30px;
-    background-color: #39065a;
+    /* background-color: #39065a; */
     /* box-shadow: 2px 2px 7px #ec92cc; */
     border: none;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     color: #e4fbff;
     /* font-size: 20px; */
     font-weight: 600;
@@ -411,20 +437,6 @@ div.topnav{
   top: 0;
 }
 
-/* Add a grey background color on mouse-over */
-/* a.icon:hover { */
-  /* background-color:rgba(57,6,90,0.4); */
-  /* color:white;
-  z-index: 100;
-  border-radius: 50%;
-  width:60px;
-  height:45px;
-  padding:0px 0px 5px 0px;
-  display:flex;
-  align-items: center;
-  justify-content:center;
-} */
-
 div.topnav{
   padding-top:0px
 }
@@ -438,19 +450,12 @@ div.topnav{
   background-color:transparent;
   color:#39065a;
   height:60px;
-
 }
-
-
-
 
 /* Style the active link (or home/logo) */
 .active {
   color: white;
 }
-
-
-
 
 span.mat-button-wrapper{
 font-size:13pt;
@@ -464,6 +469,25 @@ font-size:13pt;
   margin-left:0px;
   margin-top:2px;
   padding-left:9px;
+}
+
+h3{
+  margin-bottom:0px;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.login-wrapper{
+  display:flex;
+  align-items:center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header {
+  width: 100vh;
 }
 
 }

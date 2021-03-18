@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { DataService } from 'src/app/services/data.service';
+import { AvatarService } from '../services/avatar.service';
 
 
 @Component({
@@ -11,7 +12,10 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ChooseAvatarComponent implements OnInit {
 
-  constructor(private router: Router, private _location: Location, public data: DataService) { }
+  constructor(private router: Router, 
+              private _location: Location, 
+              public data: DataService,
+              private avatarService: AvatarService) { }
 
   ngOnInit(): void {
   }
@@ -25,5 +29,10 @@ export class ChooseAvatarComponent implements OnInit {
     { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=orange" },
     { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=red" }
   ];
+
+  // onPickAvatar(path) {
+  //   console.log(path.src)
+  //   this.avatarService.chooseAvatar.next(path)
+  // }
 
 }

@@ -7,23 +7,22 @@
     <!-- <h1 routerLink="/home" id="title">Giphia</h1> -->
       <div class="login-wrapper">
 
-        <h3 class="login-btn" (click)="onLogin()" *ngIf="!isAuthenticated">Login</h3>
-        <button id="username" mat-button [matMenuTriggerFor]="beforeMenu" [style]="{display: !isAuthenticated ? 'none' : 'block'}">{{playerInfo.username}} </button>
+        <h3 id="username" mat-button [matMenuTriggerFor]="beforeMenu" [style]="{display: !isAuthenticated ? 'none' : 'block'}">{{playerInfo.username}} </h3>
 
         <!-- navigation for hamburger menu -->
-        <div class="topnav">
+        <!-- <div class="topnav"> -->
         <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-          <a  href="javascript:void(0);" class="icon" (click)="hamburgerFunction()">
+          <!-- <a  href="javascript:void(0);" class="icon" (click)="hamburgerFunction()">
             <i class="fa fa-bars"></i>
-          </a>
+          </a> -->
           <!-- Navigation links (hidden by default) -->
-          <div id="myLinks" *ngIf="isShowDiv" >
+          <!-- <div id="myLinks" *ngIf="isShowDiv" >
             <a routerLink="home">Home</a>
             <a routerLink="leaderboard">Leaderboard</a>
             <a routerLink="player-profile">Player Profile</a>
             <a routerLink="gamemodes">Game Modes</a>
           </div>
-    
+     -->
 
 <!-- hamburger menu - using angular materials -->
 <button mat-button [matMenuTriggerFor]="menu" class="hamburgerMenu">
@@ -36,10 +35,13 @@
   <button mat-menu-item (click)="routeLeaderBoard()" class="hamburgerDropDown">Leaderboard</button>
   <button mat-menu-item (click)="routePlayerProfile()" class="hamburgerDropDown">player-profile</button>
   <button mat-menu-item (click)="routeGameModes()" class="hamburgerDropDown">Game-Modes</button>
+  <button mat-menu-item (click)="onLogin()" class="hamburgerDropDown"  *ngIf="!isAuthenticated">Login</button>
+  <!-- class="login-btn" -->
+  
 </mat-menu>
 </div>
 
-          </div>
+    
 
           <mat-menu #beforeMenu="matMenu" xPosition="before">
         <button id="username" mat-button [matMenuTriggerFor]="beforeMenu" [style]="{display: !isAuthenticated ? 'none' : 'block'}"><fa-icon [icon]="faCaretDown"></fa-icon> {{playerInfo.username}}</button>

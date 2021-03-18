@@ -5,7 +5,9 @@
        [src]="slide.src"
        class="slide"
        @carouselAnimation
+       (click)="onPickAvatar(slide)"
      />
+
    </ng-container>
    <button class="control prev" (click)="onPreviousClick()">
     <span class="arrow left"></span>

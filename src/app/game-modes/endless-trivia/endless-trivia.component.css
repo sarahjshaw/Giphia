@@ -1,3 +1,5 @@
+
+
 body {
   height: 100vh;
   width: 100vw;
@@ -63,25 +65,25 @@ h1 {
 }
 
 #h_cont {
-    color: white;
-      width: 95vw;
-      margin: 0vw 2.5vw 0vw 2.5vw;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
+  color: white;
+  width: 95vw;
+  margin: 0vw 2.5vw 0vw 2.5vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 
 #button_cont {
-    display: block;
-    width: 100vw;
-    position: fixed;
-    bottom: 60px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: block;
+  width: 100vw;
+  position: fixed;
+  bottom: 60px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 
 button,
 input {
@@ -126,20 +128,25 @@ button:hover {
 }
 
 #correct {
-  background: rgb(55,204,82);
-  box-shadow: 0vw 0vw 0vw .3vw rgba(55,204,82,1);
+  background: rgb(55, 204, 82);
+  box-shadow: 0vw 0vw 0vw 0.3vw rgba(55, 204, 82, 1);
 }
 
 #wrong {
-  background: rgb(255,0,35);
-background: radial-gradient(circle, rgba(255,0,35,1) 36%, rgba(251,19,84,1) 98%);
-box-shadow: 0vw 0vw 0vw .3vw rgba(251,19,84,1);
-  }
+  background: rgb(255, 0, 35);
+  background: radial-gradient(
+    circle,
+    rgba(255, 0, 35, 1) 36%,
+    rgba(251, 19, 84, 1) 98%
+  );
+  box-shadow: 0vw 0vw 0vw 0.3vw rgba(251, 19, 84, 1);
+}
 
-  #correct, #wrong {
-    width: 40vw;
-    height: 10vh;
-    color: white;
+#correct,
+#wrong {
+  width: 40vw;
+  height: 10vh;
+  color: white;
   position: fixed;
   left: 30vw;
   bottom: 45vh;
@@ -149,17 +156,125 @@ box-shadow: 0vw 0vw 0vw .3vw rgba(251,19,84,1);
   border-radius: 15px;
   text-align: center;
   line-height: 10vh;
+}
+
+.fade {
+  width: 200vw;
+  height: 200vh;
+  position: fixed;
+  left: 0vw;
+  bottom: 0vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+
+#giph_cont,
+#top_button {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  #top_button {
+    display: block;
+    width: 10vw;
+    height: 3vw;
+    background-color: rgb(58, 12, 163, 0.5);
+    position: fixed;
+    bottom: 20px;
+    font-size: 10px;
+    margin-left: 45vw;
   }
 
-  .fade {
-    width: 200vw;
-    height: 200vh;
-    position: fixed;
-left: 0vw;
-bottom: 0vh;
-    background-color: rgba(0,0,0,0.5);
-    display: flex;
+  #h_cont {
+    display: none;
   }
+
+  #q_cont {
+    display: flex;
+    position: sticky;
+    top: 5vh;
+    width: 75vw;
+    height: 80px;
+    margin-left: 12.5vw;
+    box-shadow: none;
+  }
+
+  #q_title {
+    width: 25%;
+    padding: 0px;
+    line-height: 80px;
+  }
+
+  #random_q {
+    display: flex;
+    justify-content: center;
+  }
+
+  #giph_cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #giph_cont img {
+    max-width: 90vw;
+  }
+
+  #button_cont {
+    background-color: #4361ee;
+    border-radius: 15px;
+    height: 125px;
+    width: 50vw;
+    margin-left: 25vw;
+  }
+
+  #button_cont input,
+  button {
+    width: 325px;
+  }
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#correct,
+#wrong {
+  width: 25vw;
+  height: 10vh;
+  color: white;
+  position: fixed;
+  left: 37.5vw;
+  bottom: 45vh;
+}
+
+@media screen and (min-width: 992px) {
+  #h_cont {
+    display: none;
+  }
+
+  #giph_cont {
+    flex-wrap: wrap;
+  }
+
+  #button_cont {
+    height: 100px;
+    width: 25vw;
+    margin-left: 37.5vw;
+  }
+
+  #q_cont {
+    width: 45vw;
+    margin-left: 27.5vw;
+    box-shadow: none;
+  }
+
+  #q_title {
+    width: 25%;
+  }
+}
+
 /* PINK - #f72585
 PURP - #7209b7
 DPRP - #3a0ca3

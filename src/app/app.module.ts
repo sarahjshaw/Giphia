@@ -25,6 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CarouselImgComponent } from './carousel-img/carousel-img.component';
 import { MatRippleModule } from '@angular/material/core'
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserAnimationsModule,
     FontAwesomeModule,
     MatRippleModule,
-    MatDialogModule
+    MatDialogModule,
+    MatGridListModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
