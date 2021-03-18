@@ -27,7 +27,13 @@ export class ChooseAvatarComponent implements OnInit {
     { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=green" },
     { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=yellow" },
     { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=orange" },
-    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=red" }
+    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=red" },
+    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=indigo" },
+    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=cyan" },
+    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=blueGrey" },
+    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=deepPurple" },
+    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=lime" },
+    { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=teal" }
   ];
 
   // onPickAvatar(path) {
