@@ -15,7 +15,7 @@ export class PlayerProfileComponent implements OnInit {
   // isAuthenticated: boolean = false;
 
   playerInfo: any = '';
-  playerAvatar: string = '';
+  playerAvatar: any = '';
 
   constructor(private router: Router,
               private firebaseService: FirebaseService,
@@ -25,6 +25,11 @@ export class PlayerProfileComponent implements OnInit {
 ngOnInit() {
   this.firebaseService.playerProfile.subscribe(playerData => {
     this.playerInfo = playerData;
+  })
+
+  this.avatarService.chooseAvatar.subscribe(img => {
+    console.log(img)
+    this.playerAvatar = img;
   })
 
   this.avatarService.chooseAvatar.subscribe(img => {
