@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "(public) dist/Giphy",
+    "public": "dist/giphy",
     "ignore": [
       "firebase.json",
       "**/.*",

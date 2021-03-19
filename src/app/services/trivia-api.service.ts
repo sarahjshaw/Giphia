@@ -14,6 +14,6 @@ randomQuestion: Trivia[];
     constructor(private http: HttpClient) {}
 
     fetchRandomQuestion() {
-        return this.http.get('http://jservice.io/api/random');
+        return this.http.get('https://jservice.io/api/random');
     }
 }
