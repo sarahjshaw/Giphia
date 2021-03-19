@@ -5,7 +5,8 @@
        [src]="slide.src"
        class="slide"
        @carouselAnimation
-       (click)="onPickAvatar(slide)"
+       #avatarImg
+       (click)="onPickAvatar(avatarImg.src)"
      />
 
    </ng-container>

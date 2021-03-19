@@ -104,7 +104,7 @@ img {
 
   }
 
-   @media only screen and (min-width: 769px){
+   @media only screen and (min-width: 1030px){
     img {
       width: 25vw;
       padding-left: 37.5vw;

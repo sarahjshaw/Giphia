@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "(public) dist/Giphy",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

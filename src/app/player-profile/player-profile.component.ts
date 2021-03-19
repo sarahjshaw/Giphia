@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
+import { AvatarService } from '../services/avatar.service';
 import { FirebaseService } from '../services/firebase.service';
 
 @Component({
@@ -14,15 +15,21 @@ export class PlayerProfileComponent implements OnInit {
   // isAuthenticated: boolean = false;
 
   playerInfo: any = '';
+  playerAvatar: any = '';
 
   constructor(private router: Router,
               private firebaseService: FirebaseService,
-              public data: DataService) { }
+              public data: DataService,
+              private avatarService: AvatarService) { }
 
 ngOnInit() {
   this.firebaseService.playerProfile.subscribe(playerData => {
     this.playerInfo = playerData;
-    
+  })
+
+  this.avatarService.chooseAvatar.subscribe(img => {
+    console.log(img)
+    this.playerAvatar = img;
   })
   
 }

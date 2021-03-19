@@ -6,5 +6,5 @@ import { Subject } from 'rxjs';
 })
 export class AvatarService {
 
-  chooseAvatar = new Subject();
+  chooseAvatar = new Subject<string>();
 }

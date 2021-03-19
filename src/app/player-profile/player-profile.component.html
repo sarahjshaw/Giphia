@@ -2,7 +2,7 @@
   <div class="playerHeaderSection informationContainer">
 
     <!-- <i class="fas fa-glasses"></i><img class="avatar" src='' alt="" /> -->
-    <i class="fas fa-glasses"></i><img class="avatar" src='https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=pink' alt="player-avatarOption" />
+    <i class="fas fa-glasses"></i><img class="avatar" src="{{playerAvatar}} " alt="player-avatarOption" />
     
     <ng-template [ngIf]="playerInfo.username" [ngIfElse]="player" >
       <h1>{{playerInfo.username}}</h1>
