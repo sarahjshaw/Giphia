@@ -28,12 +28,8 @@ ngOnInit() {
     this.playerInfo = playerData;
   })
 
-  this. playerAvatar = this.route.snapshot.params['image']
-  // this.avatarService.chooseAvatar.subscribe(img => {
-  //   console.log(img)
-  //   this.playerAvatar = img;
-  // })
-  console.log(this.playerAvatar)
+  this. playerAvatar = this.route.snapshot.params['image'];
+
 }
 
   playGameRoute(){
