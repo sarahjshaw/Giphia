@@ -40,10 +40,4 @@ export class CarouselImgComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onPickAvatar(path: string) {
-    console.log(path)
-    this.avatarService.chooseAvatar.next(path)
-    this.router.navigate(['/player-profile'])
-  }
-
 }

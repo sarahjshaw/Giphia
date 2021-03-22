@@ -21,7 +21,7 @@ export const routes: Routes = [
 
   { path: 'chooseavatar', component: ChooseAvatarComponent },
 
-  { path: 'player-profile', component: PlayerProfileComponent },
+  { path: 'player-profile/:image', component: PlayerProfileComponent },
 
   { path: 'gamemodes', component: GameModesComponent },
 
@@ -30,11 +30,11 @@ export const routes: Routes = [
   { path: 'time-challenge', component: TimeChallengeComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full'},
- 
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)], 
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

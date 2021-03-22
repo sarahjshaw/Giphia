@@ -40,7 +40,7 @@ playCount(){
      this.firebaseService.user.subscribe(userData => {
       this.firebaseService.fetchUserProfile(userData.id);
     })
-    this.router.navigateByUrl('/player-profile');
+    this.router.navigate(['/player-profile', "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=purple"]);
   };
 
   backClick(){

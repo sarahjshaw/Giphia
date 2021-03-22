@@ -6,7 +6,7 @@
        class="slide"
        @carouselAnimation
        #avatarImg
-       (click)="onPickAvatar(avatarImg.src)"
+       [routerLink]="['/player-profile', avatarImg.src]"
      />
 
    </ng-container>
