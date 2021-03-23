@@ -10,6 +10,7 @@ import { PlayerProfileComponent } from 'src/app/player-profile/player-profile.co
 import { MatDialog } from '@angular/material/dialog';
 import { delay } from 'rxjs/operators';
 import { timer } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-endless-trivia',
@@ -24,7 +25,8 @@ export class EndlessTriviaComponent implements OnInit {
     private giphyService: GiphyService,
     private triviaService: TriviaService,
     private firebaseService: FirebaseService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
   ) {}
   giphHint: any;
   randomQuestion: any;
@@ -46,10 +48,13 @@ export class EndlessTriviaComponent implements OnInit {
 
   correct_message = false;
   wrong_message = false;
+  game_over = false;
 
   ngOnInit(): void {
         this.correct_message = false;
         this.wrong_message = false;
+        this.game_over = false;
+        this.i = 0;
     this.triviaService.fetchRandomQuestion().subscribe((result) => {
       this.randomAnswer = result[0].answer.toLowerCase();
       this.randomQuestion = result[0].question;
@@ -87,7 +92,7 @@ export class EndlessTriviaComponent implements OnInit {
         console.log('Youre out!');
         this.user_answer = '';
         this.nextQuestion();
-        this.gameOver();
+        this.delay.subscribe((x) => this.gameOver());
       }
     }
   }
@@ -108,6 +113,8 @@ export class EndlessTriviaComponent implements OnInit {
   }
 
   gameOver() {
+    this.game_over = true;
+    this.delay.subscribe((x) => this.router.navigate(['/gamemodes']))
     this.firebaseService.updateEndlessScore(this.user_score);
     this.firebaseService.updateGamesPlayed();
   }

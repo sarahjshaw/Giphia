@@ -14,7 +14,7 @@
   
   .slide {
     position: absolute;
-    top: 9vh;
+    top: 10vh;
     left: 0;
     width: 150px;
     height: 150px;
@@ -76,7 +76,7 @@
   
 
     /* tablet screen */
-    @media only screen and (min-width: 376px){
+    @media only screen and (min-width: 768px){
     .control {
       border: none;
       background-color: transparent;
@@ -114,7 +114,7 @@
 
     .slide {
       position: absolute;
-      top: 7vh;
+      top: 9vh;
       left: 9vh;
       width: 220px;
       height: 220px;
@@ -124,8 +124,8 @@
     }
   }
 
-      /* ipad pro screen */
-      @media only screen and (min-width: 769px){
+      /* desktop */
+      @media only screen and (min-width:1030px){
         .control {
           border: none;
           background-color: transparent;
@@ -164,7 +164,7 @@
         .slide {
           position: absolute;
           top: 8vh;
-          left: 9.5vh;
+          left: 13vh;
           width: 275px;
           height: 275px;
           object-fit: cover;

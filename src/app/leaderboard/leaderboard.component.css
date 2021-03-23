@@ -1,3 +1,4 @@
+/*mobile view*/
 
 body {
   min-height: 90vh;
@@ -75,29 +76,15 @@ h1 {
   color: rgb(58, 58, 58);
 }
 
-/* button{
-    width: 200px;
-    height: 80px;
-    margin:11px 20px;
-    background-color: #39065a;
-    border: none;
-    border-radius: 20px;
-    color: #e4fbff;
-    font-size: 25px;
-    box-shadow: 2px 2px 7px #ea0599;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    flex-direction: row;
-} */
-
-@media only screen and (min-width: 600px) {
+/*tablet view*/
+@media only screen and (min-width: 768px) {
 
   .list-wrapper {
     width: 50%;
   }
 
+}
+
+/*desktop view*/
+@media only screen and (min-width: 1030px){
 }

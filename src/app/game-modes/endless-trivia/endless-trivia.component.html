@@ -47,4 +47,8 @@
       <div id="wrong">Strike {{ strikes }}</div>
     </div>
   </div>
+  <div id="gameOver" *ngIf="game_over">
+    <h1 class="endingHeader">Game Over!</h1>
+    <p id="endingParagraph">Don't worry. You can play again!</p>
+  </div>
 </body>

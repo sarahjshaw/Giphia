@@ -28,14 +28,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.background-circles {
-  background-color: white;
-  border-radius: 50%;
-  opacity: 10%;
-  width: 90%;
-  height: 90%;
-}
-
 .graphicsArea {
   display: flex;
   justify-content: center;
@@ -59,7 +51,7 @@ button {
   justify-content: center;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 button:hover {
@@ -77,8 +69,8 @@ img {
   align-items: center;
   justify-content: center;
 }
-
-@media only screen and (min-width: 376px) {
+/*tablet view*/
+@media only screen and (min-width: 768px) {
 
   img {
     width: 70vw;
@@ -103,12 +95,27 @@ img {
   }
 
   }
-
+/*desktop view*/
    @media only screen and (min-width: 1030px){
     img {
-      width: 25vw;
-      padding-left: 37.5vw;
+      width: 35%;
+      display:flex;
+      justify-content: center;
+      padding-left:240px;
+      padding-right:240px;
+      align-items: center;
+      flex-direction: row;
       transition: 0.5s ease-in;
+      margin:auto;
+      }
+
+      html.img{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding:0px;
+        margin:0px;
+
       }
 
       button{
@@ -125,14 +132,14 @@ img {
         justify-content: center;
         font-family: 'Poppins', sans-serif;
         font-weight: 600;
-        flex-direction: row;
+        flex-direction: column;
     }
     .button-container{
       display: flex;
       padding-top: 5%;
     }
-   
-  }
+
+}
 
 
 

@@ -25,12 +25,8 @@ img {
   padding-bottom: 0px;
   width: 60px;
   height: 30px;
-  /* background-color: #39065a; */
-  /* box-shadow: 2px 2px 7px #ec92cc; */
   border: none;
-  /* border-radius: 20px; */
   color: #e4fbff;
-  /* font-size: 20px; */
   font-weight: 600;
   cursor: pointer;
   display: flex;
@@ -44,18 +40,9 @@ img {
   background-color: #38065a98;
   box-shadow: 3px 3px 8px rgba(234, 5, 154);
   font-size: 17px;
-  /* transition: .3s ease-in-out; */
-}
-
-.back-btn:hover {
-  background-color: #38065a98;
-  box-shadow: 3px 3px 8px rgba(234, 5, 154);
-  font-size: 16px;
-  transition: 0.3s ease-in-out;
 }
 
 header {
-  /* margin-left: 20px; */
   padding-top: 10px;
   margin-top: 0px;
   background: #f72585;
@@ -85,6 +72,12 @@ a {
 .back-btn {
   margin-left: 1em;
 }
+.back-btn:hover {
+  background-color: #38065a98;
+  box-shadow: 3px 3px 8px #39065a;
+  font-size: 21px;
+  transition: 0.3s ease-in-out;
+}
 
 button {
   margin: 10px 10px;
@@ -98,6 +91,7 @@ button {
   font-weight: 600;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
+  transition: 0.3s ease-out;
 }
 
 /* Style the navigation menu */
@@ -198,30 +192,13 @@ h3 {
 }
 
 /*style for tablet view*/
-@media only screen and (min-width: 376px) {
+@media only screen and (min-width: 768px) {
   button {
     width: 100px;
     height: 45px;
     font-size: 20px;
     transition: 0.5s ease-in;
   }
-
-  /* .login-btn {
-    margin:10px 10px;
-    width: 100px;
-    height: 45px;
-    font-size: 20px;
-    border: none;
-    color: #e4fbff;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    transition: 0.5s ease-in;
-  } */
 
   img {
     max-width: 200px;
@@ -241,7 +218,6 @@ h3 {
     z-index: 100;
   }
 
-  /* Add a grey background color on mouse-over */
   a.icon:hover {
     color: white;
   }
@@ -257,33 +233,24 @@ h3 {
   }
 
   /*style for desktop view*/
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 1030px) {
     button {
       width: 125px;
       height: 65px;
+      font-size: 30px;
+      transition: 0.5s ease-in;
+    }
+    .back-btn:hover {
+      background-color: #38065a98;
+      box-shadow: 3px 3px 8px #39065a;
+      font-size: 31px;
+      transition: 0.3s ease-in-out;
     }
 
-    /* .login-btn {
-      margin: 10px 20px 0px 10px;
-      width: 125px;
-      height: 65px;
-      font-size: 30px;
-      border: none;
-      color: #e4fbff;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Poppins", sans-serif;
-      font-weight: 600;
-      transition: 0.5s ease-in;
-    } */
 
     img {
       max-width: 250px;
     }
-    /* Style the navigation menu */
 
     /* Style the hamburger menu */
     .topnav a.icon {
