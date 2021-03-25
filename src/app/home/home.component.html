@@ -1,13 +1,11 @@
 <html>
-  <div id="ticker">Where trivia goes to get even nerdier</div>    
+  <div id="ticker">Where trivia goes to get even nerdier</div>
     <img src="https://media4.giphy.com/media/KZysJjKb8XyQSXQZwl/giphy.gif?cid=ecf05e475w5dgyk0h5mq6jbg82fxhtjuynw56swwhuehoj89&rid=giphy.gif" alt="">
     <body>
   <div class="button-container">
     <button (click)="leaderboardRoute()">Leaderboard</button>
-
-    <button (click)="playGameRoute()" (click)="playCount()">Play</button>
-
-    <button (click)="playerStats()">Player Stats</button>
+    <button (click)="playGameRoute()">Play</button>
+    <button (click)="playerStats()" *ngIf="isAuthenticated">Player Stats</button>
   </div>
 </body>
 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { AvatarService } from '../services/avatar.service';
 import { FirebaseService } from '../services/firebase.service';
@@ -9,13 +10,12 @@ import { FirebaseService } from '../services/firebase.service';
   templateUrl: './player-profile.component.html',
   styleUrls: ['./player-profile.component.css']
 })
-export class PlayerProfileComponent implements OnInit {
+export class PlayerProfileComponent implements OnInit, OnDestroy {
 
-  playerRanking:number = 2;
-  // isAuthenticated: boolean = false;
-
+  playerRanking:any = 0;
   playerInfo: any = '';
   playerAvatar: string = '';
+  profileSub: Subscription;
 
   constructor(private router: Router,
               private firebaseService: FirebaseService,
@@ -24,12 +24,13 @@ export class PlayerProfileComponent implements OnInit {
               private route: ActivatedRoute) { }
 
 ngOnInit() {
-  this.firebaseService.playerProfile.subscribe(playerData => {
+  this.profileSub = this.firebaseService.playerProfile.subscribe(playerData => {
     this.playerInfo = playerData;
+    this.firebaseService.findPlayerRanking(playerData.username);
+    this.firebaseService.playerRank.subscribe(rank => this.playerRanking = rank);
   })
 
-  this. playerAvatar = this.route.snapshot.params['image'];
-
+  this.playerAvatar = this.route.snapshot.params['image'];
 }
 
   playGameRoute(){
@@ -39,6 +40,10 @@ ngOnInit() {
   CreateAvatarRoute(){
     this.router.navigateByUrl('/chooseavatar');
   };
+
+  ngOnDestroy() {
+    this.profileSub.unsubscribe();
+  }
 
 
 }

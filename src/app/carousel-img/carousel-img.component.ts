@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { trigger, transition, style, animate } from "@angular/animations";
-import { AvatarService } from '../services/avatar.service';
-import { Router } from '@angular/router';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-carousel-img',
@@ -24,7 +23,7 @@ export class CarouselImgComponent implements OnInit {
 
   currentSlide = 0;
 
-  constructor(private avatarService: AvatarService, private router: Router) { }
+  constructor(private firebaseService: FirebaseService) { }
 
   onPreviousClick() {
     const previous = this.currentSlide - 1;
@@ -37,6 +36,13 @@ export class CarouselImgComponent implements OnInit {
     this.currentSlide = next === this.slides.length ? 0 : next;
     console.log("next clicked, new current slide is: ", this.currentSlide);
   }
+
+  onPlayerStats() {
+    this.firebaseService.user.subscribe(userData => {
+      this.firebaseService.fetchUserProfile(userData.id);
+    })
+  }
+
   ngOnInit(): void {
   }
 

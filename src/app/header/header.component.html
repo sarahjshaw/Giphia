@@ -35,13 +35,14 @@
   <button mat-menu-item (click)="routeLeaderBoard()" class="hamburgerDropDown">Leaderboard</button>
   <button mat-menu-item (click)="routePlayerProfile()" class="hamburgerDropDown" *ngIf="isAuthenticated">Profile</button>
   <button mat-menu-item (click)="routeGameModes()" class="hamburgerDropDown">Game Modes</button>
-  <button mat-menu-item (click)="onLogin()" class="hamburgerDropDown"  *ngIf="!isAuthenticated">Login</button>
+  <button mat-menu-item (click)="onLogin()" class="hamburgerDropDown" *ngIf="!isAuthenticated">Login</button>
+  <button mat-menu-item (click)="onLogout()" class="hamburgerDropDown" *ngIf="isAuthenticated">Logout</button>
   <!-- class="login-btn" -->
-  
+
 </mat-menu>
 </div>
 
-    
+
 
           <mat-menu #beforeMenu="matMenu" xPosition="before">
         <button id="username" mat-button [matMenuTriggerFor]="beforeMenu" [style]="{display: !isAuthenticated ? 'none' : 'block'}"><fa-icon [icon]="faCaretDown"></fa-icon> {{playerInfo.username}}</button>
