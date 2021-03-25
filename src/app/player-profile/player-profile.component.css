@@ -96,7 +96,14 @@ button{
     flex-direction: column;
     justify-content: center;
     align-items:center;
+<<<<<<< HEAD
 } 
+=======
+    /* background-color: transparent; */
+    /* background: rgb(58,12,163); */
+    /* background: linear-gradient(180deg, rgba(58,12,163,1) 0%, rgba(114,9,183,1) 94%);*/
+}
+>>>>>>> dropdown-update
 
 
 body {
@@ -156,7 +163,11 @@ p.ranking{
     p.ranking{
         margin-left:1.5rem;
     }
-    
+
+    .buttonGroup {
+      flex-direction: row;
+    }
+
 
       }
 
@@ -215,8 +226,8 @@ h2{
 h1{
     font-size: 50px;
 }
-    
 
+<<<<<<< HEAD
 .buttonGroup{
     display:flex;
     flex-direction: row;
@@ -225,3 +236,7 @@ h1{
 } 
 
    }
+=======
+
+}
+>>>>>>> dropdown-update

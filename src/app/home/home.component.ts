@@ -12,18 +12,18 @@ import { FirebaseService } from '../services/firebase.service';
 
 })
 export class HomeComponent implements OnInit {
+  isAuthenticated: boolean = false;
 
   constructor(private router: Router,
               private _location: Location,
               public data: DataService,
               private firebaseService: FirebaseService) { }
 
-  numberOfGamesPlayed: number = 0;
-
-
-playCount(){
-  this.numberOfGamesPlayed += 1;
-}
+  ngOnInit(): void {
+    this.firebaseService.user.subscribe(user => {
+      this.isAuthenticated = !user ? false : true
+    })
+  }
 
   leaderboardRoute(){
     this.router.navigateByUrl('/leaderboard');
@@ -38,14 +38,10 @@ playCount(){
       this.firebaseService.fetchUserProfile(userData.id);
     })
     this.router.navigate(['/player-profile', "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=purple"]);
-  };
+  }
 
   backClick(){
     this._location.back();
-  }
-
-
-  ngOnInit(): void {
   }
 
 }

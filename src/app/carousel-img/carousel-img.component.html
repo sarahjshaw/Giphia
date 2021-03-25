@@ -1,19 +1,25 @@
 <div id="tester"></div>
 <div class="carousel">
   <ng-container *ngFor="let slide of slides; let i = index">
+
+  
+    <button class="control prev" (click)="onPreviousClick()">
+      <span class="arrow left"></span>
+    </button>
     <img
       *ngIf="i === currentSlide"
       [src]="slide.src"
       class="slide"
       @carouselAnimation
       #avatarImg
+      (click)="onPlayerStats()"
       [routerLink]="['/player-profile', avatarImg.src]"
     />
+
+    <button class="control next" (click)="onNextClick()">
+      <span class="arrow right"></span>
+    </button>
+
   </ng-container>
-  <button class="control prev" (click)="onPreviousClick()">
-    <span class="arrow left"></span>
-  </button>
-  <button class="control next" (click)="onNextClick()">
-    <span class="arrow right"></span>
-  </button>
+
 </div>

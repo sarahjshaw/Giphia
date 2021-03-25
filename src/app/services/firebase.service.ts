@@ -19,6 +19,7 @@ interface AuthREsponseData {
   providedIn: 'root',
 })
 export class FirebaseService {
+  playerRank = new Subject<any>();
   playerProfile = new Subject<PlayerProfile>();
   user = new BehaviorSubject<User>(null);
 
@@ -35,6 +36,17 @@ export class FirebaseService {
         return leaderboardArr;
       }))
   }
+
+  findPlayerRanking(username: string) {
+    this.fetchLeaderboard().subscribe(newArray => {
+      let limitedArray = newArray.sort((a, b) => {
+        const first = a.bestScoreEndless;
+        const second = b.bestScoreEndless;
+        return second - first;
+    })
+      const rank = limitedArray.findIndex(playerData => playerData.username === username) + 1;
+      this.playerRank.next(rank);
+  })}
 
   fetchUserProfile(uid: string) {
     this.http.get<any>(`https://giphia-9e631-default-rtdb.firebaseio.com/users/${uid}.json`)
