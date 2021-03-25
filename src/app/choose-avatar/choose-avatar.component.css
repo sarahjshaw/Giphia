@@ -1,10 +1,20 @@
 .container {
   display: flex;
   justify-content: center;
-  margin-left: 18%;
-  height: 40%;
-  width: 40%;
+  align-items:center;
+  margin: auto;
+  width: 100vw;
   padding: 3em;
+}
+
+h1 {
+  font-family: "Poppins", sans serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
 html {
@@ -17,6 +27,14 @@ html {
 @media only screen and (min-width: 768px) {
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  margin-left: 20vw;
+  height: 40%;
+  width: 40%;
+  padding: 3em;
+}
 
 /*desktop view*/
 @media only screen and (min-width: 1030px){

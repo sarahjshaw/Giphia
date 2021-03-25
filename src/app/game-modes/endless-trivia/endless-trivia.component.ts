@@ -1,14 +1,10 @@
-import { ɵNullViewportScroller } from '@angular/common';
 import { Component, OnInit, Output } from '@angular/core';
 import { Giphy } from 'src/app/models/giphy.model';
 import { Trivia } from 'src/app/models/trivia.model';
 import { GiphyService } from 'src/app/services/giphy-api.service';
 import { TriviaService } from 'src/app/services/trivia-api.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
-import { MatRippleModule } from '@angular/material/core';
-import { PlayerProfileComponent } from 'src/app/player-profile/player-profile.component';
 import { MatDialog } from '@angular/material/dialog';
-import { delay } from 'rxjs/operators';
 import { timer } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -37,7 +33,6 @@ export class EndlessTriviaComponent implements OnInit {
   user_score = 0;
   strikes = 0;
 
-  //This is ripple stuff if we want it
   centered = false;
   disabled = false;
   unbounded = true;
@@ -58,8 +53,6 @@ export class EndlessTriviaComponent implements OnInit {
     this.triviaService.fetchRandomQuestion().subscribe((result) => {
       this.randomAnswer = result[0].answer.toLowerCase();
       this.randomQuestion = result[0].question;
-      console.log('randomAnswer', this.randomAnswer);
-      console.log('randomQuestion', this.randomQuestion);
 
       this.giphyService
         .fetchGiph(this.randomAnswer)
@@ -77,19 +70,16 @@ export class EndlessTriviaComponent implements OnInit {
 
   submitAnswer(event) {
     if (this.randomAnswer.includes(this.user_answer.toLowerCase())) {
-      console.log('CORRECT');
       this.addPoint();
       this.nextQuestion();
       this.user_answer = '';
       this.correct_message = true;
       this.delay.subscribe((correct_message) => this.correct_message = false);
     } else {
-      console.log('WRONG');
       this.strikes = this.strikes + 1;
       this.wrong_message = true;
       this.delay.subscribe((wrong_message) => this.wrong_message = false);
       if (this.strikes === 3) {
-        console.log('Youre out!');
         this.user_answer = '';
         this.nextQuestion();
         this.delay.subscribe((x) => this.gameOver());
@@ -101,7 +91,6 @@ export class EndlessTriviaComponent implements OnInit {
 
   nextQuestion() {
     this.delay.subscribe((x) => this.ngOnInit());
-    //Should also push user's current score
   }
 
   addPoint() {

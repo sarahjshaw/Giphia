@@ -6,8 +6,8 @@ html {
     rgba(58, 12, 163, 1) 0%,
     rgba(114, 9, 183, 1) 94%
   );
-height: 100vh;
-width: 100vw;
+  height: 100vh;
+  width: 100vw;
 }
 
 body {
@@ -52,6 +52,7 @@ button {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   flex-direction: column;
+  box-shadow: 3px 3px 8px #4ccaf085;
 }
 
 button:hover {
@@ -71,7 +72,6 @@ img {
 }
 /*tablet view*/
 @media only screen and (min-width: 768px) {
-
   img {
     width: 70vw;
     padding: 0px;
@@ -93,55 +93,51 @@ img {
     font-size: 20px;
     transition: 0.5s ease-in;
   }
-
-  }
-/*desktop view*/
-   @media only screen and (min-width: 1030px){
-    img {
-      width: 35%;
-      display:flex;
-      justify-content: center;
-      padding-left:240px;
-      padding-right:240px;
-      align-items: center;
-      flex-direction: row;
-      transition: 0.5s ease-in;
-      margin:auto;
-      }
-
-      html.img{
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        padding:0px;
-        margin:0px;
-
-      }
-
-      button{
-        width: 220px;
-        height: 100px;
-        background-color: #39065a;
-        border: none;
-        border-radius: 20px;
-        color: #e4fbff;
-        font-size: 30px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        flex-direction: column;
-    }
-    .button-container{
-      display: flex;
-      padding-top: 5%;
-    }
-
 }
+/*desktop view*/
+@media only screen and (min-width: 1030px) {
+  img {
+    width: 28vw;
+    display: flex;
+    justify-content: center;
+    padding-left: 37.5vw;
+    padding-right: 37.5vw;
+    align-items: center;
+    flex-direction: row;
+    transition: 0.5s ease-in;
+    margin: auto;
+  }
 
+  html.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+  }
 
+  button {
+    width: 220px;
+    height: 90px;
+    background-color: #39065a;
+    border: none;
+    border-radius: 20px;
+    color: #e4fbff;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    flex-direction: column;
+  }
+  .button-container {
+    display: flex;
+    padding-top: 2vh;
+  }
 
-
-
+  #ticker {
+    margin-bottom: 3.5vh;
+  }
+}

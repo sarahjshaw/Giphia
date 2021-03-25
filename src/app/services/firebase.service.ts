@@ -50,7 +50,6 @@ export class FirebaseService {
       gamesPlayed: 0
     })
       .subscribe(data => {
-        console.log(data)
         this.fetchUserProfile(uid);
       });
   }

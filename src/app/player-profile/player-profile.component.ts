@@ -12,7 +12,6 @@ import { FirebaseService } from '../services/firebase.service';
 export class PlayerProfileComponent implements OnInit {
 
   playerRanking:number = 2;
-  // isAuthenticated: boolean = false;
 
   playerInfo: any = '';
   playerAvatar: string = '';

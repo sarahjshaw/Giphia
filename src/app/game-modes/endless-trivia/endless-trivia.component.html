@@ -14,11 +14,14 @@
     <h1 id="q_title">Question</h1>
     <div id="random_q">{{ randomQuestion }}</div>
   </div>
-    <div id="giph_cont">
-<div class="giph" *ngFor='let giph of giphArray'><img src="{{giph.images.original.url}}" alt=""></div>
+  <div id="giph_cont">
+    <div class="giph" *ngFor="let giph of giphArray">
+      <div class="background">
+        <img src="{{ giph.images.original.url }}" alt="" />
+        </div>
     </div>
+  </div>
   <div id="h_cont">
-    <!-- <h1 id="h_title">Hint</h1> -->
     <img src="{{ giphHint }}" alt="" />
     <button id="next_hint" (click)="nextGiphHint()">Next Hint</button>
   </div>
@@ -35,12 +38,11 @@
       Submit
     </button>
   </div>
-  <!-- <button id="top_button"><a href="#" (click)='toTop()'>Back To Top</a></button> -->
-
-
-
+  
   <div id="correct_message" *ngIf="correct_message">
-    <div class="fade"><div id="correct">Crushed it</div></div>
+    <div class="fade">
+      <div id="correct">Crushed it</div>
+    </div>
   </div>
   <div id="wrong_message" *ngIf="wrong_message">
     <div class="fade">

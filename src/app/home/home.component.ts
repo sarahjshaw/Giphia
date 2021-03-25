@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { DataService } from 'src/app/services/data.service';
-import { GiphiaLogoService} from 'src/app/services/giphia-logo.service';
 import { FirebaseService } from '../services/firebase.service';
 
 
@@ -17,9 +16,7 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router,
               private _location: Location,
               public data: DataService,
-              private firebaseService: FirebaseService) { }   //imported the router to use in button function ~Christa~
-
-  //functions to have buttons route to the leaderboard and game play options from the home page ~Christa~
+              private firebaseService: FirebaseService) { }
 
   numberOfGamesPlayed: number = 0;
 

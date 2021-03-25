@@ -41,11 +41,11 @@ h1 {
 }
 
 #score {
-  align-self: flex-start;
+  align-self: center;
 }
 
 #quit {
-  align-self: flex-end;
+  align-self: center;
 }
 
 #quit:hover {
@@ -189,7 +189,6 @@ button:hover {
   display: flex;
   color: white;
   justify-content: center;
-  /* align-items: center; */
   font-size: 30px;
   font-weight: 200;
   color: #ea0599;
@@ -216,7 +215,7 @@ button:hover {
 }
 
 /*tablet display*/
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
 
   #h_cont {
     display: none;
@@ -230,11 +229,11 @@ button:hover {
   #q_cont {
     display: flex;
     position: sticky;
-    top: 5vh;
+    top: 6vh;
     width: 75vw;
     height: 80px;
+    margin-left: 12.5vw;
     box-shadow: none;
-    margin: 0vw 12.5vw 2vw 12.5vw;
   }
 
   #q_title {
@@ -251,12 +250,13 @@ button:hover {
   #giph_cont {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    column-count: auto;
+    column-count: 4;
     column-gap: 5px;
     column-width: 20vw;
     width: 1;
-    height: 125vh;
+    max-height: 250vh;
   }
 
   #giph_cont img {
@@ -292,13 +292,12 @@ button:hover {
     bottom: 45vh;
   }
 /*desktop*/
-  @media screen and (min-width: 1030px) {
+  @media only screen and (min-width: 1030px) {
     #h_cont {
       display: none;
     }
 
     #giph_cont {
-      flex-wrap: wrap;
       height: 250vh;
     }
 
@@ -322,11 +321,15 @@ button:hover {
     button {
       width: 20vw;
     }
+
+    #score, #quit {
+      font-size: 40px;
+      vertical-align: top;
+    }
+
+    .ticker {
+      height: 5vh;
+    }
   }
 }
 
-/* PINK - #f72585
-PURP - #7209b7
-DPRP - #3a0ca3
-BLUE - #4361ee
-CYAN - #4cc9f0 */

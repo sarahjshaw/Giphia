@@ -10,7 +10,7 @@ html {
   );
   height: 100vh;
 }
-/* .GraphicsArea{ */
+
 body {
   display: flex;
   flex-direction: column;
@@ -38,11 +38,11 @@ body {
   height: 80px;
   margin: 100px auto 0;
   background-color: #39065a;
+  box-shadow: 3px 3px 8px rgba(234, 5, 154);
   border: none;
   border-radius: 20px;
   color: #e4fbff;
   font-size: 25px;
-  box-shadow: 2px 2px 7px #ea0599;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -50,6 +50,20 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   flex-direction: row;
+}
+
+.endless:hover{
+  background-color: rgba(56, 6, 90, 0.781);
+  box-shadow: 3px 3px 8px #4cc9f0;
+  font-size: 24px;
+  transition: 0.3s ease-in-out;
+}
+
+.timed:hover{
+  background-color: rgba(56, 6, 90, 0.781);
+  box-shadow: 3px 3px 8px #4cc9f0;
+  font-size: 24px;
+  transition: 0.3s ease-in-out;
 }
 
 button {
@@ -76,9 +90,10 @@ h3 {
 mat-card {
   border-radius: 15px;
   border-top: 10px solid #4cc9f0;
-  width: 66%;
+  width: 40%;
   margin: 5px auto 50px;
   height: 35%;
+  transition: .5s ease-in-out;
 }
 
 mat-card-content {
@@ -99,6 +114,7 @@ hr {
 @media only screen and (min-width:768px) {
   .cards-wrapper {
     display: flex;
+    flex-direction:column;
     height: 700px;
     font-size: large;
     line-height: 2em;

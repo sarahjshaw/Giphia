@@ -36,9 +36,4 @@ export class ChooseAvatarComponent implements OnInit {
     { src: "https://avatars.dicebear.com/api/bottts/example.svg?colors%5B%5D=teal" }
   ];
 
-  // onPickAvatar(path) {
-  //   console.log(path.src)
-  //   this.avatarService.chooseAvatar.next(path)
-  // }
-
 }

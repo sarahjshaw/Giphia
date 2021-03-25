@@ -6,7 +6,6 @@ import { TriviaService } from 'src/app/services/trivia-api.service';
 import { RouterModule } from '@angular/router';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { MatRippleModule } from '@angular/material/core';
 import { timer } from 'rxjs';
 
 @Component({
@@ -56,8 +55,6 @@ export class TimeChallengeComponent implements OnInit {
     this.triviaService.fetchRandomQuestion().subscribe((result) => {
       this.randomAnswer = result[0].answer.toLowerCase();
       this.randomQuestion = result[0].question;
-      console.log('randomAnswer', this.randomAnswer);
-      console.log('randomQuestion', this.randomQuestion);
 
       this.giphyService
         .fetchGiph(this.randomAnswer)
@@ -73,16 +70,13 @@ export class TimeChallengeComponent implements OnInit {
     this.interval = setInterval(() => {
       if (this.timeLeft > 0) {
         this.timeLeft--;
-      } //else {
-      //   this.timeLeft = 60; //commented this out to prevent endless looping
-      // }
+      } 
     }, 1000);
   }
 
   resetButton() {
     clearInterval(this.interval);
     this.timeLeft = 60;
-    // this.ngOnInit;
     this.startTimer();
   }
 
@@ -97,14 +91,12 @@ export class TimeChallengeComponent implements OnInit {
 
   submitAnswer() {
     if (this.randomAnswer.includes(this.user_answer.toLowerCase())) {
-      console.log('CORRECT');
       this.addPoint();
       this.nextQuestion();
       this.user_answer = '';
       this.correct_message = true;
       this.delay.subscribe((correct_message) => (this.correct_message = false));
     } else {
-      console.log('WRONG');
       this.wrong_message = true;
       this.delay.subscribe((wrong_message) => (this.wrong_message = false));
       this.strikes = this.strikes + 1;

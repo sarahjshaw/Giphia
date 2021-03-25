@@ -89,7 +89,6 @@ section {
   display: flex;
   color: white;
   justify-content: center;
-  /* align-items: center; */
   font-size: 30px;
   font-weight: 200;
   color: #ea0599;
@@ -214,6 +213,10 @@ top: 0px;
   align-items: center;
 }
 
+#score {
+  align-self: center;
+}
+
 button,
 input {
   margin: 0vw 5vw 0vw 5vw;
@@ -224,7 +227,6 @@ input {
   width: 90vw;
   padding: 0px;
   margin-bottom: 5px;
-  /* border-radius: 15px; */
   border: none;
 }
 
@@ -291,7 +293,7 @@ button:hover {
   display: none;
 }
 /*tablet view*/
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
 
   #h_cont {
     display: none;
@@ -305,12 +307,11 @@ button:hover {
   #q_cont {
     display: flex;
     position: sticky;
-    top: 5vh;
+    top: 6vh;
     width: 75vw;
     height: 80px;
     margin-left: 12.5vw;
     box-shadow: none;
-    margin: 0vw 2.5vw 2vw 2.5vw;
   }
 
   #q_title {
@@ -326,13 +327,14 @@ button:hover {
 
   #giph_cont {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    column-count: auto;
+    column-count: 4;
     column-gap: 5px;
     column-width: 20vw;
     max-width: 1;
-    height: 250vh;
+    max-height: 250vh;
   }
 
   #giph_cont img {
@@ -360,18 +362,17 @@ button:hover {
 
   #correct,
   #wrong {
-    width: 25vw;
+    width: 15vw;
+    height: 10vh;
     position: fixed;
-    left: 37.5vw;
+    left: 42.5vw;
+    bottom: 45vh;
   }
+
 /*desktop view*/
-  @media screen and (min-width: 1030px) {
+  @media only screen and (min-width: 1030px) {
     #h_cont {
       display: none;
-    }
-
-    #giph_cont {
-      flex-wrap: wrap;
     }
 
     #button_cont {
@@ -394,11 +395,15 @@ button:hover {
     button {
       width: 20vw;
     }
+
+    #score {
+      font-size: 40px;
+      vertical-align: top;
+    }
+
+    .ticker {
+      height: 5vh;
+    }
   }
 }
 
-/* PINK - #f72585
-PURP - #7209b7
-DPRP - #3a0ca3
-BLUE - #4361ee
-CYAN - #4cc9f0 */
