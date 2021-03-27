@@ -24,6 +24,8 @@ export class EndlessTriviaComponent implements OnInit {
     private dialog: MatDialog,
     private router: Router
   ) {}
+
+  category: string;
   giphHint: any;
   randomQuestion: any;
   randomAnswer: any;
@@ -53,6 +55,7 @@ export class EndlessTriviaComponent implements OnInit {
     this.triviaService.fetchRandomQuestion().subscribe((result) => {
       this.randomAnswer = result[0].answer.toLowerCase();
       this.randomQuestion = result[0].question;
+      this.category = result[0].category.title;
 
       this.giphyService
         .fetchGiph(this.randomAnswer)
@@ -69,7 +72,7 @@ export class EndlessTriviaComponent implements OnInit {
   }
 
   submitAnswer(event) {
-    if (this.randomAnswer.includes(this.user_answer.toLowerCase())) {
+    if (this.randomAnswer.includes(this.user_answer.trim().toLowerCase())) {
       this.addPoint();
       this.nextQuestion();
       this.user_answer = '';
@@ -107,7 +110,7 @@ export class EndlessTriviaComponent implements OnInit {
     this.firebaseService.updateEndlessScore(this.user_score);
     this.firebaseService.updateGamesPlayed();
   }
-  
+
 toTop() {
   document.body.scrollTop = document.documentElement.scrollTop = 0;
 }

@@ -13,6 +13,7 @@
   <div id="q_cont">
     <h1 id="q_title">Question</h1>
     <div id="random_q">{{ randomQuestion }}</div>
+    <div id="category">Category: <br> {{category}} </div>
   </div>
   <div id="giph_cont">
     <div class="giph" *ngFor="let giph of giphArray">
@@ -38,7 +39,7 @@
       Submit
     </button>
   </div>
-  
+
   <div id="correct_message" *ngIf="correct_message">
     <div class="fade">
       <div id="correct">Crushed it</div>
